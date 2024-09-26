@@ -1,15 +1,20 @@
 import { SignUp } from "@clerk/nextjs";
-import { kv } from "@vercel/kv";
+import { Redis } from "@upstash/redis";
 import { parseRedisBoolean } from "@/lib/utils/server/redis";
 import c from "config";
 import { Button } from "@/components/shadcn/ui/button";
 import Link from "next/link";
 
+const redis = new Redis({
+	url: process.env.UPSTASH_REDIS_REST_URL,
+	token: process.env.UPSTASH_REDIS_REST_TOKEN,
+});
+
 export default async function Page() {
 	const [defaultRegistrationEnabled, defaultSecretRegistrationEnabled]: (
 		| string
 		| null
-	)[] = await kv.mget(
+	)[] = await redis.mget(
 		"config:registration:registrationEnabled",
 		"config:registration:secretRegistrationEnabled",
 	);

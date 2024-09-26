@@ -4,10 +4,15 @@ import { auth, currentUser } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 import Navbar from "@/components/shared/Navbar";
 import Link from "next/link";
-import { kv } from "@vercel/kv";
+import { Redis } from "@upstash/redis";
 import { parseRedisBoolean } from "@/lib/utils/server/redis";
 import { Button } from "@/components/shadcn/ui/button";
 import { getUser } from "db/functions";
+
+const redis = new Redis({
+	url: process.env.UPSTASH_REDIS_REST_URL,
+	token: process.env.UPSTASH_REDIS_REST_TOKEN,
+});
 
 export default async function Page() {
 	const { userId } = auth();
@@ -22,7 +27,7 @@ export default async function Page() {
 	const [defaultRegistrationEnabled, defaultSecretRegistrationEnabled]: (
 		| string
 		| null
-	)[] = await kv.mget(
+	)[] = await redis.mget(
 		"config:registration:registrationEnabled",
 		"config:registration:secretRegistrationEnabled",
 	);

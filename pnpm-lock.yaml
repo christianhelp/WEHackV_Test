@@ -4,6 +4,12 @@ importers:
 
   .:
     dependencies:
+      '@neondatabase/serverless':
+        specifier: ^0.9.5
+        version: 0.9.5
+      '@upstash/redis':
+        specifier: ^1.34.0
+        version: 1.34.0
       prettier-plugin-tailwindcss:
         specifier: ^0.6.5
         version: 0.6.5(prettier@3.3.3)
@@ -204,7 +210,7 @@ importers:
         version: 16.4.5
       drizzle-orm:
         specifier: ^0.31.2
-        version: 0.31.2(@planetscale/database@1.18.0)(@types/react@18.3.3)(@vercel/postgres@0.9.0)(pg@8.12.0)(postgres@3.4.4)(react@18.3.1)
+        version: 0.31.2(@neondatabase/serverless@0.9.5)(@planetscale/database@1.18.0)(@types/react@18.3.3)(@vercel/postgres@0.9.0)(pg@8.12.0)(postgres@3.4.4)(react@18.3.1)
       drizzle-zod:
         specifier: ^0.5.1
         version: 0.5.1(drizzle-orm@0.31.2)(zod@3.23.8)
@@ -351,7 +357,7 @@ importers:
         version: 16.4.5
       drizzle-orm:
         specifier: ^0.31.2
-        version: 0.31.2(@planetscale/database@1.18.0)(@types/react@18.3.3)(@vercel/postgres@0.9.0)(pg@8.12.0)(postgres@3.4.4)(react@18.3.1)
+        version: 0.31.2(@neondatabase/serverless@0.9.5)(@planetscale/database@1.18.0)(@types/react@18.3.3)(@vercel/postgres@0.9.0)(pg@8.12.0)(postgres@3.4.4)(react@18.3.1)
       esbuild-register:
         specifier: ^3.5.0
         version: 3.5.0(esbuild@0.23.0)
@@ -2579,8 +2585,8 @@ packages:
     resolution: {integrity: sha512-Vo+PSpZG2/fmgmiNzYK9qWRh8h/CHrwD0mo1h1DzL4yzHNSfWYujGTYsWGreD000gcgmZ7K4Ys6Tx9TxtsKdDw==}
     dev: false
 
-  /@neondatabase/serverless@0.9.4:
-    resolution: {integrity: sha512-D0AXgJh6xkf+XTlsO7iwE2Q1w8981E1cLCPAALMU2YKtkF/1SF6BiAzYARZFYo175ON+b1RNIy9TdSFHm5nteg==}
+  /@neondatabase/serverless@0.9.5:
+    resolution: {integrity: sha512-siFas6gItqv6wD/pZnvdu34wEqgG3nSE6zWZdq5j2DEsa+VvX8i/5HXJOo06qrw5axPXn+lGCxeR+NLaSPIXug==}
     dependencies:
       '@types/pg': 8.11.6
     dev: false
@@ -6891,8 +6897,8 @@ packages:
       '@types/yargs-parser': 21.0.3
     dev: false
 
-  /@upstash/redis@1.33.0:
-    resolution: {integrity: sha512-5WOilc7AE0ITAdE3NCyMwgOq1n3RHcqW0OfmbotiAyfA+QAEe1R7kXin8L/Yladgdc5lkA0GcYyewqKfAw53jQ==}
+  /@upstash/redis@1.34.0:
+    resolution: {integrity: sha512-TrXNoJLkysIl8SBc4u9bNnyoFYoILpCcFJcLyWCccb/QSUmaVKdvY0m5diZqc3btExsapcMbaw/s/wh9Sf1pJw==}
     dependencies:
       crypto-js: 4.2.0
     dev: false
@@ -6930,14 +6936,14 @@ packages:
     resolution: {integrity: sha512-zdVrhbzZBYo5d1Hfn4bKtqCeKf0FuzW8rSHauzQVMUgv1+1JOwof2mWcBuI+YMJy8s0G0oqAUfQ7HgUDzb8EbA==}
     engines: {node: '>=14.6'}
     dependencies:
-      '@upstash/redis': 1.33.0
+      '@upstash/redis': 1.34.0
     dev: false
 
   /@vercel/postgres@0.9.0:
     resolution: {integrity: sha512-WiI2g3+ce2g1u1gP41MoDj2DsMuQQ+us7vHobysRixKECGaLHpfTI7DuVZmHU087ozRAGr3GocSyqmWLLo+fig==}
     engines: {node: '>=14.6'}
     dependencies:
-      '@neondatabase/serverless': 0.9.4
+      '@neondatabase/serverless': 0.9.5
       bufferutil: 4.0.8
       utf-8-validate: 6.0.4
       ws: 8.18.0(bufferutil@4.0.8)(utf-8-validate@6.0.4)
@@ -8181,7 +8187,7 @@ packages:
       - supports-color
     dev: true
 
-  /drizzle-orm@0.31.2(@planetscale/database@1.18.0)(@types/react@18.3.3)(@vercel/postgres@0.9.0)(pg@8.12.0)(postgres@3.4.4)(react@18.3.1):
+  /drizzle-orm@0.31.2(@neondatabase/serverless@0.9.5)(@planetscale/database@1.18.0)(@types/react@18.3.3)(@vercel/postgres@0.9.0)(pg@8.12.0)(postgres@3.4.4)(react@18.3.1):
     resolution: {integrity: sha512-QnenevbnnAzmbNzQwbhklvIYrDE8YER8K7kSrAWQSV1YvFCdSQPzj+jzqRdTSsV2cDqSpQ0NXGyL1G9I43LDLg==}
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
@@ -8264,6 +8270,7 @@ packages:
       sqlite3:
         optional: true
     dependencies:
+      '@neondatabase/serverless': 0.9.5
       '@planetscale/database': 1.18.0
       '@types/react': 18.3.3
       '@vercel/postgres': 0.9.0
@@ -8278,7 +8285,7 @@ packages:
       drizzle-orm: '>=0.23.13'
       zod: '*'
     dependencies:
-      drizzle-orm: 0.31.2(@planetscale/database@1.18.0)(@types/react@18.3.3)(@vercel/postgres@0.9.0)(pg@8.12.0)(postgres@3.4.4)(react@18.3.1)
+      drizzle-orm: 0.31.2(@neondatabase/serverless@0.9.5)(@planetscale/database@1.18.0)(@types/react@18.3.3)(@vercel/postgres@0.9.0)(pg@8.12.0)(postgres@3.4.4)(react@18.3.1)
       zod: 3.23.8
     dev: false
 

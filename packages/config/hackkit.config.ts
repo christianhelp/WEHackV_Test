@@ -1,7 +1,7 @@
 const defaultTheme = "dark";
 
 const schools = [
-	"The University of Texas at San Antonio",
+	"The University of Texas at Dallas",
 	"American Heritage School",
 	"American River College, California",
 	"American University, Washington, D.C.",
@@ -340,6 +340,7 @@ const schools = [
 	"The University of Texas at Austin",
 	"The University of Texas at Dallas",
 	"The University of Texas at El Paso",
+	"The University of Texas at San Antonio",
 	"The University of Texas of the Permian Basin",
 	"The University of Texas - Pan American",
 	"The University of Tulsa",
@@ -774,9 +775,9 @@ const raceOptions = [
 ];
 
 const c = {
-	hackathonName: "HackKit",
-	itteration: "I",
-	siteUrl: "https://rowdyhacks.org", // Do not have a trailing slash
+	hackathonName: "WEHack",
+	itteration: "V",
+	siteUrl: "https://www.wehackutd.com", // Do not have a trailing slash
 	defaultMetaDataDescription: "Your Metadata Description Here",
 	botName: "HackKit",
 	botParticipantRole: "Participant",

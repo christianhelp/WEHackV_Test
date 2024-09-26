@@ -7,11 +7,16 @@ import { eq } from "db/drizzle";
 import { userCommonData } from "db/schema";
 import ClientToast from "@/components/shared/ClientToast";
 import { SignedOut, RedirectToSignIn } from "@clerk/nextjs";
-import { kv } from "@vercel/kv";
+import { Redis } from "@upstash/redis"
 import { parseRedisBoolean } from "@/lib/utils/server/redis";
 import Link from "next/link";
 import { Button } from "@/components/shadcn/ui/button";
 import { getUser } from "db/functions";
+
+const redis = new Redis({
+	url: process.env.UPSTASH_REDIS_REST_URL,
+	token: process.env.UPSTASH_REDIS_REST_TOKEN,
+});
 
 export default async function RsvpPage({
 	searchParams,
@@ -40,7 +45,7 @@ export default async function RsvpPage({
 		return redirect("/i/approval");
 	}
 
-	const rsvpEnabled = await kv.get("config:registration:allowRSVPs");
+	const rsvpEnabled = await redis.get("config:registration:allowRSVPs");
 
 	// TODO: fix type jank here
 	if (
