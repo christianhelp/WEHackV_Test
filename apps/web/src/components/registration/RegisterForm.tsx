@@ -53,11 +53,24 @@ import { Tag, TagInput } from "@/components/shadcn/ui/tag/tag-input";
 import CreatingRegistration from "./CreatingRegistration";
 import { bucketResumeBaseUploadUrl } from "config";
 import { count } from "console";
+
+import { UploadDropzone } from "@/utils/uploadthing";
+import "@uploadthing/react/styles.css"; // drop zone styling
+import { NodeNextRequest } from "next/dist/server/base-http/node";
+
 interface RegisterFormProps {
 	defaultEmail: string;
 }
 
 export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
+  // State to track the uploaded resume file
+  const [resumeFile, setResumeFile] = useState<{ url: string; name: string } | null>(null);
+
+  const handleRemoveResume = () => {
+    // Clear the uploaded file state
+    setResumeFile(null);
+  };
+
 	const { isLoaded, userId } = useAuth();
 	const router = useRouter();
 
@@ -1138,7 +1151,40 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 								<FormItem>
 									<FormLabel>Resume</FormLabel>
 									<FormControl>
-										<div
+									
+									<div className='flex min-h-[200px] flex-col items-center justify-center rounded-lg border-dashed border-white'>
+									{resumeFile ? (
+										<div className='flex flex-col items-center justify-center space-y-4 rounded-lg border-dashed border-white'>
+											<span className="text-white">Uploaded: {resumeFile.name}</span>
+											<button
+												onClick={handleRemoveResume}
+												className="px-4 py-2 text-white bg-red-500 rounded hover:bg-red-600"
+											>
+												Remove
+											</button>
+										</div>
+									) : (
+									<UploadDropzone
+										endpoint="pdfUploader"
+										onClientUploadComplete={(res) => {
+											if (res && res.length > 0) {
+												const file = res[0];
+												// Set the uploaded file info (name and URL)
+												setResumeFile({ url: file.url, name: file.name });
+												alert("Resume Upload Completed");
+											  }
+										}}
+										onUploadError={(error: Error) => {
+										// Do something with the error.
+										alert(`ERROR! ${error.message}`);
+										}}
+										
+									/>
+	  								)}
+									</div>
+
+									
+										{/* <div
 											{...getRootProps()}
 											className={`border-2${
 												uploadedFile
@@ -1164,7 +1210,7 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 													Remove
 												</Button>
 											) : null}
-										</div>
+										</div> */}
 									</FormControl>
 									<FormMessage />
 								</FormItem>

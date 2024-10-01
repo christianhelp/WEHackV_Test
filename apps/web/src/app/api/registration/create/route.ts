@@ -7,6 +7,7 @@ import { RegisterFormValidator } from "@/validators/shared/RegisterForm";
 import c from "config";
 import { z } from "zod";
 import { getUser, getUserByTag } from "db/functions";
+import { getWebSocketDb } from "db/functions";
 
 export async function POST(req: Request) {
 	const rawBody = await req.json();
@@ -71,7 +72,9 @@ export async function POST(req: Request) {
 		});
 	}
 
-	await db.transaction(async (tx) => {
+	try{
+		const webSocketDb = getWebSocketDb();
+		await webSocketDb.transaction(async (tx) => {
 		await tx.insert(userCommonData).values({
 			clerkID: user.id,
 			firstName: body.firstName,
@@ -115,6 +118,14 @@ export async function POST(req: Request) {
 			isEmailable: body.isEmailable,
 		});
 	});
+	}
+	catch(e){
+		console.log(e);
+		return NextResponse.json({
+			success: false,
+			message: "Error with Websocket.",
+		});
+	}
 
 	// sendEmail({
 	// 	to: body.email,

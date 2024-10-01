@@ -778,13 +778,13 @@ const c = {
 	hackathonName: "WEHack",
 	itteration: "V",
 	siteUrl: "https://www.wehackutd.com", // Do not have a trailing slash
-	defaultMetaDataDescription: "Your Metadata Description Here",
-	botName: "HackKit",
+	defaultMetaDataDescription: "WEHack 2024 is coming in April 2025",
+	botName: "WEHack",
 	botParticipantRole: "Participant",
 	hackathonTimezone: "America/Chicago",
-	localUniversityName: schools[0],
-	localUniversitySchoolIDName: "ABC123",
-	localUniversityShortIDMaxLength: 6,
+	localUniversityName: "The University of Texas at Dallas",
+	localUniversitySchoolIDName: "UTD NetID",
+	localUniversityShortIDMaxLength: 9,
 	registration:{
 		schools,
 		majors,

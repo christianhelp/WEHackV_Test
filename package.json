@@ -25,7 +25,9 @@
   "name": "hackkit",
   "dependencies": {
     "@neondatabase/serverless": "^0.9.5",
+    "@uploadthing/react": "^7.0.2",
     "@upstash/redis": "^1.34.0",
-    "prettier-plugin-tailwindcss": "^0.6.5"
+    "prettier-plugin-tailwindcss": "^0.6.5",
+    "uploadthing": "^7.0.2"
   }
 }
