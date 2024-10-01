@@ -18,7 +18,7 @@ export default async function ({ params }: { params: { tag: string } }) {
 			<Navbar />
 			<div className="max-w-screen relative flex min-h-screen items-center justify-center bg-nav">
 				<div className="absolute top-0 h-[50vh] w-[60vw] -translate-y-[22vh] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[color-mix(in_hsl_longer_hue,hsl(var(--hackathon-primary))_80%,#fff)] via-hackathon to-transparent opacity-50 blur-[100px] will-change-transform" />
-				<div className="grid min-h-[45vh] w-full max-w-5xl grid-cols-5 gap-x-2">
+				<div className="grid min-h-[45vh] w-full max-w-5xl md:grid-cols-5 md:gap-x-2 flex-col justify-center md:justify-start md:pl-11">
 					<div className="flex flex-col justify-center">
 						<div className="relative aspect-square w-full overflow-hidden rounded-full">
 							<Image
@@ -87,14 +87,14 @@ export default async function ({ params }: { params: { tag: string } }) {
 								</Link>
 							)}
 					</div>
-					<div className="col-span-4 flex flex-col justify-center pl-5">
-						<h3 className="font-bold">About</h3>
+					<div className="col-span-4 flex flex-col justify-center md:ml-14">
+						<h3 className="font-bold md:text-2xl">About</h3>
 						<p>
 							<Balancer>{user.bio}</Balancer>
 						</p>
 						{user.skills && (user.skills as string[]).length > 0 ? (
 							<>
-								<h3 className="mt-4 font-bold">Skills</h3>
+								<h3 className="mt-4 font-bold md:text-2xl">Skills</h3>
 								<p>{(user.skills as string[]).join(", ")}</p>
 							</>
 						) : null}
