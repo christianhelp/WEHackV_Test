@@ -825,7 +825,7 @@ const c = {
 			discordRole: "Guild E Role",
 		},
 	},
-	issueEmail: "team@rowdyhacks.org",
+	issueEmail: "wehackutd@gmail.com",
 	links: {
 		discord: "https://go.rowdyhacks.org/discord",
 		instagram: "https://instagram.com/rowdyhacks",
@@ -866,9 +866,9 @@ const c = {
 		Other: "#795548",
 	},
 	days: {
-		Saturday: new Date(2023, 6, 15),
+		Saturday: new Date(2025, 3, 13),
 	},
-	Sunday: new Date(2023, 6, 16),
+	Sunday: new Date(2025, 3, 14),
 	maxResumeSizeInBytes: 4194304,
 	maxProfilePhotoSizeInBytes: 3145728,
 	maxFileSizeInBytes: 4194304,
@@ -876,8 +876,8 @@ const c = {
 	noResumeProvidedURL:
 		"https://static.acmutsa.org/No%20Resume%20Provided.pdf",
 	// Come in and change this date to whenever the hackathon starts
-	startDate: new Date(new Date(2024, 1, 24).setHours(9)),
-	prettyLocation: "Location of Hackathon",
+	startDate: new Date(new Date(2025, 3, 13).setHours(9)),
+	prettyLocation: "Engineering and Computer Science West (ECSW)",
 	roleBadges: {
 		hacker: {
 			title: "Hacker",

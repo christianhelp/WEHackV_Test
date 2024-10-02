@@ -52,7 +52,7 @@ function EventPass({ qrPayload, user, clerk, guild }: EventPassProps) {
 		<div className="relative my-20 h-max">
 			<div className="absolute left-1/2 top-0 z-10 h-[75px] w-[75px] -translate-x-1/2 -translate-y-[50%] rotate-45 rounded-full border-2 border-background border-b-muted border-r-muted bg-background dark:border" />
 			<div className="flex aspect-[9/17] !max-h-[calc(100vh-7rem)] w-full max-w-[400px] flex-col overflow-hidden rounded-3xl border-2 border-muted bg-background py-[37.5px] dark:border">
-				<div className="relative flex h-[30%] w-full flex-col items-center pt-2">
+				<div className="relative flex h-[30%] w-full flex-col items-center pt-2 mt-10">
 					<Image
 						src={clerk.imageUrl}
 						alt={`${user.firstName}'s Profile Picture`}
@@ -67,46 +67,46 @@ function EventPass({ qrPayload, user, clerk, guild }: EventPassProps) {
 						<h3 className="text-center font-mono text-sm">
 							@{user.hackerTag}
 						</h3>
-						<h3 className="text-center font-mono text-sm">
+						{/* <h3 className="text-center font-mono text-sm">
 							{guild}
-						</h3>
+						</h3> */}
 					</div>
 				</div>
-				<div className="event-pass-img relative flex h-[45%] w-full items-end">
+				<div className="event-pass-img relative flex w-full mt-12">
 					<div className="absolute left-1/2 top-1/2 aspect-square w-[200px] -translate-x-1/2 -translate-y-[65%] bg-hackathon opacity-60 blur-[50px] will-change-transform"></div>
-					<Image
+					{/* <Image
 						src={c.eventPassBgImage}
 						alt={""}
 						fill
 						className="no-select -translate-y-[15%] scale-[0.8] object-contain"
-					/>
-					<div className="grid h-20 w-full grid-cols-2">
-						<div className="flex h-full w-full items-center justify-start pl-2">
-							<Image
+					/> */}
+					<div className="w-full flex flex-col justify-center items-center">
+						<div className="flex h-full w-full items-center justify-center pl-2">
+							{/* <Image
 								src={c.icon.svg}
 								height={60}
 								width={60}
 								alt={``}
-							/>
-							<h1 className="text-md ml-1 font-bold leading-tight">
+							/> */}
+							<h1 className="text-2xl ml-1 font-bold leading-tight">
 								{c.hackathonName}{" "}
 								<span className="text-hackathon">
 									{c.itteration}
 								</span>
 							</h1>
 						</div>
-						<div className="flex h-full w-full flex-col items-end justify-center gap-y-1 pr-3">
+						<div className="h-full w-full flex flex-col justify-center items-center gap-y-1">
 							<p className="font-mono text-xs">{`${format(
 								c.startDate,
 								"h:mma, MMM d, yyyy",
 							)}`}</p>
-							<p className="font-mono text-xs">
+							<p className="font-mono text-xs text-center px-10">
 								{c.prettyLocation}
 							</p>
 						</div>
 					</div>
 				</div>
-				<div className="flex h-[25%] w-full items-center justify-center border-dashed border-muted">
+				<div className="flex h-[25%] w-full items-center justify-center border-dashed border-muted mt-5">
 					<Drawer>
 						<DrawerTrigger asChild>
 							<div className="flex aspect-square h-[90%] items-center justify-center overflow-x-hidden rounded-xl border-2 border-dashed border-muted p-2">
