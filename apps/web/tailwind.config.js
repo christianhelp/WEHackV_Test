@@ -23,17 +23,17 @@ module.exports = {
 					"radial-gradient(ellipse_at_center, var(--gradient-color-stops))",
 			},
 			colors: {
-				border: "hsl(var(--border))",
-				input: "hsl(var(--input))",
+				border: "#992444",
+				input: "#D09C51",
 				ring: "hsl(var(--ring))",
-				background: "hsl(var(--background))",
-				foreground: "hsl(var(--foreground))",
+				background: "#301814",
+				foreground: "#CCBA97", // changes font color
 				primary: {
 					DEFAULT: "hsl(var(--primary))",
 					foreground: "hsl(var(--primary-foreground))",
 				},
 				nav: "hsl(var(--nav))",
-				hackathon: "hsl(var(--hackathon-primary))",
+				hackathon: "#A6CDC4",
 				secondary: {
 					DEFAULT: "hsl(var(--secondary))",
 					foreground: "hsl(var(--secondary-foreground))",

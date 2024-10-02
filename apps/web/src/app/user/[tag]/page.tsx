@@ -17,7 +17,7 @@ export default async function ({ params }: { params: { tag: string } }) {
 		<>
 			<Navbar />
 			<div className="max-w-screen relative flex min-h-screen items-center justify-center bg-nav">
-				<div className="absolute top-0 h-[50vh] w-[60vw] -translate-y-[22vh] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[color-mix(in_hsl_longer_hue,hsl(var(--hackathon-primary))_80%,#fff)] via-hackathon to-transparent opacity-50 blur-[100px] will-change-transform" />
+				<div className="absolute top-0 h-[50vh] w-[60vw] -translate-y-[22vh]" />
 				<div className="grid min-h-[45vh] w-full max-w-5xl md:grid-cols-5 md:gap-x-2 flex-col justify-center md:justify-start md:pl-11">
 					<div className="flex flex-col justify-center">
 						<div className="relative aspect-square w-full overflow-hidden rounded-full">
@@ -87,7 +87,7 @@ export default async function ({ params }: { params: { tag: string } }) {
 								</Link>
 							)}
 					</div>
-					<div className="col-span-4 flex flex-col justify-center md:ml-14">
+					<div className="col-span-4 flex flex-col justify-center mt-5 md:ml-14">
 						<h3 className="font-bold md:text-2xl">About</h3>
 						<p>
 							<Balancer>{user.bio}</Balancer>

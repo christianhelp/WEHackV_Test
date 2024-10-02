@@ -27,7 +27,7 @@ export default async function Page() {
 		<div className="mx-auto min-h-[calc(100%-7rem)] max-w-7xl py-10 px-2">
 			<div className="w-full px-2">
 				<h2 className="text-xl font-bold">Welcome,</h2>
-				<h1 className="text-5xl font-black text-hackathon">
+				<h1 className="text-5xl font-black text-hackathon font">
 					{user.firstName}
 				</h1>
 			</div>

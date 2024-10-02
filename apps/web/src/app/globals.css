@@ -38,11 +38,12 @@
 
 		--radius: 0.5rem;
 
-		--gradient-color-1: #668cff;
-		--gradient-color-2: #3366ff;
-		--gradient-color-3: #002db3;
-		--gradient-color-4: #1952cc;
+		--gradient-color-1: #A6CDC4;		
+		--gradient-color-2: #60a697;
+		--gradient-color-3: #77dac3;
+		--gradient-color-4: #67b1a0;
 	}
+
 
 	.dark {
 		--background: 240 10% 3.9%;

@@ -62,7 +62,7 @@ export default function ProfileSettings({
 
 	return (
 		<main>
-			<div className="rounded-lg border-2 border-muted px-5 py-10">
+			<div className="rounded-lg border-2 border-border px-5 py-10">
 				<h2 className="pb-5 text-3xl font-semibold">Profile Photo</h2>
 				<div className="max-w-[500px] space-y-4">
 					<div>
@@ -99,7 +99,7 @@ export default function ProfileSettings({
 					</Button>
 				</div>
 			</div>
-			<div className="mt-5 rounded-lg border-2 border-muted px-5 py-10">
+			<div className="mt-5 rounded-lg border-2 border-border px-5 py-10">
 				<h2 className="pb-5 text-3xl font-semibold">Profile Data</h2>
 				<div className="max-w-[500px] space-y-4">
 					{/* <div>

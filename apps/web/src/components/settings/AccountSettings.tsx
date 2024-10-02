@@ -36,7 +36,7 @@ export default function AccountSettings({ user }: AccountSettingsProps) {
 
 	return (
 		<main>
-			<div className="rounded-lg border-2 border-muted px-5 py-10">
+			<div className="rounded-lg border-2 border-border px-5 py-10">
 				<h2 className="pb-5 text-3xl font-semibold">
 					Personal Information
 				</h2>

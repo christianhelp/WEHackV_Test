@@ -23,7 +23,7 @@ export default async function ({ children }: { children: ReactNode }) {
 		<>
 			<ClientToast />
 			<Navbar />
-			<div className="mx-auto grid max-w-5xl grid-cols-5 gap-x-3 pt-44">
+			<div className="mx-auto md:grid max-w-5xl md:grid-cols-5 gap-x-3 pt-24 pb-24 flex-col items-center justify-center px-10">
 				<div className="col-span-5 flex items-center">
 					<div className="flex items-center pb-24">
 						<div>
@@ -34,7 +34,7 @@ export default async function ({ children }: { children: ReactNode }) {
 						</div>
 					</div>
 				</div>
-				<div>
+				<div className="flex flex-row md:flex-col pb-5 gap-x-6 md:gap-y-6 md:pr-6">
 					{/* <SettingsSection name="Settings" path="/settings" /> */}
 					<SettingsSection name="Account" path="/settings/account" />
 					<SettingsSection name="Profile" path="/settings/profile" />
