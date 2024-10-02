@@ -55,7 +55,7 @@ export default async function ProfileButton() {
 					forceMount
 				>
 					<DropdownMenuGroup>
-						<DropdownSwitcher />
+						{/* <DropdownSwitcher /> */}
 						<Link href={`/register`}>
 							<DropdownMenuItem className="cursor-pointer">
 								Complete Registration
@@ -104,7 +104,7 @@ export default async function ProfileButton() {
 				</DropdownMenuLabel>
 				<DropdownMenuSeparator />
 				<DropdownMenuGroup>
-					<DropdownSwitcher />
+					{/* <DropdownSwitcher /> */}
 					<Link href={`/@${user.hackerTag}`}>
 						<DropdownMenuItem className="cursor-pointer">
 							Profile

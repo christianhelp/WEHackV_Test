@@ -54,7 +54,7 @@ export default async function ProfileButton() {
 						</Link>
 						<MobileNavBarLinks />
 						<DropdownMenuSeparator className="bg-[rgb(228,228,231)] dark:bg-[rgb(39,39,42)]" />
-						<DropdownSwitcher />
+						{/* <DropdownSwitcher /> */}
 						<Link href={`/bug-report`}>
 							<DropdownMenuItem className="cursor-pointer">
 								Report a Bug
@@ -100,7 +100,7 @@ export default async function ProfileButton() {
 						</Link>
 					</DropdownMenuGroup>
 					<DropdownMenuSeparator className="bg-[rgb(228,228,231)] dark:bg-[rgb(39,39,42)]" />
-					<DropdownSwitcher />
+					{/* <DropdownSwitcher /> */}
 					<SignOutButton>
 						<DropdownMenuItem className="cursor-pointer hover:!bg-destructive">
 							Log out
@@ -174,7 +174,7 @@ export default async function ProfileButton() {
 					</Link>
 				</DropdownMenuGroup>
 				<DropdownMenuSeparator className="bg-[rgb(228,228,231)] dark:bg-[rgb(39,39,42)]" />
-				<DropdownSwitcher />
+				{/* <DropdownSwitcher /> */}
 				<SignOutButton>
 					<DropdownMenuItem className="cursor-pointer hover:!bg-destructive">
 						Log out
