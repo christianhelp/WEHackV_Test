@@ -30,14 +30,14 @@ export default async function Page() {
 		getRecentRegistrationData(allUsers);
 
 	return (
-		<div className="mx-auto h-16 w-full max-w-7xl pt-44">
+		<div className="mx-auto h-16 w-full max-w-7xl pt-44 px-4">
 			<div className="w-full px-2">
 				<h2 className="text-xl font-bold">Welcome,</h2>
 				<h1 className="text-5xl font-black text-hackathon">
 					{adminUser.firstName}
 				</h1>
 			</div>
-			<div className="grid grid-cols-4 gap-x-2 pt-10">
+			<div className="grid md:grid-cols-4 gap-y-3 md:gap-x-2 pt-10">
 				<Card>
 					<CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
 						<CardTitle className="text-sm font-medium">
@@ -89,7 +89,7 @@ export default async function Page() {
 					</CardContent>
 				</Card>
 			</div>
-			<div className="grid grid-cols-3 gap-x-2 py-2">
+			<div className="grid md:grid-cols-3 gap-y-3 md:gap-x-2 py-2 pb-24">
 				<Card className="col-span-2">
 					<CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
 						<div>
