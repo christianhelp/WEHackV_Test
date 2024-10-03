@@ -73,7 +73,7 @@ function EventPass({ qrPayload, user, clerk, guild }: EventPassProps) {
 					</div>
 				</div>
 				<div className="event-pass-img relative flex w-full mt-12">
-					<div className="absolute left-1/2 top-1/2 aspect-square w-[200px] -translate-x-1/2 -translate-y-[65%] bg-hackathon opacity-60 blur-[50px] will-change-transform"></div>
+					<div className="absolute left-1/2 top-1/2 aspect-square w-[200px] -translate-x-1/2 -translate-y-[65%] bg-[#c37288] opacity-40 blur-[50px] will-change-transform"></div>
 					{/* <Image
 						src={c.eventPassBgImage}
 						alt={""}
@@ -109,7 +109,7 @@ function EventPass({ qrPayload, user, clerk, guild }: EventPassProps) {
 				<div className="flex h-[25%] w-full items-center justify-center border-dashed border-muted mt-5">
 					<Drawer>
 						<DrawerTrigger asChild>
-							<div className="flex aspect-square h-[90%] items-center justify-center overflow-x-hidden rounded-xl border-2 border-dashed border-muted p-2">
+							<div className="flex aspect-square h-[90%] items-center justify-center overflow-x-hidden rounded-xl border-2 border-dashed border-border p-2">
 								<QRCode
 									className="h-full"
 									bgColor="hsl(var(--background))"
