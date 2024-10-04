@@ -179,4 +179,16 @@ export const RegisterFormValidator = z.object({
 		}),
 	), // TODO: impliment a max length
 	profileIsSearchable: z.boolean(),
+	questionOne: z
+		.string()
+		.min(1, { message: "Sentence must be at least one character" })
+		.max(200, { message: "Sentence must be less than 200 characters" }),
+	questionTwo: z
+		.string()
+		.min(1, { message: "Sentence must be at least one character" })
+		.max(200, { message: "Sentence must be less than 200 characters" }),
+	questionThree: z
+		.string()
+		.min(1, { message: "Sentence must be at least one character" })
+		.max(200, { message: "Sentence must be less than 200 characters" }),
 });

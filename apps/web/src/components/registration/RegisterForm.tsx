@@ -107,6 +107,9 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 			university: "",
 			phoneNumber:"",
 			countryOfResidence:"",
+			questionOne:"",
+			questionTwo:"",
+			questionThree:"",
 		},
 	});
 
@@ -953,6 +956,59 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 												</SelectGroup>
 											</SelectContent>
 										</Select>
+										<FormMessage />
+									</FormItem>
+								)}
+							/>
+						</div>
+					</FormGroupWrapper>
+					{/* ADDED SHORT ANSWER QUESTIONS */}
+					<FormGroupWrapper title="Short Answer Questions">
+						<div className="grid grid-cols-1 gap-x-2 gap-y-4">
+							<FormField
+								control={form.control}
+								name="questionOne"
+								render={({ field }) => (
+									<FormItem>
+										<FormLabel>Question 1</FormLabel>
+										<FormControl>
+											<Input
+												placeholder="Enter answer here"
+												{...field}
+											/>
+										</FormControl>
+										<FormMessage />
+									</FormItem>
+								)}
+							/>
+							<FormField
+								control={form.control}
+								name="questionTwo"
+								render={({ field }) => (
+									<FormItem>
+										<FormLabel>Question 2</FormLabel>
+										<FormControl>
+											<Input
+												placeholder="Enter answer here"
+												{...field}
+											/>
+										</FormControl>
+										<FormMessage />
+									</FormItem>
+								)}
+							/>
+							<FormField
+								control={form.control}
+								name="questionThree"
+								render={({ field }) => (
+									<FormItem>
+										<FormLabel>Question 3</FormLabel>
+										<FormControl>
+											<Input
+												placeholder="Enter answer here"
+												{...field}
+											/>
+										</FormControl>
 										<FormMessage />
 									</FormItem>
 								)}
