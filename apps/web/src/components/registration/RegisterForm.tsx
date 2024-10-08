@@ -1345,7 +1345,7 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 											<span
 												className={
 													bioValue.length > 500
-														? "text-red-500"
+														? "text-[#F03C2D]"
 														: ""
 												}
 											>
@@ -1427,7 +1427,7 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 					</FormGroupWrapper>
 					<Button type="submit">Submit</Button>
 					{hasErrors && (
-						<p className="text-red-800">
+						<p className="text-[#F03C2D]">
 							Something doesn't look right. Please check your
 							inputs.
 						</p>
