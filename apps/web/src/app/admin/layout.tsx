@@ -37,7 +37,7 @@ export default async function AdminLayout({ children }: AdminLayoutProps) {
 	return (
 		<>
 			<ClientToast />
-			<div className="fixed z-20 grid h-16 w-full grid-cols-2 bg-nav px-5">
+			<div className="relative top-0 z-20 grid h-16 w-full grid-cols-2 bg-nav px-5">
 				<div className="flex items-center gap-x-4">
 					<Image
 						src={c.icon.svg}
@@ -77,7 +77,7 @@ export default async function AdminLayout({ children }: AdminLayoutProps) {
 				</div>
 				<div className="flex items-center justify-end gap-x-4 md:hidden"></div>
 			</div>
-			<div className="fixed z-20 mt-16 flex h-12 w-full border-b border-b-border bg-nav px-5">
+			<div className="z-20 flex h-12 w-full border-b border-b-border bg-nav px-5">
 				{Object.entries(c.dashPaths.admin).map(([name, path]) => (
 					<DashNavItem key={name} name={name} path={path} />
 				))}
