@@ -71,6 +71,17 @@ export async function POST(req: Request) {
 				"You must accept the MLH Code of Conduct and Privacy Policy.",
 		});
 	}
+	
+	// added: check resume url
+	// resume is given a default value
+	// only do resume upload when there's a successful database
+	if(!body.resumeFile || !body.resumeFile.name || !body.resumeFile.url) {
+		return NextResponse.json({
+			success: false,
+			message:
+				"Please upload your resume before submitting.",
+		});
+	}
 
 	try{
 		const webSocketDb = getWebSocketDb();
@@ -116,6 +127,9 @@ export async function POST(req: Request) {
 			hasAcceptedMLHCoC: body.hasAcceptedMLHCoC,
 			hasSharedDataWithMLH: body.hasSharedDataWithMLH,
 			isEmailable: body.isEmailable,
+			questionOne: body.questionOne,
+			questionTwo: body.questionTwo,
+			questionThree: body.questionThree,
 		});
 	});
 	}

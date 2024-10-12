@@ -135,6 +135,9 @@ export const userHackerData = pgTable("user_hacker_data", {
 	hasAcceptedMLHCoC: boolean("has_accepted_mlh_coc").notNull(),
 	hasSharedDataWithMLH: boolean("has_shared_data_with_mlh").notNull(),
 	isEmailable: boolean("is_emailable").notNull(),
+	questionOne: varchar("questionOne", { length: 500 }).notNull(),
+	questionTwo: varchar("questionTwo", { length: 500 }).notNull(),
+	questionThree: varchar("questionThree", { length: 500 }).notNull(),
 });
 
 export const userHackerRelations = relations(

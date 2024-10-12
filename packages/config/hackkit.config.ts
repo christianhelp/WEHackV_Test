@@ -556,6 +556,7 @@ const dietaryRestrictionOptions = [
 	"Kosher",
 	"Gluten-Free",
 	"Soy",
+	"None",
 ];
 
 const countries = [

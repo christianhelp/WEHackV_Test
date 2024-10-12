@@ -136,7 +136,7 @@ export const RegisterFormValidator = z.object({
 		z.literal("2XL", defaultPrettyError),
 		z.literal("3XL", defaultPrettyError),
 	]),
-	dietaryRestrictions: z.array(z.string()),
+	dietaryRestrictions: z.array(z.string()).min(1, "At least one dietary restriction must be selected."),
 	accommodationNote: z.string().optional(),
 	github: z
 		.string()
@@ -182,13 +182,18 @@ export const RegisterFormValidator = z.object({
 	questionOne: z
 		.string()
 		.min(1, { message: "Sentence must be at least one character" })
-		.max(200, { message: "Sentence must be less than 200 characters" }),
+		.max(500, { message: "Sentence must be less than 500 characters" }),
 	questionTwo: z
 		.string()
 		.min(1, { message: "Sentence must be at least one character" })
-		.max(200, { message: "Sentence must be less than 200 characters" }),
+		.max(500, { message: "Sentence must be less than 500 characters" }),
 	questionThree: z
 		.string()
 		.min(1, { message: "Sentence must be at least one character" })
-		.max(200, { message: "Sentence must be less than 200 characters" }),
+		.max(500, { message: "Sentence must be less than 500 characters" }),
+
+	resumeFile: z.object({
+		name: z.string().min(1, "Resume file name is required"),
+		url: z.string().url("Invalid URL").min(1, "Resume file URL is required"),
+		})
 });
