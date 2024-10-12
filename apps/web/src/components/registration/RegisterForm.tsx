@@ -68,6 +68,7 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 
   const handleRemoveResume = () => {
     // Clear the uploaded file state
+	form.setValue('resumeFile', {url: "", name: ""}); // Reset the form value
     setResumeFile(null);
   };
 
@@ -110,6 +111,7 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 			questionOne:"",
 			questionTwo:"",
 			questionThree:"",
+			resumeFile: undefined,
 		},
 	});
 
@@ -159,14 +161,21 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 
 		let resume: string = c.noResumeProvidedURL;
 
-		if (uploadedFile) {
-			const fileLocation = `${bucketResumeBaseUploadUrl}/${uploadedFile.name}`;
-			const newBlob = await put(fileLocation, uploadedFile, {
-				access: "public",
-				handleBlobUploadUrl: "/api/upload/resume/register",
-			});
-			resume = newBlob.url;
+		if(data.resumeFile == null) {
+			setIsLoading(false);
+			return alert(
+				"You must upload a resume",
+			);
 		}
+
+		// if (uploadedFile) {
+		// 	const fileLocation = `${bucketResumeBaseUploadUrl}/${uploadedFile.name}`;
+		// 	const newBlob = await put(fileLocation, uploadedFile, {
+		// 		access: "public",
+		// 		handleBlobUploadUrl: "/api/upload/resume/register",
+		// 	});
+		// 	resume = newBlob.url;
+		// }
 
 		const res = await zpostSafe({
 			url: "/api/registration/create",
@@ -1197,7 +1206,7 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 						</div>
 						<FormField
 							control={form.control}
-							name="personalWebsite"
+							name="resumeFile"
 							render={({ field }) => (
 								<FormItem>
 									<FormLabel  className="flex flex-row gap-x-2">Resume <p className="text-[#F03C2D]">*</p></FormLabel>
@@ -1222,6 +1231,8 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 												const file = res[0];
 												// Set the uploaded file info (name and URL)
 												setResumeFile({ url: file.url, name: file.name });
+												form.setValue('resumeFile', { url: file.url, name: file.name }); // Update form state
+                               					form.clearErrors('resumeFile'); // Clear any errors related to resume file
 												alert("Resume Upload Completed");
 											  }
 										}}
@@ -1234,8 +1245,8 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 	  								)}
 									</div>
 
-									
-										{/* <div
+{/* 									
+										<div
 											{...getRootProps()}
 											className={`border-2${
 												uploadedFile

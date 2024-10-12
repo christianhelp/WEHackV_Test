@@ -76,7 +76,7 @@ export const RegisterFormValidator = z.object({
 	phoneNumber: z.string().min(10).max(30, {
 		message: "Phone number must be less than 15 characters",
 	}),
-	countryOfResidence: z.string().length(2),
+	countryOfResidence: z.string().min(1, "Please select a country of residence."),
 	hasAcceptedMLHCoC: z.boolean().refine((val) => val === true, {
 		message: "You must accept the MLH Code of Conduct.",
 	}),
@@ -191,9 +191,12 @@ export const RegisterFormValidator = z.object({
 		.string()
 		.min(1, { message: "Sentence must be at least one character" })
 		.max(500, { message: "Sentence must be less than 500 characters" }),
-
 	resumeFile: z.object({
-		name: z.string().min(1, "Resume file name is required"),
-		url: z.string().url("Invalid URL").min(1, "Resume file URL is required"),
+			url: z.string().min(1, { message: "Resume is required" }),
+			name: z.string().min(1, { message: "Resume is required" }),
 		})
+		.nullable()
+		.refine((file) => file !== null, {
+			message: "Resume file is required.",
+		}),
 });

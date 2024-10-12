@@ -75,11 +75,11 @@ export async function POST(req: Request) {
 	// added: check resume url
 	// resume is given a default value
 	// only do resume upload when there's a successful database
-	if(!body.resumeFile || !body.resumeFile.name || !body.resumeFile.url) {
+	if(!body.resumeFile.url) {
 		return NextResponse.json({
 			success: false,
 			message:
-				"Please upload your resume before submitting.",
+				"You must upload a resume.",
 		});
 	}
 
