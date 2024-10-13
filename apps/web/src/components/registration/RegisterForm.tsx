@@ -56,6 +56,7 @@ import { count } from "console";
 
 import { UploadDropzone } from "@/utils/uploadthing";
 import "@uploadthing/react/styles.css"; // drop zone styling
+import { useUploadThing } from "@/utils/uploadthing";
 import { NodeNextRequest } from "next/dist/server/base-http/node";
 
 interface RegisterFormProps {
@@ -63,14 +64,9 @@ interface RegisterFormProps {
 }
 
 export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
-  // State to track the uploaded resume file
-  const [resumeFile, setResumeFile] = useState<{ url: string; name: string } | null>(null);
+	const [resumeFile, setResumeFile] = useState<File | null>(null);
 
-  const handleRemoveResume = () => {
-    // Clear the uploaded file state
-	form.setValue('resumeFile', {url: "", name: ""}); // Reset the form value
-    setResumeFile(null);
-  };
+  	const { startUpload } = useUploadThing("pdfUploader"); // Specify your endpoint
 
 	const { isLoaded, userId } = useAuth();
 	const router = useRouter();
@@ -111,7 +107,6 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 			questionOne:"",
 			questionTwo:"",
 			questionThree:"",
-			resumeFile: undefined,
 		},
 	});
 
@@ -161,55 +156,90 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 
 		let resume: string = c.noResumeProvidedURL;
 
-		if(data.resumeFile == null) {
-			setIsLoading(false);
-			return alert(
-				"You must upload a resume",
-			);
-		}
+		if (resumeFile) {
+			// const fileLocation = `${bucketResumeBaseUploadUrl}/${uploadedFile.name}`;
+			// const newBlob = await put(fileLocation, uploadedFile, {
+			// 	access: "public",
+			// 	handleBlobUploadUrl: "/api/upload/resume/register",
+			// });
+			// resume = newBlob.url;
+			const uploadResult = await startUpload([resumeFile]); // Pass the resumeFile as an array
 
-		// if (uploadedFile) {
-		// 	const fileLocation = `${bucketResumeBaseUploadUrl}/${uploadedFile.name}`;
-		// 	const newBlob = await put(fileLocation, uploadedFile, {
-		// 		access: "public",
-		// 		handleBlobUploadUrl: "/api/upload/resume/register",
-		// 	});
-		// 	resume = newBlob.url;
-		// }
+            if (uploadResult) {
+                // Extract the uploaded file information (URL, etc.)
+                const uploadedFileData = uploadResult[0];
+                resume = uploadedFileData.url; // Get the URL of the uploaded resume
 
-		const res = await zpostSafe({
-			url: "/api/registration/create",
-			body: { ...data, resume },
-			vRes: BasicServerValidator,
-		});
-
-		if (res.success) {
-			if (res.data.success) {
-				alert(
-					"Registration successfully created! Redirecting to the dashboard.",
-				);
-				router.push("/dash");
-			} else {
-				if (res.data.message == "hackertag_not_unique") {
+                // Proceed with form submission by including the uploaded resume URL
+                const res = await zpostSafe({
+                    url: "/api/registration/create",
+                    body: { ...data, resume }, // Add the resume URL to the form data
+                    vRes: BasicServerValidator,
+                });
+		
+				if (res.success) {
+					if (res.data.success) {
+						alert(
+							"Registration successfully created! Redirecting to the dashboard.",
+						);
+						router.push("/dash");
+					} else {
+						if (res.data.message == "hackertag_not_unique") {
+							setIsLoading(false);
+							return alert(
+								"The HackerTag you chose has already been taken. Please change it and then resubmit the form.",
+							);
+						}
+						setIsLoading(false);
+						return alert(
+							`Registration not created. Error message: \n\n ${res.data.message} \n\n Please try again. If this is a continuing issue, please reach out to us at ${c.issueEmail}.`,
+						);
+					}
+				} else {
 					setIsLoading(false);
-					return alert(
-						"The HackerTag you chose has already been taken. Please change it and then resubmit the form.",
+					alert(
+						`Something went wrong while attempting to register. Please try again. If this is a continuing issue, please reach out to us at ${c.issueEmail}.`,
+					)
+					return console.log(
+						`Recieved a unexpected response from the server. Please try again. If this is a continuing issue, please reach out to us at ${c.issueEmail}.`,
 					);
 				}
-				setIsLoading(false);
-				return alert(
-					`Registration not created. Error message: \n\n ${res.data.message} \n\n Please try again. If this is a continuing issue, please reach out to us at ${c.issueEmail}.`,
-				);
 			}
-		} else {
-			setIsLoading(false);
-			alert(
-				`Something went wrong while attempting to register. Please try again. If this is a continuing issue, please reach out to us at ${c.issueEmail}.`,
-			)
-			return console.log(
-				`Recieved a unexpected response from the server. Please try again. If this is a continuing issue, please reach out to us at ${c.issueEmail}.`,
-			);
 		}
+
+		// const res = await zpostSafe({
+		// 	url: "/api/registration/create",
+		// 	body: { ...data, resume },
+		// 	vRes: BasicServerValidator,
+		// });
+
+		// if (res.success) {
+		// 	if (res.data.success) {
+		// 		alert(
+		// 			"Registration successfully created! Redirecting to the dashboard.",
+		// 		);
+		// 		router.push("/dash");
+		// 	} else {
+		// 		if (res.data.message == "hackertag_not_unique") {
+		// 			setIsLoading(false);
+		// 			return alert(
+		// 				"The HackerTag you chose has already been taken. Please change it and then resubmit the form.",
+		// 			);
+		// 		}
+		// 		setIsLoading(false);
+		// 		return alert(
+		// 			`Registration not created. Error message: \n\n ${res.data.message} \n\n Please try again. If this is a continuing issue, please reach out to us at ${c.issueEmail}.`,
+		// 		);
+		// 	}
+		// } else {
+		// 	setIsLoading(false);
+		// 	alert(
+		// 		`Something went wrong while attempting to register. Please try again. If this is a continuing issue, please reach out to us at ${c.issueEmail}.`,
+		// 	)
+		// 	return console.log(
+		// 		`Recieved a unexpected response from the server. Please try again. If this is a continuing issue, please reach out to us at ${c.issueEmail}.`,
+		// 	);
+		// }
 	}
 
 	const onDrop = useCallback(
@@ -220,7 +250,7 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 				);
 			}
 			if (acceptedFiles.length > 0) {
-				setUploadedFile(acceptedFiles[0]);
+				setResumeFile(acceptedFiles[0]);
 			}
 		},
 		[],
@@ -230,8 +260,8 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 		multiple: false,
 		accept: { "application/pdf": [".pdf"] },
 		maxSize: c.maxResumeSizeInBytes,
-		noClick: uploadedFile != null,
-		noDrag: uploadedFile != null,
+		noClick: resumeFile != null,
+		noDrag: resumeFile != null,
 	});
 
 	if (isLoading) {
@@ -1206,13 +1236,13 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 						</div>
 						<FormField
 							control={form.control}
-							name="resumeFile"
+							name="personalWebsite"
 							render={({ field }) => (
 								<FormItem>
 									<FormLabel  className="flex flex-row gap-x-2">Resume <p className="text-[#F03C2D]">*</p></FormLabel>
 									<FormControl>
 									
-									<div className='flex min-h-[200px] flex-col items-center justify-center rounded-lg border-dashed border-white'>
+									{/* <div className='flex min-h-[200px] flex-col items-center justify-center rounded-lg border-dashed border-white'>
 									{resumeFile ? (
 										<div className='flex flex-col items-center justify-center space-y-4 rounded-lg border-dashed border-white'>
 											<span className="text-white">Uploaded: {resumeFile.name}</span>
@@ -1243,36 +1273,36 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 										
 									/>
 	  								)}
-									</div>
+									</div> */}
 
-{/* 									
+									
 										<div
 											{...getRootProps()}
 											className={`border-2${
-												uploadedFile
+												resumeFile
 													? ""
 													: "cursor-pointer"
 											} flex min-h-[200px] flex-col items-center justify-center rounded-lg border-dashed border-white`}
 										>
 											<input {...getInputProps()} />
 											<p className="p-2 text-center">
-												{uploadedFile
-													? `${uploadedFile.name} (${Math.round(uploadedFile.size / 1024)}kb)`
+												{resumeFile
+													? `${resumeFile.name} (${Math.round(resumeFile.size / 1024)}kb)`
 													: isDragActive
 														? "Drop your resume here..."
 														: "Drag 'n' drop your resume here, or click to select a file"}
 											</p>
-											{uploadedFile ? (
+											{resumeFile ? (
 												<Button
 													className="mt-4"
 													onClick={() =>
-														setUploadedFile(null)
+														setResumeFile(null)
 													}
 												>
 													Remove
 												</Button>
 											) : null}
-										</div> */}
+										</div>
 									</FormControl>
 									<FormMessage />
 								</FormItem>

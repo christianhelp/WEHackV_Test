@@ -75,13 +75,6 @@ export async function POST(req: Request) {
 	// added: check resume url
 	// resume is given a default value
 	// only do resume upload when there's a successful database
-	if(!body.resumeFile.url) {
-		return NextResponse.json({
-			success: false,
-			message:
-				"You must upload a resume.",
-		});
-	}
 
 	try{
 		const webSocketDb = getWebSocketDb();

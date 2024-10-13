@@ -191,12 +191,4 @@ export const RegisterFormValidator = z.object({
 		.string()
 		.min(1, { message: "Sentence must be at least one character" })
 		.max(500, { message: "Sentence must be less than 500 characters" }),
-	resumeFile: z.object({
-			url: z.string().min(1, { message: "Resume is required" }),
-			name: z.string().min(1, { message: "Resume is required" }),
-		})
-		.nullable()
-		.refine((file) => file !== null, {
-			message: "Resume file is required.",
-		}),
 });
