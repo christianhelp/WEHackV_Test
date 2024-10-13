@@ -58,6 +58,10 @@ import { UploadDropzone } from "@/utils/uploadthing";
 import "@uploadthing/react/styles.css"; // drop zone styling
 import { useUploadThing } from "@/utils/uploadthing";
 import { NodeNextRequest } from "next/dist/server/base-http/node";
+import { Sonsie_One } from "next/font/google";
+import { generateClientDropzoneAccept } from "uploadthing/client";
+import { generatePermittedFileTypes } from "uploadthing/client";
+import type { FileRouter } from "uploadthing/types";
 
 interface RegisterFormProps {
 	defaultEmail: string;
@@ -66,7 +70,7 @@ interface RegisterFormProps {
 export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 	const [resumeFile, setResumeFile] = useState<File | null>(null);
 
-  	const { startUpload } = useUploadThing("pdfUploader"); // Specify your endpoint
+	const { startUpload, routeConfig } = useUploadThing("pdfUploader"); // Specify your endpoint
 
 	const { isLoaded, userId } = useAuth();
 	const router = useRouter();
@@ -134,6 +138,11 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 		console.log(countryValue)
 	},[countryValue])
 
+	useEffect(() => {
+		console.log("Resume file updated:", resumeFile);
+	}, [resumeFile]);
+
+
 	async function onSubmit(data: z.infer<typeof RegisterFormValidator>) {
 		console.log(data);
 		setIsLoading(true);
@@ -157,12 +166,6 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 		let resume: string = c.noResumeProvidedURL;
 
 		if (resumeFile) {
-			// const fileLocation = `${bucketResumeBaseUploadUrl}/${uploadedFile.name}`;
-			// const newBlob = await put(fileLocation, uploadedFile, {
-			// 	access: "public",
-			// 	handleBlobUploadUrl: "/api/upload/resume/register",
-			// });
-			// resume = newBlob.url;
 			const uploadResult = await startUpload([resumeFile]); // Pass the resumeFile as an array
 
             if (uploadResult) {
@@ -205,6 +208,15 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 					);
 				}
 			}
+		}
+		else {
+			setIsLoading(false);
+					alert(
+						`Please upload a resume`,
+					)
+					return console.log(
+						`User has not uploaded a resume`,
+					);
 		}
 
 		// const res = await zpostSafe({
@@ -255,14 +267,21 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 		},
 		[],
 	);
+
 	const { getRootProps, getInputProps, isDragActive } = useDropzone({
 		onDrop,
-		multiple: false,
-		accept: { "application/pdf": [".pdf"] },
-		maxSize: c.maxResumeSizeInBytes,
-		noClick: resumeFile != null,
-		noDrag: resumeFile != null,
+		accept: generateClientDropzoneAccept(
+		  generatePermittedFileTypes(routeConfig).fileTypes,
+		),
 	});
+	// const { getRootProps, getInputProps, isDragActive } = useDropzone({
+	// 	onDrop,
+	// 	multiple: false,
+	// 	accept: { "application/pdf": [".pdf"] },
+	// 	maxSize: c.maxResumeSizeInBytes,
+	// 	noClick: resumeFile != null,
+	// 	noDrag: resumeFile != null,
+	// });
 
 	if (isLoading) {
 		return <CreatingRegistration />;
