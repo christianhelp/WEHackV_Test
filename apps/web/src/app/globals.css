@@ -83,6 +83,7 @@
 	* {
 		@apply border-border;
 	}
+
 	body {
 		@apply bg-background text-foreground;
 	}
@@ -104,6 +105,27 @@
 
 .event-pass-img {
 	transform: translateZ(40px);
+}
+
+.pulsatingDot {
+	/* animation: pulseDot 1.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) -.4s infinite; */
+	/* border-radius: 50%; */
+	/* box-sizing: border-box; */
+	transform-origin: center;
+}
+
+.pulsatingDot:before {
+	animation: pulseRing 1.25s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+	/* background-color: var(--pulsating-dot, #00BEFF); */
+	background-color: hsl(var(--hackathon-primary));
+	border-radius: 45px;
+	content: "";
+	display: block;
+	height: 300%;
+	left: -100%;
+	position: relative;
+	top: -100%;
+	width: 300%;
 }
 
 /* === containers === */
