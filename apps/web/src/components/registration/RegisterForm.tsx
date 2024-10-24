@@ -1287,9 +1287,10 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 											{resumeFile ? (
 												<Button
 													className="mt-4"
-													onClick={() =>
+													onClick={() => {
+														field.onChange(null)
 														setResumeFile(null)
-													}
+													}}
 												>
 													Remove
 												</Button>
