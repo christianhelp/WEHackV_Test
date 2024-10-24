@@ -10,6 +10,9 @@ const noProfanityValidator = (val: any) => !isProfane(val);
 const noProfanityMessage = "Profanity is not allowed";
 
 const countryCodesArray = c.registration.countries.map(countryObject => countryObject.code);
+const MAX_FILE_SIZE = 500000; // Maximum file size of 5MB
+const ACCEPTED_FILE_MIME_TYPES = ['application/pdf']; // Allowed MIME types
+const ACCEPTED_IMAGE_TYPES = ["pdf"];
 
 export const RegisterFormValidator = z.object({
 	firstName: z
@@ -87,12 +90,12 @@ export const RegisterFormValidator = z.object({
 	isEmailable: z.boolean(),
 	university: z.string().min(1).max(200),
 	major: z.string().min(1).max(200),
-	schoolID: z
-		.string()
-		.length(c.localUniversityShortIDMaxLength, {
-			message: `${c.localUniversitySchoolIDName} must be than ${c.localUniversityShortIDMaxLength} characters.`,
-		})
-		.or(z.literal("NOT_LOCAL_SCHOOL")),
+	// schoolID: z
+	// 	.string()
+	// 	.length(c.localUniversityShortIDMaxLength, {
+	// 		message: `${c.localUniversitySchoolIDName} must be than ${c.localUniversityShortIDMaxLength} characters.`,
+	// 	})
+	// 	.or(z.literal("NOT_LOCAL_SCHOOL")),
 	levelOfStudy: z.union([
 		z.literal("Freshman", defaultPrettyError),
 		z.literal("Sophomore", defaultPrettyError),
@@ -191,4 +194,9 @@ export const RegisterFormValidator = z.object({
 		.string()
 		.min(1, { message: "Sentence must be at least one character" })
 		.max(500, { message: "Sentence must be less than 500 characters" }),
+	// uploadedFile: z
+	// 	.instanceof(File, {
+	// 		message: "Please upload a PDF of your resume.",
+	// 	})
+	// 	.nullable(),
 });

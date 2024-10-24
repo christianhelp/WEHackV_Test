@@ -1,0 +1,1 @@
+ALTER TABLE "user_hacker_data" DROP COLUMN IF EXISTS "school_id";

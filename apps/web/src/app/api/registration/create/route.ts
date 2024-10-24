@@ -75,6 +75,13 @@ export async function POST(req: Request) {
 	// added: check resume url
 	// resume is given a default value
 	// only do resume upload when there's a successful database
+	// if(!body.uploadedFile) {
+	// 	return NextResponse.json({
+	// 		success: false,
+	// 		message:
+	// 			"You must upload a resume.",
+	// 	});
+	// }
 
 	try{
 		const webSocketDb = getWebSocketDb();
@@ -107,7 +114,7 @@ export async function POST(req: Request) {
 			clerkID: user.id,
 			university: body.university,
 			major: body.major,
-			schoolID: body.schoolID,
+			// schoolID: body.schoolID,
 			levelOfStudy: body.levelOfStudy,
 			hackathonsAttended: body.hackathonsAttended,
 			softwareExperience: body.softwareBuildingExperience,

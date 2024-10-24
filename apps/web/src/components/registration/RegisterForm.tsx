@@ -104,7 +104,7 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 			pronouns: "",
 			race: "" as any,
 			shirtSize: "" as any,
-			schoolID: "",
+			// schoolID: "",
 			university: "",
 			phoneNumber:"",
 			countryOfResidence:"",
@@ -125,13 +125,13 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 	const bioValue = form.watch("bio");
 	const countryValue = form.watch("countryOfResidence");
 
-	useEffect(() => {
-		if (universityValue != c.localUniversityName) {
-			form.setValue("schoolID", "NOT_LOCAL_SCHOOL");
-		} else {
-			form.setValue("schoolID", "");
-		}
-	}, [universityValue]);
+	// useEffect(() => {
+	// 	if (universityValue != c.localUniversityName) {
+	// 		form.setValue("schoolID", "NOT_LOCAL_SCHOOL");
+	// 	} else {
+	// 		form.setValue("schoolID", "");
+	// 	}
+	// }, [universityValue]);
 
 
 	useEffect(()=>{
@@ -888,7 +888,7 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 									</FormItem>
 								)}
 							/>
-							<FormField
+							{/* <FormField
 								control={form.control}
 								name="schoolID"
 								render={({ field }) => (
@@ -914,7 +914,7 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 										<FormMessage />
 									</FormItem>
 								)}
-							/>
+							/> */}
 						</div>
 					</FormGroupWrapper>
 					<FormGroupWrapper title="Hackathon Experience">
@@ -1260,41 +1260,6 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 								<FormItem>
 									<FormLabel  className="flex flex-row gap-x-2">Resume <p className="text-[#F03C2D]">*</p></FormLabel>
 									<FormControl>
-									
-									{/* <div className='flex min-h-[200px] flex-col items-center justify-center rounded-lg border-dashed border-white'>
-									{resumeFile ? (
-										<div className='flex flex-col items-center justify-center space-y-4 rounded-lg border-dashed border-white'>
-											<span className="text-white">Uploaded: {resumeFile.name}</span>
-											<button
-												onClick={handleRemoveResume}
-												className="px-4 py-2 text-white bg-red-500 rounded hover:bg-red-600"
-											>
-												Remove
-											</button>
-										</div>
-									) : (
-									<UploadDropzone
-										endpoint="pdfUploader"
-										onClientUploadComplete={(res) => {
-											if (res && res.length > 0) {
-												const file = res[0];
-												// Set the uploaded file info (name and URL)
-												setResumeFile({ url: file.url, name: file.name });
-												form.setValue('resumeFile', { url: file.url, name: file.name }); // Update form state
-                               					form.clearErrors('resumeFile'); // Clear any errors related to resume file
-												alert("Resume Upload Completed");
-											  }
-										}}
-										onUploadError={(error: Error) => {
-										// Do something with the error.
-										alert(`ERROR! ${error.message}`);
-										}}
-										
-									/>
-	  								)}
-									</div> */}
-
-									
 										<div
 											{...getRootProps()}
 											className={`border-2${
