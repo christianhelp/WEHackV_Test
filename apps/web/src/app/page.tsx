@@ -10,10 +10,10 @@ export default function Home() {
 		<div className="App w-full overflow-x-hidden">
 			<Navbar />
 			<MLHBadge />
-			<Jumbotron/>
-      		<About/>
-      		<FAQ/>
-      		<Footer/>
+			<Jumbotron />
+			<About />
+			<FAQ />
+			<Footer />
 		</div>
 	);
 }

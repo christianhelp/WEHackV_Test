@@ -13,7 +13,7 @@ export default function SettingsSection({ name, path }: ToggleItemProps) {
 	return (
 		<Link href={path}>
 			<div
-				className={`w-full rounded-md px-5 py-3 transition-all duration-100 bg-[#D09C51] hover:bg-[#CCBA97] border-2 border-[#D09C51] ${
+				className={`w-full rounded-md border-2 border-[#D09C51] bg-[#D09C51] px-5 py-3 transition-all duration-100 hover:bg-[#CCBA97] ${
 					(currPath.startsWith(path) &&
 						path !== "/settings" &&
 						path !== "/dash" &&

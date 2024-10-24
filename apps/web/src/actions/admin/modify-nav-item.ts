@@ -14,7 +14,6 @@ const redis = new Redis({
 	url: process.env.UPSTASH_REDIS_REST_URL,
 	token: process.env.UPSTASH_REDIS_REST_TOKEN,
 });
-  
 
 // Maybe a better way to do this for revalidation? Who knows.
 const navAdminPage = "/admin/toggles/landing";

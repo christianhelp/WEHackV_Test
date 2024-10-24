@@ -14,12 +14,8 @@ const countryCodesArray = c.registration.countries.map(
 );
 
 export const RegisterFormValidator = z.object({
-	firstName: z
-		.string()
-		.min(1, { message: "Required" }),
-	lastName: z
-		.string()
-		.min(1, { message: "Required" }),
+	firstName: z.string().min(1, { message: "Required" }),
+	lastName: z.string().min(1, { message: "Required" }),
 	email: z
 		.string()
 		.email({
@@ -76,7 +72,9 @@ export const RegisterFormValidator = z.object({
 	phoneNumber: z.string().min(10).max(30, {
 		message: "Phone number must be less than 15 characters",
 	}),
-	countryOfResidence: z.string().min(1, "Please select a country of residence."),
+	countryOfResidence: z
+		.string()
+		.min(1, "Please select a country of residence."),
 	hasAcceptedMLHCoC: z.boolean().refine((val) => val === true, {
 		message: "You must accept the MLH Code of Conduct.",
 	}),
@@ -135,7 +133,9 @@ export const RegisterFormValidator = z.object({
 		z.literal("XL", defaultPrettyError),
 		z.literal("2XL", defaultPrettyError),
 	]),
-	dietaryRestrictions: z.array(z.string()).min(1, "At least one dietary restriction must be selected."),
+	dietaryRestrictions: z
+		.array(z.string())
+		.min(1, "At least one dietary restriction must be selected."),
 	accommodationNote: z.string().optional(),
 	github: z
 		.string()
@@ -178,15 +178,9 @@ export const RegisterFormValidator = z.object({
 		}),
 	), // TODO: impliment a max length
 	profileIsSearchable: z.boolean(),
-	questionOne: z
-		.string()
-		.min(1, { message: "Required" }),
-	questionTwo: z
-		.string()
-		.min(1, { message: "Required" }),
-	questionThree: z
-		.string()
-		.min(1, { message: "Required" }),
+	questionOne: z.string().min(1, { message: "Required" }),
+	questionTwo: z.string().min(1, { message: "Required" }),
+	questionThree: z.string().min(1, { message: "Required" }),
 	// uploadedFile: z
 	// 	.instanceof(File, {
 	// 		message: "Please upload a PDF of your resume.",
@@ -194,7 +188,7 @@ export const RegisterFormValidator = z.object({
 	// 	.nullable(),
 	uploadedFile: z
 		.any()
-    	.refine((file) => file !== null && file !== undefined, {
-      		message: "Please upload a PDF of your resume before submitting.",
-    	}),
+		.refine((file) => file !== null && file !== undefined, {
+			message: "Please upload a PDF of your resume before submitting.",
+		}),
 });

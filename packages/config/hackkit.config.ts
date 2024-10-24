@@ -786,7 +786,7 @@ const c = {
 	localUniversityName: "The University of Texas at Dallas",
 	localUniversitySchoolIDName: "UTD NetID",
 	localUniversityShortIDMaxLength: 9,
-	registration:{
+	registration: {
 		schools,
 		majors,
 		levelsOfStudy,
@@ -854,7 +854,7 @@ const c = {
 			Users: "/admin/users",
 			Events: "/admin/events",
 			Points: "/admin/points",
-			"Check-in": "/admin/check-in",
+			"Hackathon Check-in": "/admin/check-in",
 			Toggles: "/admin/toggles",
 		},
 		// TODO: Can remove days? Pretty sure they're dynamic now.

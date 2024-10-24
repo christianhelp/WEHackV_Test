@@ -4,10 +4,10 @@ import { useState, useEffect } from "react";
 import { QrScanner } from "@yudiel/react-qr-scanner";
 import superjson from "superjson";
 import { checkInUserToHackathon } from "@/actions/admin/scanner-admin-actions";
-import { useAction } from "next-safe-action/hooks";
 import { type QRDataInterface } from "@/lib/utils/shared/qr";
 import type { User } from "db/types";
 import clsx from "clsx";
+import { useAction } from "next-safe-action/hooks";
 import {
 	Drawer,
 	DrawerContent,

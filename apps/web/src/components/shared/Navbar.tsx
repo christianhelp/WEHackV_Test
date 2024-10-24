@@ -8,7 +8,7 @@ import NavBarLinksGrouper from "./NavBarLinksGrouper";
 import { Oswald } from "next/font/google";
 import { cn } from "@/lib/utils/client/cn";
 import { getUser } from "db/functions";
-import './Nav.css'
+import "./Nav.css";
 
 const oswald = Oswald({
 	variable: "--font-oswald",
@@ -24,13 +24,8 @@ export default async function Navbar({ className }: NavbarProps) {
 	const registrationIsComplete =
 		user != null && (await getUser(user.id)) != undefined;
 	return (
-		<div className="z-50 w-screen absolute pt-6">
-			<div
-				className={cn(
-					`relative top-0 z-50 h-16 w-screen`,
-					className,
-				)}
-			>
+		<div className="absolute z-50 w-screen pt-6">
+			<div className={cn(`relative top-0 z-50 h-16 w-screen`, className)}>
 				<div className="mx-auto grid h-full w-full max-w-7xl grid-flow-col grid-cols-2 px-2 sm:px-6 lg:max-w-full lg:px-8">
 					<div className="col-span-3 flex items-center justify-start gap-x-5 pl-4 md:pl-0">
 						<Link
@@ -46,12 +41,28 @@ export default async function Navbar({ className }: NavbarProps) {
 						</Link>
 					</div>
 
-					<div className="flex items-center justify-between space-x-2 md:justify-center pr-20 md:pr-32">
+					<div className="flex items-center justify-between space-x-2 pr-20 md:justify-center md:pr-32">
 						<div className="col-span-2 hidden items-center justify-end gap-x-5 md:flex md:pr-10">
 							{/* <NavBarLinksGrouper /> */}
-							<a className='text-lg lg:text-base font-medium' href="#about-wehack">About</a>
-                        	<a className='text-lg lg:text-base font-medium' href="#FAQ">FAQ</a>
-                        	<a className='text-lg lg:text-base font-medium' href="http://hackp.ac/coc" target="_blank">MLH Conduct</a>
+							<a
+								className="text-lg font-medium lg:text-base"
+								href="#about-wehack"
+							>
+								About
+							</a>
+							<a
+								className="text-lg font-medium lg:text-base"
+								href="#FAQ"
+							>
+								FAQ
+							</a>
+							<a
+								className="text-lg font-medium lg:text-base"
+								href="http://hackp.ac/coc"
+								target="_blank"
+							>
+								MLH Conduct
+							</a>
 						</div>
 						<div className="hidden gap-x-4 md:flex">
 							{user ? (
@@ -63,9 +74,7 @@ export default async function Navbar({ className }: NavbarProps) {
 												: "/register"
 										}
 									>
-										<Button
-											className="primary-btn bg-[#909634] text-[#FFE9D7] w-full py-3 px-5 hover:bg-[#909634]"
-										>
+										<Button className="primary-btn w-full bg-[#909634] px-5 py-3 text-[#FFE9D7] hover:bg-[#909634]">
 											{registrationIsComplete
 												? "Dashboard"
 												: "Complete Registration"}
@@ -75,16 +84,14 @@ export default async function Navbar({ className }: NavbarProps) {
 							) : (
 								<>
 									<Link href={"/sign-in"}>
-										<Button
-											className="primary-btn bg-[#909634] text-[#FFE9D7] w-full py-3 px-5 hover:bg-[#909634]"
-										>
+										<Button className="primary-btn w-full bg-[#909634] px-5 py-3 text-[#FFE9D7] hover:bg-[#909634]">
 											Sign In
 										</Button>
 									</Link>
 									<Link href={"/register"}>
-										<Button
-											className="primary-btn bg-[#909634] text-[#FFE9D7] w-full py-3 px-5 hover:bg-[#909634]"
-										>Register</Button>
+										<Button className="primary-btn w-full bg-[#909634] px-5 py-3 text-[#FFE9D7] hover:bg-[#909634]">
+											Register
+										</Button>
 									</Link>
 								</>
 							)}
@@ -92,7 +99,6 @@ export default async function Navbar({ className }: NavbarProps) {
 						<div className="relative">
 							<ProfileButton />
 						</div>
-						
 					</div>
 				</div>
 			</div>

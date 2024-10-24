@@ -20,7 +20,9 @@ export default function Page() {
 					You will be notified when it is approved!
 				</p>
 				<Link href={"/"}>
-					<Button className="bg-[#D09C51] hover:bg-[#CCBA97]">Go Home</Button>
+					<Button className="bg-[#D09C51] hover:bg-[#CCBA97]">
+						Go Home
+					</Button>
 				</Link>
 			</div>
 		</main>

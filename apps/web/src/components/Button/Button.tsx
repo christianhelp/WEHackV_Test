@@ -1,12 +1,14 @@
-import React from 'react'
-import './Button.css'
+import React from "react";
+import "./Button.css";
 
-function Button({buttonText, link} : {buttonText : String, link : any}) {
-  return (
-      <a href={link} className="text-xl" target="_blank">
-        <button className="primary-btn bg-[#909634] text-[#FFE9D7] w-full py-3 px-5">{buttonText}</button>
-      </a>
-  )
+function Button({ buttonText, link }: { buttonText: String; link: any }) {
+	return (
+		<a href={link} className="text-xl" target="_blank">
+			<button className="primary-btn w-full bg-[#909634] px-5 py-3 text-[#FFE9D7]">
+				{buttonText}
+			</button>
+		</a>
+	);
 }
 
-export default Button
+export default Button;

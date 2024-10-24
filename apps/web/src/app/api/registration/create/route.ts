@@ -71,7 +71,7 @@ export async function POST(req: Request) {
 				"You must accept the MLH Code of Conduct and Privacy Policy.",
 		});
 	}
-	
+
 	// added: check resume url
 	// resume is given a default value
 	// only do resume upload when there's a successful database
@@ -83,57 +83,56 @@ export async function POST(req: Request) {
 	// 	});
 	// }
 
-	try{
+	try {
 		const webSocketDb = getWebSocketDb();
 		await webSocketDb.transaction(async (tx) => {
-		await tx.insert(userCommonData).values({
-			clerkID: user.id,
-			firstName: body.firstName,
-			lastName: body.lastName,
-			email: body.email,
-			hackerTag: body.hackerTag.toLowerCase(),
-			age: body.age,
-			gender: body.gender,
-			race: body.race,
-			ethnicity: body.ethnicity,
-			shirtSize: body.shirtSize,
-			dietRestrictions: body.dietaryRestrictions,
-			accommodationNote: body.accommodationNote || null,
-			discord: body.profileDiscordName,
-			pronouns: body.pronouns,
-			bio: body.bio,
-			skills: body.skills.map((v) => v.text.toLowerCase()),
-			profilePhoto: user.imageUrl,
-			isFullyRegistered: true,
-			phoneNumber: body.phoneNumber,
-			isSearchable: body.profileIsSearchable,
-			countryOfResidence: body.countryOfResidence,
-		});
+			await tx.insert(userCommonData).values({
+				clerkID: user.id,
+				firstName: body.firstName,
+				lastName: body.lastName,
+				email: body.email,
+				hackerTag: body.hackerTag.toLowerCase(),
+				age: body.age,
+				gender: body.gender,
+				race: body.race,
+				ethnicity: body.ethnicity,
+				shirtSize: body.shirtSize,
+				dietRestrictions: body.dietaryRestrictions,
+				accommodationNote: body.accommodationNote || null,
+				discord: body.profileDiscordName,
+				pronouns: body.pronouns,
+				bio: body.bio,
+				skills: body.skills.map((v) => v.text.toLowerCase()),
+				profilePhoto: user.imageUrl,
+				isFullyRegistered: true,
+				phoneNumber: body.phoneNumber,
+				isSearchable: body.profileIsSearchable,
+				countryOfResidence: body.countryOfResidence,
+			});
 
-		await tx.insert(userHackerData).values({
-			clerkID: user.id,
-			university: body.university,
-			major: body.major,
-			// schoolID: body.schoolID,
-			levelOfStudy: body.levelOfStudy,
-			hackathonsAttended: body.hackathonsAttended,
-			softwareExperience: body.softwareBuildingExperience,
-			heardFrom: body.heardAboutEvent || null,
-			GitHub: body.github,
-			LinkedIn: body.linkedin,
-			PersonalWebsite: body.personalWebsite,
-			resume: body.resume,
-			group: totalUserCount[0].count % Object.keys(c.groups).length,
-			hasAcceptedMLHCoC: body.hasAcceptedMLHCoC,
-			hasSharedDataWithMLH: body.hasSharedDataWithMLH,
-			isEmailable: body.isEmailable,
-			questionOne: body.questionOne,
-			questionTwo: body.questionTwo,
-			questionThree: body.questionThree,
+			await tx.insert(userHackerData).values({
+				clerkID: user.id,
+				university: body.university,
+				major: body.major,
+				// schoolID: body.schoolID,
+				levelOfStudy: body.levelOfStudy,
+				hackathonsAttended: body.hackathonsAttended,
+				softwareExperience: body.softwareBuildingExperience,
+				heardFrom: body.heardAboutEvent || null,
+				GitHub: body.github,
+				LinkedIn: body.linkedin,
+				PersonalWebsite: body.personalWebsite,
+				resume: body.resume,
+				group: totalUserCount[0].count % Object.keys(c.groups).length,
+				hasAcceptedMLHCoC: body.hasAcceptedMLHCoC,
+				hasSharedDataWithMLH: body.hasSharedDataWithMLH,
+				isEmailable: body.isEmailable,
+				questionOne: body.questionOne,
+				questionTwo: body.questionTwo,
+				questionThree: body.questionThree,
+			});
 		});
-	});
-	}
-	catch(e){
+	} catch (e) {
 		console.log(e);
 		return NextResponse.json({
 			success: false,

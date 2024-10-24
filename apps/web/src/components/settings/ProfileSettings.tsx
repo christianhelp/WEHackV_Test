@@ -70,7 +70,7 @@ export default function ProfileSettings({
 							accept=".jpg, .jpeg, .png, .svg, .gif, .mp4"
 							type="file"
 							name="photo"
-							className="mb-4 mt-2 cursor-pointer file:cursor-pointer file:text-[#CCBA97] bg-[#992444] border-[#992444]"
+							className="mb-4 mt-2 cursor-pointer border-[#992444] bg-[#992444] file:cursor-pointer file:text-[#CCBA97]"
 							onChange={handleFileChange}
 						/>
 					</div>

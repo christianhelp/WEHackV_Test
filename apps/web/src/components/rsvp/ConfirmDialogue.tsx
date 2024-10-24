@@ -51,11 +51,13 @@ export default function ConfirmDialogue({ hasRsvped }: { hasRsvped: boolean }) {
 						We can't wait to see you at the event!
 					</p>
 					<Link href={"/dash"}>
-						<Button className="bg-[#D09C51] hover:bg-[#CCBA97]">Go To Dashboard</Button>
+						<Button className="bg-[#D09C51] hover:bg-[#CCBA97]">
+							Go To Dashboard
+						</Button>
 					</Link>
 				</div>
 			) : (
-				<div className="relative flex aspect-video w-full max-w-[500px] flex-col items-center justify-center rounded-xl backdrop-blur transition dark:bg-white/[0.08] pb-60">
+				<div className="relative flex aspect-video w-full max-w-[500px] flex-col items-center justify-center rounded-xl pb-60 backdrop-blur transition dark:bg-white/[0.08]">
 					<p className="absolute bottom-0 px-10 pb-40 text-center text-sm text-[#F03C2D]">
 						Make sure you only RSVP if you are certain you can
 						attend the event!
@@ -68,7 +70,7 @@ export default function ConfirmDialogue({ hasRsvped }: { hasRsvped: boolean }) {
 							});
 						}}
 						size={"lg"}
-						className="font-bold bg-[#D09C51] hover:bg-[#CCBA97]"
+						className="bg-[#D09C51] font-bold hover:bg-[#CCBA97]"
 					>
 						Confirm RSVP
 					</Button>

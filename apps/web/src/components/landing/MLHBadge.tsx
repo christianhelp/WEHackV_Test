@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function MLHBadge() {
 	return (
 		<>
-			<div className="absolute hidden h-0 w-full dark:block z-50">
+			<div className="absolute z-50 hidden h-0 w-full dark:block">
 				<Link
 					id="mlh-trust-badge"
 					className="absolute right-5 top-0 z-50 w-[10%] min-w-[60px] max-w-[100px]"
@@ -22,7 +22,7 @@ export default function MLHBadge() {
 					/>
 				</Link>
 			</div>
-			<div className="absolute block h-0 w-full dark:hidden z-50">
+			<div className="absolute z-50 block h-0 w-full dark:hidden">
 				<Link
 					id="mlh-trust-badge"
 					className="absolute right-5 top-0 z-50 w-[10%] min-w-[60px] max-w-[100px]"
