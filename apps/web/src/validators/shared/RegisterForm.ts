@@ -10,9 +10,6 @@ const noProfanityValidator = (val: any) => !isProfane(val);
 const noProfanityMessage = "Profanity is not allowed";
 
 const countryCodesArray = c.registration.countries.map(countryObject => countryObject.code);
-const MAX_FILE_SIZE = 500000; // Maximum file size of 5MB
-const ACCEPTED_FILE_MIME_TYPES = ['application/pdf']; // Allowed MIME types
-const ACCEPTED_IMAGE_TYPES = ["pdf"];
 
 export const RegisterFormValidator = z.object({
 	firstName: z
@@ -199,4 +196,9 @@ export const RegisterFormValidator = z.object({
 	// 		message: "Please upload a PDF of your resume.",
 	// 	})
 	// 	.nullable(),
+	uploadedFile: z
+		.any()
+    	.refine((file) => file !== null && file !== undefined, {
+      		message: "Please upload a resume before submitting.",
+    	}),
 });

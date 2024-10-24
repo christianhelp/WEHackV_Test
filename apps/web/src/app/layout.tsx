@@ -3,6 +3,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { cookies } from "next/headers";
 import { Analytics } from "@vercel/analytics/react";
 import { defaultTheme } from "config";
+import { neobrutalism } from '@clerk/themes'
 
 export default function RootLayout({
 	children,

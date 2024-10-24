@@ -4,6 +4,9 @@ importers:
 
   .:
     dependencies:
+      '@clerk/themes':
+        specifier: ^2.1.39
+        version: 2.1.39
       '@neondatabase/serverless':
         specifier: ^0.9.5
         version: 0.9.5
@@ -1390,9 +1393,24 @@ packages:
       swr: 2.2.0(react@18.3.1)
     dev: false
 
+  /@clerk/themes@2.1.39:
+    resolution: {integrity: sha512-sa5uO3/77ESsQ/2JrhZsspEKHBhtTgMohtNxsdN/gzJtH+gxs9gVN7ecbnVPAKsSrTjUYdwvWnfOTT+A26Et/g==}
+    engines: {node: '>=18.17.0'}
+    dependencies:
+      '@clerk/types': 4.28.0
+      tslib: 2.4.1
+    dev: false
+
   /@clerk/types@3.65.2:
     resolution: {integrity: sha512-MX56SpyjHvKi5ZbLSkINOOecFXR+fzRqa6tHlXry7sNDgemU/0UCWn2KwxyO+/O3QspQPe0m8vqkvP53iGYw/Q==}
     engines: {node: '>=14'}
+    dependencies:
+      csstype: 3.1.1
+    dev: false
+
+  /@clerk/types@4.28.0:
+    resolution: {integrity: sha512-RPdrUs8HYfhXaZ0MOVBkzy7lilsU9lDVSC88a5o/cEMmTML+BTDfLHMlLG81kgvagSLCKKbl28iocb8y7stm1Q==}
+    engines: {node: '>=18.17.0'}
     dependencies:
       csstype: 3.1.1
     dev: false

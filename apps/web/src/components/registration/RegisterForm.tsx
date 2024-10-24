@@ -111,6 +111,7 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 			questionOne:"",
 			questionTwo:"",
 			questionThree:"",
+			uploadedFile: undefined
 		},
 	});
 
@@ -171,7 +172,7 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
             if (uploadResult) {
                 // Extract the uploaded file information (URL, etc.)
                 const uploadedFileData = uploadResult[0];
-                resume = uploadedFileData.url; // Get the URL of the uploaded resume
+				console.log(resume)
 
                 // Proceed with form submission by including the uploaded resume URL
                 const res = await zpostSafe({
@@ -180,6 +181,7 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
                     vRes: BasicServerValidator,
                 });
 		
+				
 				if (res.success) {
 					if (res.data.success) {
 						alert(
@@ -1255,7 +1257,7 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 						</div>
 						<FormField
 							control={form.control}
-							name="personalWebsite"
+							name="uploadedFile"
 							render={({ field }) => (
 								<FormItem>
 									<FormLabel  className="flex flex-row gap-x-2">Resume <p className="text-[#F03C2D]">*</p></FormLabel>
@@ -1268,7 +1270,13 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 													: "cursor-pointer"
 											} flex min-h-[200px] flex-col items-center justify-center rounded-lg border-dashed border-white`}
 										>
-											<input {...getInputProps()} />
+											<input
+												{...getInputProps()}
+												onChange={(e) => {
+													field.onChange(e.target.files);
+													setResumeFile(e.target.files?.[0] || null);
+												  }}
+											/>
 											<p className="p-2 text-center">
 												{resumeFile
 													? `${resumeFile.name} (${Math.round(resumeFile.size / 1024)}kb)`
