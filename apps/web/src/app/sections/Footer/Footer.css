@@ -1,0 +1,17 @@
+.footer-container {
+    background-image:url("/static/images/background.png");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position:center;
+}
+
+.nav-link {
+    color: #FFE9D7;
+    font-size:1rem;
+}
+
+.nav-link:hover {
+    cursor: pointer;
+    text-shadow: 0rem 0rem 1rem white;
+    transition: 0.3s ease-in-out;
+}

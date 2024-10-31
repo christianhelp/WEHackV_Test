@@ -1,0 +1,185 @@
+.jumbotron {
+    background-image:url("/static/images/wehack-test background2.png");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position:center;
+}
+
+.jumbo-group {
+    /* flex */
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    /* margin: top, right, bottom left*/
+    /* margin: 2rem 0rem 0rem 0rem; */
+    /* gap:0.5rem; */
+}
+
+.jumbo-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* margin: top, right, bottom left*/
+    margin: 1rem 0rem 0rem 0rem;
+    gap:1.3rem;
+}
+
+.jumbo-title{
+    text-shadow: 0rem 0rem 3rem white;
+    font-size: 4.5rem;
+}
+
+
+.jumbo-text {
+    font-family: var(--font-julius-sans-one);
+}
+
+
+.countdown {
+    display: flex;
+    justify-content: flex-start;
+    align-items: left;
+    width: 100%;
+    position: relative; /* Enables absolute positioning of children */
+    margin-top: 1vh;
+    
+  }
+  
+  /* General Circle Styles */
+  .circle-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+  }
+  
+  .circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 0px 25px 101.5px #D2AF71;
+    color: #755642;
+    font-family: var(--font-junge)
+  }
+  
+  /* Label Styles */
+  .label {
+    color: #ffffff;
+    margin-top: 1rem;
+    font-size: 12px;
+    font-family: var(--font-junge)
+  }
+  
+  /* Circle Sizes & Text Sizes */
+  .circle-container.large .circle {
+    width: 20rem;
+    height: 20rem;
+  }
+  
+  .circle-container.medium .circle {
+    width: 15rem;
+    height: 15rem;
+  }
+  
+  .circle-container.small .circle {
+    width: 12rem;
+    height: 12rem;
+  }
+
+  .circle-container.smallest .circle {
+    width: 7rem;
+    height: 7rem;
+  }
+  
+  .circle-container.large p {
+    font-size: 70px; /* Adjust size for large circles */
+  }
+  
+  .circle-container.medium p {
+    font-size: 60px; /* Adjust size for medium circles */
+  }
+  
+  .circle-container.small p {
+    font-size: 30px; /* Adjust size for small circles */
+  }
+  
+  .circle-container.smallest p {
+    font-size: 20px; /* Adjust size for small circles */
+  }
+
+  /* Y-positioning using transform for vertical adjustment */
+  .circle-container.large {
+    transform: translateY(60px); /* Move slightly above center */
+  }
+  
+  .circle-container.medium {
+    transform: translateY(160px); /* Move below center */
+
+  }
+  
+  .circle-container.small {
+    transform: translateY(40px); /* Slightly above center */
+  }
+
+  .circle-container.smallest {
+    transform: translateY(30px); /* Slightly above center */
+  }
+
+  .label {
+    color: bisque;
+  }
+
+/* === media queries === */
+
+/* small */
+@media (min-width: 580px) {
+    .jumboImg-container {
+        margin-right:0rem;
+    }
+    
+    .jumboText-container {
+        margin-left:0rem;
+    }
+}
+
+/* medium */
+@media (min-width: 768px) {
+    .jumboImg-container {
+        margin-right:0rem;
+    }
+    .jumboText-container {
+        margin-left:0rem;
+    }
+    .jumbo-group {
+        /* margin: top, right, bottom left*/
+        margin: 0rem 3rem 0rem 0rem;
+    }
+}
+
+/* large */
+@media (min-width: 1024px) {
+    .jumboImg-container {
+        margin-right:-5rem;
+    }
+    .jumboText-container {
+        margin-left:-5rem;
+    }
+    .jumbo-buttons {
+        /* margin: top, right, bottom left*/
+        margin: 2rem 0rem 0rem 0rem;
+    }
+    .jumbo-group {
+        /* margin: top, right, bottom left*/
+        margin: 0rem 3rem 0rem 0rem;
+    }
+    .jumbotron {
+        gap:6rem;
+    }
+
+    
+}
+

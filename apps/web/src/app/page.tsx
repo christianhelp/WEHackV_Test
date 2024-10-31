@@ -1,33 +1,20 @@
 import Navbar from "@/components/shared/Navbar";
-import Hero from "@/components/landing/Hero";
-
-import About from "@/components/landing/About";
-
-import Partners from "@/components/landing/Partners";
-import Footer from "@/components/landing/Footer";
+import Footer from "./sections/Footer/Footer";
 import MLHBadge from "@/components/landing/MLHBadge";
-
-import { Oswald } from "next/font/google";
-import WorkWithUs from "@/components/landing/WorkWithUs";
-
-const oswald = Oswald({
-	variable: "--font-oswald",
-	subsets: ["latin"],
-});
+import Jumbotron from "./sections/Jumbotron/Jumbotron";
+import About from "./sections/About/About";
+import Nav from "./sections/Navbar/Nav";
+import FAQ from "./sections/FAQ/FAQ";
 
 export default function Home() {
 	return (
-		<div className={`${oswald.variable} w-full overflow-x-hidden`}>
+		<div className="App w-full overflow-x-hidden">
 			<Navbar />
 			<MLHBadge />
-			<main className="overflow-x-hidden">
-				<Hero />
-
-				<About />
-				<Partners />
-				<WorkWithUs />
-				<Footer />
-			</main>
+			<Jumbotron/>
+      		<About/>
+      		<FAQ/>
+      		<Footer/>
 		</div>
 	);
 }
