@@ -42,8 +42,8 @@ export default function ConfirmDialogue({ hasRsvped }: { hasRsvped: boolean }) {
 				/>
 			)}
 			{hasRsvped ? (
-				<div className="relative flex aspect-video w-full max-w-[500px] flex-col items-center justify-center rounded-xl bg-white p-5 backdrop-blur transition dark:bg-white/[0.08]">
-					<h1 className="flex items-center gap-x-2 text-2xl font-bold text-green-500">
+				<div className="relative flex aspect-video w-96 max-w-[500px] flex-col items-center justify-center rounded-xl bg-[#992444] p-5 backdrop-blur transition dark:bg-white/[0.08]">
+					<h1 className="flex items-center gap-x-2 text-2xl font-bold text-[#A6CDC4]">
 						<CheckCircleIcon />
 						You have RSVPed!
 					</h1>
@@ -51,13 +51,13 @@ export default function ConfirmDialogue({ hasRsvped }: { hasRsvped: boolean }) {
 						We can't wait to see you at the event!
 					</p>
 					<Link href={"/dash"}>
-						<Button>Go To Dashboard</Button>
+						<Button className="bg-[#D09C51] hover:bg-[#CCBA97]">Go To Dashboard</Button>
 					</Link>
 				</div>
 			) : (
-				<div className="relative flex aspect-video w-full max-w-[500px] flex-col items-center justify-center rounded-xl bg-white p-5 backdrop-blur transition dark:bg-white/[0.08]">
-					<p className="absolute bottom-0 px-10 pb-5 text-center text-sm text-gray-400">
-						Psst. make sure you only RSVP if you are certain you can
+				<div className="relative flex aspect-video w-full max-w-[500px] flex-col items-center justify-center rounded-xl backdrop-blur transition dark:bg-white/[0.08] pb-60">
+					<p className="absolute bottom-0 px-10 pb-40 text-center text-sm text-[#F03C2D]">
+						Make sure you only RSVP if you are certain you can
 						attend the event!
 					</p>
 					<Button
@@ -68,7 +68,7 @@ export default function ConfirmDialogue({ hasRsvped }: { hasRsvped: boolean }) {
 							});
 						}}
 						size={"lg"}
-						className="font-bold"
+						className="font-bold bg-[#D09C51] hover:bg-[#CCBA97]"
 					>
 						Confirm RSVP
 					</Button>

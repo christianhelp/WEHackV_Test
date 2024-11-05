@@ -66,9 +66,9 @@ export default async function Page() {
 							registration for {c.hackathonName}.
 						</p>
 						<p className="pb-10 pt-5 text-xs">
-							Psttt... Running into a issue? Please let us know on{" "}
-							<Link className="underline" href={c.links.discord}>
-								Discord
+							Psttt... Running into a issue? Please let us know by{" "}
+							<Link className="underline" href={c.issueEmail}>
+								emailing us.
 							</Link>
 							!
 						</p>

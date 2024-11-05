@@ -7,7 +7,7 @@ export default function CreatingRegistration() {
 			<Bars
 				height="80"
 				width="80"
-				color="hsl(var(--primary))"
+				color="#A6CDC4"
 				ariaLabel="bars-loading"
 				wrapperStyle={{}}
 				wrapperClass=""
