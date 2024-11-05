@@ -48,32 +48,36 @@ export default async function AdminLayout({ children }: AdminLayoutProps) {
 					<div className="h-[45%] w-[2px] rotate-[25deg] bg-muted-foreground" />
 					<h2 className="font-bold tracking-tight">Admin</h2>
 				</div>
-				<div className="hidden items-center justify-end gap-x-4 md:flex">
-					<Link href={"/"}>
-						<Button
-							variant={"outline"}
-							className="bg-nav hover:bg-[#D09C51]"
-						>
-							Home
-						</Button>
-					</Link>
-					<Link href={c.links.guide}>
-						<Button
-							variant={"outline"}
-							className="bg-nav hover:bg-[#D09C51]"
-						>
-							Survival Guide
-						</Button>
-					</Link>
-					<Link href={c.links.discord}>
-						<Button
-							variant={"outline"}
-							className="bg-nav hover:bg-[#D09C51]"
-						>
-							Discord
-						</Button>
-					</Link>
-					<ProfileButton />
+				<div className="items-center justify-end gap-x-4 flex pt-6 md:pt-0">
+					<div className="hidden items-center justify-end gap-x-4 md:flex">
+						<Link href={"/"}>
+							<Button
+								variant={"outline"}
+								className="bg-nav hover:bg-[#D09C51]"
+							>
+								Home
+							</Button>
+						</Link>
+						<Link href={c.links.guide}>
+							<Button
+								variant={"outline"}
+								className="bg-nav hover:bg-[#D09C51]"
+							>
+								Survival Guide
+							</Button>
+						</Link>
+						<Link href={c.links.discord}>
+							<Button
+								variant={"outline"}
+								className="bg-nav hover:bg-[#D09C51]"
+							>
+								Discord
+							</Button>
+						</Link>
+						
+					</div>
+					<div className='-mt-4 md:-mt-0'><ProfileButton /></div>
+					
 				</div>
 				<div className="flex items-center justify-end gap-x-4 md:hidden"></div>
 			</div>

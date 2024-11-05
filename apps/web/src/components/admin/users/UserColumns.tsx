@@ -61,7 +61,7 @@ export const columns: ColumnDef<userValidatorType>[] = [
 		header: "View",
 		cell: ({ row }) => (
 			<Link href={`/admin/users/${row.original.clerkID}`}>
-				<Button>View</Button>
+				<Button className="bg-[#D09C51] hover:bg-[#CCBA97]">View</Button>
 			</Link>
 		),
 	},

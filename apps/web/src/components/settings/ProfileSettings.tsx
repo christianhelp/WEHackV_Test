@@ -71,7 +71,7 @@ export default function ProfileSettings({
 							accept=".jpg, .jpeg, .png, .svg, .gif, .mp4"
 							type="file"
 							name="photo"
-							className="mb-4 mt-2 cursor-pointer file:cursor-pointer file:text-primary dark:border-primary dark:bg-transparent dark:ring-offset-primary"
+							className="mb-4 mt-2 cursor-pointer file:cursor-pointer file:text-[#CCBA97] bg-[#992444] border-[#992444]"
 							onChange={handleFileChange}
 						/>
 					</div>
@@ -93,7 +93,7 @@ export default function ProfileSettings({
 								fileName: newProfileImage.name,
 							});
 						}}
-						className="mt-5"
+						className="mt-5 bg-[#D09C51] hover:bg-[#CCBA97]"
 					>
 						Update
 					</Button>
@@ -134,7 +134,7 @@ export default function ProfileSettings({
 								skills: "",
 							});
 						}}
-						className="mt-5"
+						className="mt-5 bg-[#D09C51] hover:bg-[#CCBA97]"
 					>
 						Update
 					</Button>

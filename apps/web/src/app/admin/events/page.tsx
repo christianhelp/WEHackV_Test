@@ -8,7 +8,7 @@ export default async function Page() {
 	const events = await getAllEvents();
 
 	return (
-		<div className="mx-auto max-w-7xl px-5 pt-44">
+		<div className="mx-auto max-w-7xl px-5 pt-20">
 			<div className="mb-5 grid w-full grid-cols-2">
 				<div className="flex items-center">
 					<div>
@@ -22,7 +22,7 @@ export default async function Page() {
 				</div>
 				<div className="flex items-center justify-end">
 					<Link href="/admin/events/new">
-						<Button className="flex gap-x-1">
+						<Button className="flex gap-x-1 bg-[#D09C51] hover:bg-[#CCBA97]">
 							<PlusCircle />
 							New Event
 						</Button>

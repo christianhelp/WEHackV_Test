@@ -23,7 +23,7 @@ export default function ToggleItem({ name, path }: ToggleItemProps) {
 						: "text-muted-foreground"
 				}`}
 			>
-				<p className="text-sm">{name}</p>
+				<p className="text-sm text-white">{name}</p>
 			</div>
 		</Link>
 	);

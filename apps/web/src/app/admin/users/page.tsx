@@ -36,7 +36,7 @@ export default async function Page({
 	});
 
 	return (
-		<div className="mx-auto max-w-7xl px-5 pt-44">
+		<div className="mx-auto max-w-7xl px-5 pt-20">
 			<div className="mb-5 grid w-full grid-cols-3">
 				<div className="flex items-center">
 					<div>
@@ -51,7 +51,7 @@ export default async function Page({
 				<SearchBar />
 				<div className="flex items-center justify-end">
 					<a download href="/api/admin/export">
-						<Button className="flex gap-x-1">
+						<Button className="flex gap-x-1 bg-[#D09C51]">
 							<FolderInput />
 							Export
 						</Button>

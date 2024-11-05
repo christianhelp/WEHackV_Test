@@ -256,7 +256,7 @@ export default function NewEventForm({ defaultDate }: NewEventFormProps) {
 						/>
 					</p>
 				) : (
-					<Button type="submit">Create Event</Button>
+					<Button type="submit" className="bg-[#D09C51] hover:bg-[#CCBA97]">Create Event</Button>
 				)}
 			</form>
 		</Form>

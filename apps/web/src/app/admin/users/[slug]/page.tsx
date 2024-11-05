@@ -32,7 +32,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
 	}
 
 	return (
-		<main className="mx-auto max-w-5xl pt-44">
+		<main className="mx-auto max-w-5xl pt-20">
 			<div className="mb-5 grid w-full grid-cols-3">
 				<div className="flex items-center">
 					<div>
@@ -80,7 +80,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
 					</h2>
 					{/* <p className="mt-5 text-sm">{team.bio}</p> */}
 					<div className="mt-5 flex gap-x-2">
-						<Badge className="no-select">
+						<Badge className="no-select bg-[#992444] p-3">
 							Joined{" "}
 							{user.signupTime
 								.toDateString()

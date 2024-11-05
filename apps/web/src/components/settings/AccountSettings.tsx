@@ -60,7 +60,7 @@ export default function AccountSettings({ user }: AccountSettingsProps) {
 						/>
 					</div>
 					<Button
-						className="mt-5"
+						className="mt-5 bg-[#D09C51] hover:bg-[#CCBA97]"
 						onClick={() => {
 							toast.loading("Updating name...");
 							runModifyAccountSettings({
