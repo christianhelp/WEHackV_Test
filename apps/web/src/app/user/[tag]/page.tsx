@@ -6,6 +6,8 @@ import Link from "next/link";
 import { Github, Linkedin, Globe } from "lucide-react";
 import Navbar from "@/components/shared/Navbar";
 import { getHackerByTag } from "db/functions";
+import DashLayout from "@/app/dash/layout";
+import NavbarNonDash from "@/components/shared/NavbarNonDash";
 
 export default async function ({ params }: { params: { tag: string } }) {
 	if (!params.tag || params.tag.length <= 1) return notFound();
@@ -15,8 +17,8 @@ export default async function ({ params }: { params: { tag: string } }) {
 
 	return (
 		<>
-			<Navbar />
-			<div className="max-w-screen relative flex min-h-screen items-center justify-center bg-nav">
+			<NavbarNonDash title={"Profile"} />
+				<div className="max-w-screen relative flex min-h-screen items-center justify-center bg-nav">
 				<div className="absolute top-0 h-[50vh] w-[60vw] -translate-y-[22vh]" />
 				<div className="grid min-h-[45vh] w-full max-w-5xl md:grid-cols-5 md:gap-x-2 flex-col justify-center md:justify-start md:pl-11">
 					<div className="flex flex-col justify-center">
@@ -101,6 +103,7 @@ export default async function ({ params }: { params: { tag: string } }) {
 					</div>
 				</div>
 			</div>
+			
 		</>
 	);
 }

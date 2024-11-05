@@ -6,6 +6,8 @@ import Navbar from "@/components/shared/Navbar";
 import { Settings } from "lucide-react";
 import ClientToast from "@/components/shared/ClientToast";
 import { getUser } from "db/functions/user";
+import DashLayout from "../dash/layout";
+import NavbarNonDash from "@/components/shared/NavbarNonDash";
 
 export default async function ({ children }: { children: ReactNode }) {
 	const { userId } = await auth();
@@ -22,7 +24,7 @@ export default async function ({ children }: { children: ReactNode }) {
 	return (
 		<>
 			<ClientToast />
-			<Navbar />
+			<NavbarNonDash title={"Settings"} />
 			<div className="mx-auto md:grid max-w-5xl md:grid-cols-5 gap-x-3 pt-24 pb-24 flex-col items-center justify-center px-10">
 				<div className="col-span-5 flex items-center">
 					<div className="flex items-center pb-24">

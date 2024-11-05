@@ -42,7 +42,7 @@ export default async function DashLayout({ children }: DashLayoutProps) {
 					<div className="flex items-center gap-x-4">
 						<Link href="/">
 							<Image
-								src={c.icon.svg}
+								src={"/static/images/LogoSparkle.png"}
 								alt={c.hackathonName + " Logo"}
 								width={32}
 								height={32}
@@ -56,7 +56,7 @@ export default async function DashLayout({ children }: DashLayoutProps) {
 						<Link href={"/"}>
 							<Button
 								variant={"outline"}
-								className="bg-nav hover:bg-background"
+								className="bg-nav hover:bg-[#D09C51]"
 							>
 								Home
 							</Button>
@@ -64,7 +64,7 @@ export default async function DashLayout({ children }: DashLayoutProps) {
 						<Link href={c.links.guide} target="_blank">
 							<Button
 								variant={"outline"}
-								className="bg-nav hover:bg-background"
+								className="bg-nav hover:bg-[#D09C51]"
 							>
 								Survival Guide
 							</Button>
@@ -72,7 +72,7 @@ export default async function DashLayout({ children }: DashLayoutProps) {
 						<Link href={c.links.discord} target="_blank">
 							<Button
 								variant={"outline"}
-								className="bg-nav hover:bg-background"
+								className="bg-nav hover:bg-[#D09C51]"
 							>
 								Discord
 							</Button>

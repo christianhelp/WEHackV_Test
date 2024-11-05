@@ -40,7 +40,7 @@ export default async function AdminLayout({ children }: AdminLayoutProps) {
 			<div className="relative top-0 z-20 grid h-16 w-full grid-cols-2 bg-nav px-5">
 				<div className="flex items-center gap-x-4">
 					<Image
-						src={c.icon.svg}
+						src={"/static/images/LogoSparkle.png"}
 						alt={c.hackathonName + " Logo"}
 						width={32}
 						height={32}

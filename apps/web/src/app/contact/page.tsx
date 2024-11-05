@@ -28,7 +28,7 @@ export default function Page() {
 					</div>
 					<Link
 						href={c.links.discord}
-						className="col-span-2 flex aspect-square h-full items-center justify-center rounded-xl bg-[#3E5A31]"
+						className="col-span-2 flex aspect-square h-full items-center justify-center rounded-xl bg-[#CCBA97]"
 					>
 						<span className="text-9xl">
 							<svg

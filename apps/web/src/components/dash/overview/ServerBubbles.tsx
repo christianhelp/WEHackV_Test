@@ -17,10 +17,10 @@ export function Questions() {
 			</div>
 			<div className="flex items-end gap-2">
 				<Link href={c.links.discord}>
-					<Button className="border-hackathon">Discord</Button>
+					<Button className="bg-[#D09C51] hover:bg-[#CCBA97]">Discord</Button>
 				</Link>
 				<Link href={`mailto:${c.issueEmail}`}>
-					<Button className="border-hackathon">Email</Button>
+					<Button className="bg-[#D09C51] hover:bg-[#CCBA97]">Email</Button>
 				</Link>
 			</div>
 		</div>
