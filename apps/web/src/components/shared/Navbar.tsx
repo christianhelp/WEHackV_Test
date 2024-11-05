@@ -8,6 +8,7 @@ import NavBarLinksGrouper from "./NavBarLinksGrouper";
 import { Oswald } from "next/font/google";
 import { cn } from "@/lib/utils/client/cn";
 import { getUser } from "db/functions";
+import './Nav.css'
 
 const oswald = Oswald({
 	variable: "--font-oswald",
@@ -23,36 +24,35 @@ export default async function Navbar({ className }: NavbarProps) {
 	const registrationIsComplete =
 		user != null && (await getUser(user.id)) != undefined;
 	return (
-		<div className="z-50 w-screen">
+		<div className="z-50 w-screen fixed pt-6">
 			<div
 				className={cn(
-					`relative top-0 z-50 h-16 w-screen border-b border-b-border bg-nav ${oswald.variable}`,
+					`relative top-0 z-50 h-16 w-screen`,
 					className,
 				)}
 			>
 				<div className="mx-auto grid h-full w-full max-w-7xl grid-flow-col grid-cols-2 px-2 sm:px-6 lg:max-w-full lg:px-8">
-					<div className="col-span-2 flex items-center justify-start gap-x-5">
+					<div className="col-span-3 flex items-center justify-start gap-x-5 pl-4 md:pl-0">
 						<Link
 							href={"/"}
 							className="mr-5 flex items-center gap-x-2"
 						>
 							<Image
-								src={c.icon.svg}
+								src={"/static/images/LogoSparkle.png"}
 								alt={c.hackathonName + " Logo"}
-								width={32}
-								height={32}
+								width={60}
+								height={60}
 							/>
-							{/* <div className="bg-muted-foreground h-[45%] rotate-[25deg] w-[2px]" /> */}
-							<h2 className="font-oswald text-lg font-bold text-[#A7866A] dark:text-[#FEF2E6]">
-								{c.hackathonName}
-							</h2>
 						</Link>
-						<div className="col-span-2 hidden items-center justify-start gap-x-5 md:flex">
-							<NavBarLinksGrouper />
-						</div>
 					</div>
 
-					<div className="flex items-center justify-between space-x-2 md:justify-center">
+					<div className="flex items-center justify-between space-x-2 md:justify-center pr-20 md:pr-32">
+						<div className="col-span-2 hidden items-center justify-end gap-x-5 md:flex md:pr-10">
+							{/* <NavBarLinksGrouper /> */}
+							<a className='text-lg lg:text-base font-medium' href="#about-wehack">About</a>
+                        	<a className='text-lg lg:text-base font-medium' href="#FAQ">FAQ</a>
+                        	<a className='text-lg lg:text-base font-medium' href="http://hackp.ac/coc" target="_blank">MLH Conduct</a>
+						</div>
 						<div className="hidden gap-x-4 md:flex">
 							{user ? (
 								<>
@@ -64,8 +64,7 @@ export default async function Navbar({ className }: NavbarProps) {
 										}
 									>
 										<Button
-											variant={"outline"}
-											className="bg-nav hover:bg-background"
+											className="primary-btn bg-[#909634] text-[#FFE9D7] w-full py-3 px-5"
 										>
 											{registrationIsComplete
 												? "Dashboard"
@@ -77,19 +76,23 @@ export default async function Navbar({ className }: NavbarProps) {
 								<>
 									<Link href={"/sign-in"}>
 										<Button
-											variant={"outline"}
-											className="bg-nav hover:bg-background"
+											className="primary-btn bg-[#909634] text-[#FFE9D7] w-full py-3 px-5 hover:bg-[#909634]"
 										>
 											Sign In
 										</Button>
 									</Link>
 									<Link href={"/register"}>
-										<Button>Register</Button>
+										<Button
+											className="primary-btn bg-[#909634] text-[#FFE9D7] w-full py-3 px-5 hover:bg-[#909634]"
+										>Register</Button>
 									</Link>
 								</>
 							)}
 						</div>
-						<ProfileButton />
+						<div className="relative md:hidden">
+							<ProfileButton />
+						</div>
+						
 					</div>
 				</div>
 			</div>

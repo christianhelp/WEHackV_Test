@@ -1,10 +1,11 @@
 "use client";
 import { UserRound } from "lucide-react";
+import { Menu } from "lucide-react";
 
 export default function DefaultDropdownTrigger() {
 	return (
-		<div className="[color:black] dark:[color:white]">
-			<UserRound width={"18px"} height={"18px"} className="" />
+		<div className="[color:#FFE9D7]">
+			<Menu width={"30px"} height={"30px"} className="" />
 		</div>
 	);
 }
