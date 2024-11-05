@@ -38,7 +38,7 @@ export default async function Page() {
 				</h1>
 			</div>
 			<div className="grid md:grid-cols-4 gap-y-3 md:gap-x-2 pt-10">
-				<Card>
+				<Card className="text-[#D09C51]">
 					<CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
 						<CardTitle className="text-sm font-medium">
 							Registrations
@@ -52,7 +52,7 @@ export default async function Page() {
 						{/* <p className="text-xs text-muted-foreground">+20.1% from last month</p> */}
 					</CardContent>
 				</Card>
-				<Card>
+				<Card className="text-[#D09C51]">
 					<CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
 						<CardTitle className="text-sm font-medium">
 							Teams
@@ -64,7 +64,7 @@ export default async function Page() {
 						{/* <p className="text-xs text-muted-foreground">+20.1% from last month</p> */}
 					</CardContent>
 				</Card>
-				<Card>
+				<Card className="text-[#D09C51]">
 					<CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
 						<CardTitle className="text-sm font-medium">
 							RSVPs
@@ -76,7 +76,7 @@ export default async function Page() {
 						{/* <p className="text-xs text-muted-foreground">+20.1% from last month</p> */}
 					</CardContent>
 				</Card>
-				<Card>
+				<Card className="text-[#D09C51]">
 					<CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
 						<CardTitle className="text-sm font-medium">
 							Check-ins
@@ -90,7 +90,7 @@ export default async function Page() {
 				</Card>
 			</div>
 			<div className="grid md:grid-cols-3 gap-y-3 md:gap-x-2 py-2 pb-24">
-				<Card className="col-span-2">
+				<Card className="col-span-2 text-[#D09C51]">
 					<CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
 						<div>
 							<CardTitle className="text-md font-bold">
@@ -112,7 +112,7 @@ export default async function Page() {
 						<Overview rawData={recentSignupCount} />
 					</CardContent>
 				</Card>
-				<Card>
+				<Card className="text-[#D09C51]">
 					<CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
 						<div>
 							<CardTitle className="text-md font-bold">
