@@ -14,12 +14,10 @@ const countryCodesArray = c.registration.countries.map(countryObject => countryO
 export const RegisterFormValidator = z.object({
 	firstName: z
 		.string()
-		.min(1, { message: "Firstname must be at least one character" })
-		.max(50, { message: "Firstname must be less than 50 characters" }),
+		.min(1, { message: "Required" }),
 	lastName: z
 		.string()
-		.min(1, { message: "Lastname must be at least 1 character" })
-		.max(50, { message: "Lastname must be less than 50 characters" }),
+		.min(1, { message: "Required" }),
 	email: z
 		.string()
 		.email({
@@ -85,8 +83,8 @@ export const RegisterFormValidator = z.object({
 			"You must accept the MLH Terms & Conditions and Privacy Policy.",
 	}),
 	isEmailable: z.boolean(),
-	university: z.string().min(1).max(200),
-	major: z.string().min(1).max(200),
+	university: z.string().min(1, "Please select a university").max(200),
+	major: z.string().min(1, "Please select a major").max(200),
 	// schoolID: z
 	// 	.string()
 	// 	.length(c.localUniversityShortIDMaxLength, {
@@ -98,7 +96,6 @@ export const RegisterFormValidator = z.object({
 		z.literal("Sophomore", defaultPrettyError),
 		z.literal("Junior", defaultPrettyError),
 		z.literal("Senior", defaultPrettyError),
-		z.literal("Recent Grad", defaultPrettyError),
 		z.literal("Other", defaultPrettyError),
 	]),
 	hackathonsAttended: z
@@ -125,6 +122,7 @@ export const RegisterFormValidator = z.object({
 			z.literal("Twitter"),
 			z.literal("Event Site"),
 			z.literal("Friend"),
+			z.literal("LinkedIn"),
 			z.literal("Other"),
 		])
 		.optional(),
@@ -134,7 +132,6 @@ export const RegisterFormValidator = z.object({
 		z.literal("L", defaultPrettyError),
 		z.literal("XL", defaultPrettyError),
 		z.literal("2XL", defaultPrettyError),
-		z.literal("3XL", defaultPrettyError),
 	]),
 	dietaryRestrictions: z.array(z.string()).min(1, "At least one dietary restriction must be selected."),
 	accommodationNote: z.string().optional(),
@@ -181,16 +178,13 @@ export const RegisterFormValidator = z.object({
 	profileIsSearchable: z.boolean(),
 	questionOne: z
 		.string()
-		.min(1, { message: "Sentence must be at least one character" })
-		.max(500, { message: "Sentence must be less than 500 characters" }),
+		.min(1, { message: "Required" }),
 	questionTwo: z
 		.string()
-		.min(1, { message: "Sentence must be at least one character" })
-		.max(500, { message: "Sentence must be less than 500 characters" }),
+		.min(1, { message: "Required" }),
 	questionThree: z
 		.string()
-		.min(1, { message: "Sentence must be at least one character" })
-		.max(500, { message: "Sentence must be less than 500 characters" }),
+		.min(1, { message: "Required" }),
 	// uploadedFile: z
 	// 	.instanceof(File, {
 	// 		message: "Please upload a PDF of your resume.",
@@ -199,6 +193,6 @@ export const RegisterFormValidator = z.object({
 	uploadedFile: z
 		.any()
     	.refine((file) => file !== null && file !== undefined, {
-      		message: "Please upload a resume before submitting.",
+      		message: "Please upload a PDF of your resume before submitting.",
     	}),
 });

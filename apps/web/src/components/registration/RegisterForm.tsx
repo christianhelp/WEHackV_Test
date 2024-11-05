@@ -877,9 +877,6 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 													<SelectItem value="Senior">
 														Senior
 													</SelectItem>
-													<SelectItem value="Recent Grad">
-														Recent Grad
-													</SelectItem>
 													<SelectItem value="Other">
 														Other
 													</SelectItem>
@@ -1006,6 +1003,9 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 													<SelectItem value="Friend">
 														Friend
 													</SelectItem>
+													<SelectItem value="LinkedIn">
+														LinkedIn
+													</SelectItem>
 													<SelectItem value="Other">
 														Other
 													</SelectItem>
@@ -1020,7 +1020,7 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 					</FormGroupWrapper>
 					{/* ADDED SHORT ANSWER QUESTIONS */}
 					<FormGroupWrapper title="Short Answer Questions">
-						<div className="grid grid-cols-1 gap-x-2 gap-y-4">
+						<div className="grid grid-cols-1 gap-x-2 gap-y-16 md:gap-y-10 pb-10 md:pb-8">
 							<FormField
 								control={form.control}
 								name="questionOne"
@@ -1028,8 +1028,9 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 									<FormItem>
 										<FormLabel className="flex flex-row gap-x-2">What does WEHack mean to you? <p className="text-[#F03C2D]">*</p></FormLabel>
 										<FormControl>
-											<Input
+											<Textarea
 												placeholder="Enter answer here"
+												className="h-[80%]"
 												{...field}
 											/>
 										</FormControl>
@@ -1044,8 +1045,9 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 									<FormItem>
 										<FormLabel className="flex flex-row gap-x-2">What steps do you take to encourage or support inclusive environments for underrepresented groups? <p className="text-[#F03C2D]">*</p></FormLabel>
 										<FormControl>
-											<Input
+											<Textarea
 												placeholder="Enter answer here"
+												className="h-[80%]"
 												{...field}
 											/>
 										</FormControl>
@@ -1060,8 +1062,9 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 									<FormItem>
 										<FormLabel className="flex flex-row gap-x-2">In what ways do you hope to make a positive impact through your project at WEHack 2025? <p className="text-[#F03C2D]">*</p></FormLabel>
 										<FormControl>
-											<Input
+											<Textarea
 												placeholder="Enter answer here"
+												className="h-[80%]"
 												{...field}
 											/>
 										</FormControl>
@@ -1104,9 +1107,6 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 													</SelectItem>
 													<SelectItem value="2XL">
 														2XL
-													</SelectItem>
-													<SelectItem value="3XL">
-														3XL
 													</SelectItem>
 												</SelectGroup>
 											</SelectContent>
