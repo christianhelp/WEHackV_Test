@@ -1026,7 +1026,7 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 								name="questionOne"
 								render={({ field }) => (
 									<FormItem>
-										<FormLabel className="flex flex-row gap-x-2">Question 1 <p className="text-[#F03C2D]">*</p></FormLabel>
+										<FormLabel className="flex flex-row gap-x-2">What does WEHack mean to you? <p className="text-[#F03C2D]">*</p></FormLabel>
 										<FormControl>
 											<Input
 												placeholder="Enter answer here"
@@ -1042,7 +1042,7 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 								name="questionTwo"
 								render={({ field }) => (
 									<FormItem>
-										<FormLabel className="flex flex-row gap-x-2">Question 2 <p className="text-[#F03C2D]">*</p></FormLabel>
+										<FormLabel className="flex flex-row gap-x-2">What steps do you take to encourage or support inclusive environments for underrepresented groups? <p className="text-[#F03C2D]">*</p></FormLabel>
 										<FormControl>
 											<Input
 												placeholder="Enter answer here"
@@ -1058,7 +1058,7 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 								name="questionThree"
 								render={({ field }) => (
 									<FormItem>
-										<FormLabel className="flex flex-row gap-x-2">Question 3 <p className="text-[#F03C2D]">*</p></FormLabel>
+										<FormLabel className="flex flex-row gap-x-2">In what ways do you hope to make a positive impact through your project at WEHack 2025? <p className="text-[#F03C2D]">*</p></FormLabel>
 										<FormControl>
 											<Input
 												placeholder="Enter answer here"
@@ -1286,7 +1286,7 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 											</p>
 											{resumeFile ? (
 												<Button
-													className="mt-4"
+													className="mt-4 bg-[#992444] hover:bg-[#F03C2D]"
 													onClick={() => {
 														field.onChange(null)
 														setResumeFile(null)
@@ -1453,7 +1453,7 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 							)}
 						/>
 					</FormGroupWrapper>
-					<Button type="submit">Submit</Button>
+					<Button type="submit" className="bg-[#D09C51] hover:bg-[#CCBA97]">Submit</Button>
 					{hasErrors && (
 						<p className="text-[#F03C2D]">
 							Something doesn't look right. Please check your
