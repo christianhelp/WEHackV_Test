@@ -65,12 +65,9 @@ export default async function Page() {
 							Please fill out the form below to complete your
 							registration for {c.hackathonName}.
 						</p>
-						<p className="pb-10 pt-5 text-xs">
-							Psttt... Running into a issue? Please let us know by{" "}
-							<Link className="underline" href={c.issueEmail}>
-								emailing us.
-							</Link>
-							!
+						<p className="pb-10 pt-5 text-sm">
+							Psttt... Running into a issue? Please let us know by emailing <b>wehackutd@gmail.com</b>
+							
 						</p>
 						<RegisterForm
 							defaultEmail={

@@ -48,7 +48,7 @@ export function Overview({ rawData }: OverviewProps) {
 					dataKey="total"
 					fill="currentColor"
 					radius={[4, 4, 0, 0]}
-					className="fill-primary"
+					className="fill-[#992444]"
 				/>
 			</BarChart>
 		</ResponsiveContainer>

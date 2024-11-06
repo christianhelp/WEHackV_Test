@@ -89,7 +89,7 @@ export default async function Navbar({ className }: NavbarProps) {
 								</>
 							)}
 						</div>
-						<div className="relative md:hidden">
+						<div className="relative">
 							<ProfileButton />
 						</div>
 						
