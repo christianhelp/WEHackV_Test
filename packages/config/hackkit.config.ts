@@ -877,7 +877,7 @@ const c = {
 	noResumeProvidedURL:
 		"https://static.acmutsa.org/No%20Resume%20Provided.pdf",
 	// Come in and change this date to whenever the hackathon starts
-	startDate: new Date(new Date(2025, 3, 13).setHours(9)),
+	startDate: new Date(new Date(2025, 3, 5).setHours(9)),
 	prettyLocation: "Engineering and Computer Science West (ECSW)",
 	roleBadges: {
 		hacker: {
