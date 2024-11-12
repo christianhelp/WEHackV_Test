@@ -836,10 +836,10 @@ const c = {
 		guide: "https://go.rowdyhacks.org/discord",
 	},
 	icon: {
-		sm: "/img/logo/hackkit.svg",
-		md: "/img/logo/hackkit-md.png",
-		lg: "/img/logo/hackkit-lg.png",
-		svg: "/img/logo/hackkit.svg",
+		sm: "/img/logo/wehack25-logo.svg",
+		md: "/img/logo/wehack25-logo.png",
+		lg: "/img/logo/wehack25-logo.png",
+		svg: "/img/logo/wehack25-logo.svg",
 	},
 	dashPaths: {
 		dash: {

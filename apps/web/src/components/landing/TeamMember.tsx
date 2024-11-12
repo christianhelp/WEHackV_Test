@@ -99,7 +99,7 @@ export default function TeamMember({ person }: { person: Person }) {
 						priority={true}
 						alt="Person Placeholder"
 						onError={(e) => {
-							setSrc("/img/logo/hackkit.svg");
+							setSrc("/img/logo/wehack25-logo.svg");
 							setStyling(FallBackStyling);
 						}}
 					/>

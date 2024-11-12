@@ -12,8 +12,8 @@ export default function Hero() {
 					<div className="z-10 grid h-min grid-cols-2">
 						<div className="relative">
 							<Image
-								src="/img/logo/hackkit-md.png"
-								alt="HackKit Logo"
+								src="/img/logo/wehack25-logo.png"
+								alt="WEHack 25 Logo"
 								fill
 								className="object-contain"
 							/>
