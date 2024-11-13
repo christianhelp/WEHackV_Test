@@ -6,7 +6,7 @@ function Footer() {
   return (
     <div className='footer-container w-full h-auto flex flex-col md:flex-row lg:flex-row md:items-start md:justify-start lg:items-start lg:justify-start py-10 px-10 pb-20 md:px-20 lg:px-20 gap-y-10 md:gap-x-3 lg:gap-x-5'>
         <div className='main-container w-full flex flex-wrap flex-col gap-y-5 md:items-start md:content-start lg:items-start lg:content-start'>
-            <img className="wehack-logo h-auto max-w-40 sm:max-w-64 md:max-w-72 lg:max-w-32" src={"/static/images/LogoSparkle.png"} alt="wehack logo"></img>
+            <img className="wehack-logo h-auto max-w-40 sm:max-w-64 md:max-w-72 lg:max-w-32" src={"/static/images/black wehack logo.png"} alt="wehack logo"></img>
             <div className="gap-x-0">
             <p className='about-text text-[#FFE9D7] font-medium text-sm'>Made with 💪🤍 by WEHack 2025</p>
             <p className='about-text text-[#FFE9D7] font-medium text-sm'><a href="https://github.com/acmutsa/HackKit" target="_blank"><u>Powered by HackKit</u></a></p>
