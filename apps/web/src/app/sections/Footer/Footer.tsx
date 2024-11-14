@@ -8,8 +8,8 @@ function Footer() {
         <div className='main-container w-full flex flex-wrap flex-col gap-y-5 md:items-start md:content-start lg:items-start lg:content-start'>
             <img className="wehack-logo h-auto max-w-40 sm:max-w-64 md:max-w-72 lg:max-w-32" src={"/static/images/black wehack logo.png"} alt="wehack logo"></img>
             <div className="gap-x-0">
-            <p className='about-text text-[#FFE9D7] font-medium text-base'>Made with 💪🤍 by WEHack 2025</p>
-            <p className='about-text text-[#FFE9D7] font-medium text-base'><a href="https://github.com/acmutsa/HackKit" target="_blank"><u>Powered by HackKit</u></a></p>
+            <p className='about-text text-[#FFE9D7] font-medium text-md'>Made with 💪🤍 by WEHack 2025</p>
+            <p className='about-text text-[#FFE9D7] font-medium text-md'><a href="https://github.com/acmutsa/HackKit" target="_blank"><u>Powered by HackKit</u></a></p>
             </div>
         </div>
         <div className="flex flex-col gap-y-10 md:flex-row md:items-end md:gap-x-10 lg:flex-row lg:gap-x-10 lg:w-full lg:items-ends lg:-mr-10 xl:-mr-72">
