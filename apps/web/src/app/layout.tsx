@@ -6,6 +6,7 @@ import { defaultTheme } from "config";
 import { neobrutalism } from '@clerk/themes'
 import Script from  "next/script"
 import { Inknut_Antiqua, Nunito, Junge, Julius_Sans_One} from "next/font/google";
+import {Darker_Grotesque, Sriracha, Righteous} from "next/font/google";
 import type { Metadata } from "next";
 
 const nunito = Nunito({ 

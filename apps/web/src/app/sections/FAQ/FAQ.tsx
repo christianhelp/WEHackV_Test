@@ -4,8 +4,8 @@ import Question from '@/components/Question/Question'
 
 function FAQ() {
   return (
-    <div className='FAQ-container bg-[#755642] w-full h-auto flex flex-wrap flex-col items-center justify-center p-6 pb-40 lg:pb-60' id="FAQ">
-        <h1 className='FAQ-title text-[#FFE9D7] text-center text-4xl md:text-5xl lg:text-5xl pb-7 md:pb-15 md:pb-20'>Frequently Asked Questions</h1>
+    <div className='FAQ-container bg-[#301814] w-full h-auto flex flex-wrap flex-col items-center justify-center p-6 pb-40 lg:pb-60' id="FAQ">
+        <h1 className='FAQ-title text-[#CCBA97] text-center text-4xl md:text-5xl lg:text-5xl pb-7 md:pb-15 md:pb-20'>Frequently Asked Questions</h1>
 
         <div className='drop-down-container gap-5 mt-10 lg:mt-0 lg:gap-0 lg:px-14'>
             <div className='column-right w-full lg:w-1/2'>

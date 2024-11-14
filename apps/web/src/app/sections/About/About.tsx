@@ -4,7 +4,7 @@ import Stats from '@/components/Stats/Stats'
 
 function About() {
   return (
-    <section className='parent-container about-section bg-[#755642]' id="about-wehack">
+    <section className='parent-container about-section bg-[#301814]' id="about-wehack">
       {/* group 1 */}
       <div className='about-group flex flex-wrap flex-col sm:flex-row md:flex-row: lg:flex-row'>
         <div className='child-container'>
