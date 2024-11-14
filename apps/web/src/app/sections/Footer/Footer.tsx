@@ -8,7 +8,7 @@ function Footer() {
         <div className='main-container w-full flex flex-wrap flex-col gap-y-5 md:items-start md:content-start lg:items-start lg:content-start'>
             <img className="wehack-logo h-auto max-w-40 sm:max-w-64 md:max-w-72 lg:max-w-32" src={"/static/images/black wehack logo.png"} alt="wehack logo"></img>
             <div className="gap-x-0">
-            <p className='about-text text-[#FFE9D7] font-medium text-xs'>Made with 💪🤍 by WEHack 2025</p>
+            <p className='about-text text-[#FFE9D7] font-medium text-xs'>Made with 💪🤍 by WEHack 2025 :D</p>
             <p className='about-text text-[#FFE9D7] font-medium text-xs'><a href="https://github.com/acmutsa/HackKit" target="_blank"><u>Powered by HackKit</u></a></p>
             </div>
         </div>
