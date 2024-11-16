@@ -24,3 +24,4 @@ export default function Layout({ children }: ToggleLayoutProps) {
 		</div>
 	);
 }
+export const runtime = 'edge';
