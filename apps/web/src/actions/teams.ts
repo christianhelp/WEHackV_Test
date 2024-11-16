@@ -1,21 +1,27 @@
 "use server";
 
 // TODO: update team /api endpoints to be actions
-
 import { authenticatedAction } from "@/lib/safe-action";
-import { z } from "zod";
-// import { db } from "db";
+import { boolean, string, z } from "zod";
+import { db } from "db";
 import { userHackerData, teams, invites } from "db/schema";
 import { eq } from "db/drizzle";
 import { revalidatePath } from "next/cache";
 import { getHacker } from "db/functions";
+import { returnValidationErrors } from "next-safe-action";
 import { getWebSocketDb } from "db/functions";
 
-export const leaveTeam = authenticatedAction(
-	z.null(),
-	async (_, { userId }) => {
+export const leaveTeam = authenticatedAction
+	.outputSchema(
+		z.object({
+			success: z.boolean(),
+			message: z.string(),
+		}),
+	)
+	.action(async ({ ctx: { userId } }) => {
 		const user = await getHacker(userId, false);
-		if (!user) throw new Error("User not found");
+		if (!user)
+			returnValidationErrors(z.null(), { _errors: ["User not found"] });
 
 		if (!user.hackerData.teamID) {
 			revalidatePath("/dash/team");
@@ -90,5 +96,4 @@ export const leaveTeam = authenticatedAction(
 		}
 
 		return result;
-	},
-);
+	});

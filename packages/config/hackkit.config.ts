@@ -808,7 +808,7 @@ const c = {
 			discordRole: "Guild B Role",
 		},
 		"Guild C | Group A": {
-			discordRole: "Guild C Role	",
+			discordRole: "Guild C Role",
 		},
 		"Guild C | Group B": {
 			discordRole: "Guild C Role",
@@ -952,13 +952,5 @@ const publicRoutes = [
 
 // Generally it is reccomended to put your primary audience's university at the top of this list.
 
-
-
-
 export default c;
-export {
-	defaultTheme,
-	bucketResumeBaseUploadUrl,
-	perms,
-	publicRoutes,
-};
+export { defaultTheme, bucketResumeBaseUploadUrl, perms, publicRoutes };
