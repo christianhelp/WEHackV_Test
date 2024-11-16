@@ -24,7 +24,7 @@ export default async function Navbar({ className }: NavbarProps) {
 	const registrationIsComplete =
 		user != null && (await getUser(user.id)) != undefined;
 	return (
-		<div className="z-50 w-screen fixed pt-6">
+		<div className="z-50 w-screen absolute pt-6">
 			<div
 				className={cn(
 					`relative top-0 z-50 h-16 w-screen`,
