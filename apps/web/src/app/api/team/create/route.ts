@@ -7,7 +7,6 @@ import { getHacker } from "db/functions";
 import { newTeamValidator } from "@/validators/shared/team";
 import { nanoid } from "nanoid";
 import c from "config";
-import { logError } from "@/lib/utils/server/logError";
 import { getWebSocketDb } from "db/functions";
 
 export async function POST(req: Request) {
@@ -57,14 +56,16 @@ export async function POST(req: Request) {
 			message: body.data.tag,
 		});
 	} catch (e) {
-		const errorID = await logError({
-			error: e,
-			userID: userId,
-			route: "/api/team/create",
-		});
+		// const errorID = await logError({
+		// 	error: e,
+		// 	userID: userId,
+		// 	route: "/api/team/create",
+		// });
+		console.error(`Something went wrong: ${e}`);
+		// with error ID ${errorID
 		return NextResponse.json({
 			success: false,
-			message: `An error occurred while creating your team. If this is a continuing issue, please reach out to ${c.issueEmail} with error ID ${errorID}.`,
+			message: `An error occurred while creating your team. If this is a continuing issue, please reach out to ${c.issueEmail}}.`,
 		});
 	}
 }
