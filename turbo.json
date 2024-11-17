@@ -37,7 +37,11 @@
         "POSTGRES_URL",
         "POSTGRES_URL_NON_POOLING",
         "POSTGRES_URL_NO_SSL",
-        "POSTGRES_USER"
+        "POSTGRES_USER",
+        "UPSTASH_REDIS_REST_TOKEN",
+        "UPSTASH_REDIS_REST_URL",
+        "DATABASE_URL",
+        "DATABASE_URL_UNPOOLED"
       ],
 	"tasks": {
 		"build": {
