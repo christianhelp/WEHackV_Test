@@ -5,7 +5,7 @@ import Question from "@/components/Question/Question";
 function FAQ() {
 	return (
 		<div
-			className="FAQ-container flex h-auto w-full flex-col flex-wrap items-center justify-center bg-[#301814] p-6 pb-40 lg:pb-60"
+			className="FAQ-container flex h-auto w-full flex-col flex-wrap items-center justify-center p-6 pb-40 lg:pb-60"
 			id="FAQ"
 		>
 			<h1 className="FAQ-title md:pb-15 pb-7 text-center text-4xl text-[#CCBA97] md:pb-20 md:text-5xl lg:text-5xl">

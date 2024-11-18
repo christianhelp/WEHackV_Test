@@ -5,7 +5,7 @@ import Stats from "@/components/Stats/Stats";
 function About() {
 	return (
 		<section
-			className="parent-container about-section bg-[#301814]"
+			className="parent-container about-section"
 			id="about-wehack"
 		>
 			{/* group 1 */}

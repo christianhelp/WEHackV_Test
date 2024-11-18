@@ -1,0 +1,6 @@
+.App {
+    background-image: url("/static/images/landing page background.png");
+    background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}

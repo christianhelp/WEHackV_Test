@@ -4,6 +4,7 @@ import MLHBadge from "@/components/landing/MLHBadge";
 import Jumbotron from "./sections/Jumbotron/Jumbotron";
 import About from "./sections/About/About";
 import FAQ from "./sections/FAQ/FAQ";
+import "./main.css";
 
 export default function Home() {
 	return (
