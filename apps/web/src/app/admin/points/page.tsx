@@ -5,4 +5,3 @@ export default function Points() {
 		</main>
 	);
 }
-export const runtime = 'edge';
