@@ -14,14 +14,13 @@ const redis = new Redis({
 	url: process.env.UPSTASH_REDIS_REST_URL,
 	token: process.env.UPSTASH_REDIS_REST_TOKEN,
 });
-  
 
 // Maybe a better way to do this for revalidation? Who knows.
 const navAdminPage = "/admin/toggles/landing";
 
-export const setItem = adminAction(
-	metadataSchema,
-	async ({ name, url }, { user, userId }) => {
+export const setItem = adminAction
+	.schema(metadataSchema)
+	.action(async ({ parsedInput: { name, url }, ctx: { user, userId } }) => {
 		await redis.sadd("config:navitemslist", encodeURIComponent(name));
 		await redis.hset(`config:navitems:${encodeURIComponent(name)}`, {
 			url,
@@ -30,12 +29,11 @@ export const setItem = adminAction(
 		});
 		revalidatePath(navAdminPage);
 		return { success: true };
-	},
-);
+	});
 
-export const removeItem = adminAction(
-	z.string(),
-	async (name, { user, userId }) => {
+export const removeItem = adminAction
+	.schema(z.string())
+	.action(async ({ parsedInput: name, ctx: { user, userId } }) => {
 		const pipe = redis.pipeline();
 		pipe.srem("config:navitemslist", encodeURIComponent(name));
 		pipe.del(`config:navitems:${encodeURIComponent(name)}`);
@@ -43,16 +41,19 @@ export const removeItem = adminAction(
 		// await new Promise((resolve) => setTimeout(resolve, 1500));
 		revalidatePath(navAdminPage);
 		return { success: true };
-	},
-);
+	});
 
-export const toggleItem = adminAction(
-	z.object({ name: z.string(), statusToSet: z.boolean() }),
-	async ({ name, statusToSet }, { user, userId }) => {
-		await redis.hset(`config:navitems:${encodeURIComponent(name)}`, {
-			enabled: statusToSet,
-		});
-		revalidatePath(navAdminPage);
-		return { success: true, itemStatus: statusToSet };
-	},
-);
+export const toggleItem = adminAction
+	.schema(z.object({ name: z.string(), statusToSet: z.boolean() }))
+	.action(
+		async ({
+			parsedInput: { name, statusToSet },
+			ctx: { user, userId },
+		}) => {
+			await redis.hset(`config:navitems:${encodeURIComponent(name)}`, {
+				enabled: statusToSet,
+			});
+			revalidatePath(navAdminPage);
+			return { success: true, itemStatus: statusToSet };
+		},
+	);

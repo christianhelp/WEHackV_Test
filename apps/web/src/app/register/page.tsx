@@ -53,7 +53,7 @@ export default async function Page() {
 								</Link>
 							</div>
 						</div>
-						</div>
+					</div>
 				</div>
 				<main className="dark:bg-[#301814]">
 					<div className="mx-auto min-h-screen max-w-5xl px-5 pb-10 pt-[20vh] font-sans dark:text-[#CCBA97]">
@@ -66,8 +66,8 @@ export default async function Page() {
 							registration for {c.hackathonName}.
 						</p>
 						<p className="pb-10 pt-5 text-sm">
-							Psttt... Running into a issue? Please let us know by emailing <b>wehackutd@gmail.com</b>
-							
+							Psttt... Running into a issue? Please let us know by
+							emailing <b>wehackutd@gmail.com</b>
 						</p>
 						<RegisterForm
 							defaultEmail={

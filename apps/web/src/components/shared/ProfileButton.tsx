@@ -19,6 +19,7 @@ import { DropdownSwitcher } from "@/components/shared/ThemeSwitcher";
 import DefaultDropdownTrigger from "../dash/shared/DefaultDropDownTrigger";
 import MobileNavBarLinks from "./MobileNavBarLinks";
 import { getUser } from "db/functions";
+import { redirect } from "next/navigation";
 
 export default async function ProfileButton() {
 	const clerkUser = await auth();
@@ -67,8 +68,8 @@ export default async function ProfileButton() {
 								MLH Conduct
 							</DropdownMenuItem>
 						</Link>
-						
-						<DropdownMenuSeparator className="bg-[rgb(228,228,231)] " />
+
+						<DropdownMenuSeparator className="bg-[rgb(228,228,231)]" />
 						{/* <DropdownSwitcher /> */}
 						<Link href={`/bug-report`}>
 							<DropdownMenuItem className="cursor-pointer">

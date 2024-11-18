@@ -38,12 +38,11 @@
 
 		--radius: 0.5rem;
 
-		--gradient-color-1: #992444;		
+		--gradient-color-1: #992444;
 		--gradient-color-2: #be4566;
 		--gradient-color-3: #d85074;
 		--gradient-color-4: #c37288;
 	}
-
 
 	.dark {
 		--background: 240 10% 3.9%;
@@ -130,70 +129,70 @@
 
 /* === containers === */
 html {
-    scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 body {
-    margin: 0;
-    overflow-x: hidden;
+	margin: 0;
+	overflow-x: hidden;
 }
 
-.parent-container {    
-    /* width and height */
-    width: 100vw;
-    height: auto;
-    
-    /* flex */
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.parent-container {
+	/* width and height */
+	width: 100vw;
+	height: auto;
 
-    /* spacing */
-    /* padding: top, right, bottom, left */
-    padding: 5rem 2.5rem 10rem 2.5rem
+	/* flex */
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	/* spacing */
+	/* padding: top, right, bottom, left */
+	padding: 5rem 2.5rem 10rem 2.5rem;
 }
 
 .child-container {
-    /* width and height */
-    width: 100%;
-    height: auto;
+	/* width and height */
+	width: 100%;
+	height: auto;
 
-    /* flex */
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+	/* flex */
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
 
-    /* spacing */
-    /* margin: top, right, bottom, left */
-    margin: 1rem 0rem 0rem 0rem;
+	/* spacing */
+	/* margin: top, right, bottom, left */
+	margin: 1rem 0rem 0rem 0rem;
 }
 
 /* === fonts === */
 /* shoutout to anastasiia fr: 
 https://medium.com/@a.pirus/simplifying-multiple-fonts-styling-in-next-js-13-with-css-variables-cb57e9707693 */
 
-h1, h3 {
-    /* font-family:var(--font-inknut-antiqua); */
-    font-family: var(--font-junge);
-    
+h1,
+h3 {
+	/* font-family:var(--font-inknut-antiqua); */
+	font-family: var(--font-junge);
 }
 
 h2 {
-    font-family: var(--font-julius-sans-one);
+	font-family: var(--font-julius-sans-one);
 }
 
 p {
-    font-family:var(--font-nunito);
+	font-family: var(--font-nunito);
 }
 
 /* === media queries === */
 
 /* small */
 @media (min-width: 580px) {
-    /* .parent-container {
+	/* .parent-container {
         flex-direction: row; 
     }
     .child-container {
@@ -204,24 +203,24 @@ p {
 
 /* medium */
 @media (min-width: 768px) {
-    .parent-container {
-        flex-direction: row; /* changed here */
-    }
-    .child-container {
-        width:50%;
-        flex-direction: column;
-    }
+	.parent-container {
+		flex-direction: row; /* changed here */
+	}
+	.child-container {
+		width: 50%;
+		flex-direction: column;
+	}
 }
 
 /* large */
 @media (min-width: 1024px) {
-    .parent-container {
-        flex-direction: row; /* changed here */
-        /* padding: top, right, bottom, left */
-        padding: 10rem 2.5rem 12rem 2.5rem;
-    }
-    .child-container {
-        width:50%;
-        flex-direction: column;
-    }
+	.parent-container {
+		flex-direction: row; /* changed here */
+		/* padding: top, right, bottom, left */
+		padding: 10rem 2.5rem 12rem 2.5rem;
+	}
+	.child-container {
+		width: 50%;
+		flex-direction: column;
+	}
 }
