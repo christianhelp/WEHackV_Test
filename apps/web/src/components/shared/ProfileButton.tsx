@@ -53,16 +53,31 @@ export default async function ProfileButton() {
 								Register
 							</DropdownMenuItem>
 						</Link>
-						<Link href={`#about-wehack`}>
+						{/* <Link href={`/#about-wehack`}>
 							<DropdownMenuItem className="cursor-pointer">
 								About
 							</DropdownMenuItem>
 						</Link>
-						<Link href={`#FAQ`}>
+						<Link href={`/#Testimonials`}>
+							<DropdownMenuItem className="cursor-pointer">
+								Testimonials
+							</DropdownMenuItem>
+						</Link>
+						<Link href={`/#Sponsors`}>
+							<DropdownMenuItem className="cursor-pointer">
+								Sponsors
+							</DropdownMenuItem>
+						</Link>
+						<Link href={`/#FAQ`}>
 							<DropdownMenuItem className="cursor-pointer">
 								FAQ
 							</DropdownMenuItem>
 						</Link>
+						<Link href={`/#Team`}>
+							<DropdownMenuItem className="cursor-pointer">
+								Meet the Team
+							</DropdownMenuItem>
+						</Link> */}
 						<Link href={`http://hackp.ac/coc`} target="_blank">
 							<DropdownMenuItem className="cursor-pointer">
 								MLH Conduct
