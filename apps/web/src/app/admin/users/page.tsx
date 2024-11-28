@@ -40,7 +40,7 @@ export default async function Page({
 			<div className="mb-5 grid w-full grid-cols-3">
 				<div className="flex items-center">
 					<div>
-						<h2 className="text-3xl font-bold tracking-tight">
+						<h2 className="text-3xl font-bold tracking-wide">
 							Users
 						</h2>
 						<p className="text-sm text-muted-foreground">

@@ -26,7 +26,7 @@ export default async function Page() {
 	return (
 		<div>
 			<div className="flex items-center justify-start pb-10">
-				<h2 className="text-3xl font-bold tracking-tight">
+				<h2 className="text-3xl font-bold tracking-wide">
 					Registration & Sign-in
 				</h2>
 			</div>

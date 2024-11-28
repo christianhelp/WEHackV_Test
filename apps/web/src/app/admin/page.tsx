@@ -30,7 +30,7 @@ export default async function Page() {
 		getRecentRegistrationData(allUsers);
 
 	return (
-		<div className="mx-auto h-16 w-full max-w-7xl px-4 pt-12">
+		<div className="mx-auto w-full max-w-7xl px-4 pt-12">
 			<div className="w-full px-2">
 				<h2 className="text-xl font-bold">Welcome,</h2>
 				<h1 className="text-5xl font-black text-hackathon">
@@ -40,7 +40,7 @@ export default async function Page() {
 			<div className="grid gap-y-3 pt-10 md:grid-cols-4 md:gap-x-2">
 				<Card className="text-[#D09C51]">
 					<CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-						<CardTitle className="text-sm font-medium">
+						<CardTitle className="text-sm font-medium tracking-wide">
 							Registrations
 						</CardTitle>
 						<User2 />
@@ -54,7 +54,7 @@ export default async function Page() {
 				</Card>
 				<Card className="text-[#D09C51]">
 					<CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-						<CardTitle className="text-sm font-medium">
+						<CardTitle className="text-sm font-medium tracking-wide">
 							Teams
 						</CardTitle>
 						<Users />
@@ -66,7 +66,7 @@ export default async function Page() {
 				</Card>
 				<Card className="text-[#D09C51]">
 					<CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-						<CardTitle className="text-sm font-medium">
+						<CardTitle className="text-sm font-medium tracking-wide">
 							RSVPs
 						</CardTitle>
 						<MailCheck />
@@ -78,7 +78,7 @@ export default async function Page() {
 				</Card>
 				<Card className="text-[#D09C51]">
 					<CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-						<CardTitle className="text-sm font-medium">
+						<CardTitle className="text-sm font-medium tracking-wide">
 							Check-ins
 						</CardTitle>
 						<UserCheck />
@@ -93,7 +93,7 @@ export default async function Page() {
 				<Card className="col-span-2 text-[#D09C51]">
 					<CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
 						<div>
-							<CardTitle className="text-md font-bold">
+							<CardTitle className="text-md font-bold tracking-wide">
 								Registrations
 							</CardTitle>{" "}
 							<CardDescription>
@@ -115,7 +115,7 @@ export default async function Page() {
 				<Card className="text-[#D09C51]">
 					<CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
 						<div>
-							<CardTitle className="text-md font-bold">
+							<CardTitle className="text-md font-bold tracking-wide">
 								Recent Registrations
 							</CardTitle>{" "}
 						</div>

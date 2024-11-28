@@ -33,11 +33,11 @@ export default async function Navbar({ className }: NavbarProps) {
 							className="mr-5 flex items-center gap-x-2"
 						>
 							<Image
-								src={"/static/images/black wehack logo.png"}
+								src={"/img/static/images/black wehack logo.png"}
 								alt={c.hackathonName + " Logo"}
 								width={65}
 								height={65}
-								className={"drop-shadow-[0_0px_8px_rgba(255,255,255,0.60)]"}
+								className={"drop-shadow-[0_0px_8px_rgba(255,255,255,0.90)]"}
 							/>
 						</Link>
 					</div>
@@ -46,19 +46,37 @@ export default async function Navbar({ className }: NavbarProps) {
 						<div className="col-span-2 hidden items-center justify-end gap-x-5 md:flex md:pr-10">
 							{/* <NavBarLinksGrouper /> */}
 							<a
-								className="text-lg font-medium lg:text-base"
+								className="text-lg font-medium lg:text-sm"
 								href="#about-wehack"
 							>
 								About
 							</a>
 							<a
-								className="text-lg font-medium lg:text-base"
+								className="text-lg font-medium lg:text-sm"
+								href="#Testimonials"
+							>
+								Testimonials
+							</a>
+							<a
+								className="text-lg font-medium lg:text-sm"
+								href="#Sponsors"
+							>
+								Sponsors
+							</a>
+							<a
+								className="text-lg font-medium lg:text-sm"
 								href="#FAQ"
 							>
 								FAQ
 							</a>
 							<a
-								className="text-lg font-medium lg:text-base"
+								className="text-lg font-medium lg:text-sm"
+								href="#Team"
+							>
+								Meet the Team
+							</a>
+							<a
+								className="text-lg font-medium lg:text-sm"
 								href="http://hackp.ac/coc"
 								target="_blank"
 							>
@@ -75,7 +93,7 @@ export default async function Navbar({ className }: NavbarProps) {
 												: "/register"
 										}
 									>
-										<Button className="primary-btn w-full bg-[#909634] px-5 py-3 text-[#FFE9D7] hover:bg-[#909634]">
+										<Button className="primary-btn w-full bg-[#A6CDC4] px-5 py-3 text-[#282738] hover:bg-[#6e8d85]">
 											{registrationIsComplete
 												? "Dashboard"
 												: "Complete Registration"}
@@ -85,12 +103,12 @@ export default async function Navbar({ className }: NavbarProps) {
 							) : (
 								<>
 									<Link href={"/sign-in"}>
-										<Button className="primary-btn w-full bg-[#909634] px-5 py-3 text-[#FFE9D7] hover:bg-[#909634]">
+										<Button className="primary-btn w-full bg-[#A6CDC4] px-5 py-3 text-[#282738] hover:bg-[#6e8d85]">
 											Sign In
 										</Button>
 									</Link>
 									<Link href={"/register"}>
-										<Button className="primary-btn w-full bg-[#909634] px-5 py-3 text-[#FFE9D7] hover:bg-[#909634]">
+										<Button className="primary-btn w-full bg-[#A6CDC4] px-5 py-3 text-[#282738] hover:bg-[#6e8d85]">
 											Register
 										</Button>
 									</Link>

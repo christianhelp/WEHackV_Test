@@ -1,21 +1,20 @@
 import React from "react";
 import "./Footer.css";
-import Button from "@/components/Button/Button";
 
 function Footer() {
 	return (
 		<div className="footer-container flex h-auto w-full flex-col gap-y-10 px-10 py-10 pb-20 md:flex-row md:items-start md:justify-start md:gap-x-3 md:px-20 lg:flex-row lg:items-start lg:justify-start lg:gap-x-5 lg:px-20">
 			<div className="main-container flex w-full flex-col flex-wrap gap-y-5 md:content-start md:items-start lg:content-start lg:items-start">
 				<img
-					className="wehack-logo h-auto drop-shadow-[0_0px_20px_rgba(255,255,255,0.50)] max-w-40 sm:max-w-64 md:max-w-72 lg:max-w-32"
-					src={"/static/images/black wehack logo.png"}
+					className="wehack-logo h-auto drop-shadow-[0_0px_25px_rgba(255,255,255,1.0)] max-w-40 sm:max-w-64 md:max-w-48 lg:max-w-32"
+					src={"/img/static/images/black wehack logo.png"}
 					alt="wehack logo"
 				></img>
 				<div className="gap-x-0">
-					<p className="about-text text-base font-medium text-[#FFE9D7]">
+					<p className="about-text text-lg font-medium text-[#FFE9D7]">
 						Made with 💪🤍 by WEHack 2025
 					</p>
-					<p className="about-text text-base font-medium text-[#FFE9D7]">
+					<p className="about-text text-lg font-medium text-[#FFE9D7]">
 						<a
 							href="https://github.com/acmutsa/HackKit"
 							target="_blank"

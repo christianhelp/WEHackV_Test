@@ -29,7 +29,7 @@ export default async function ({ children }: { children: ReactNode }) {
 				<div className="col-span-5 flex items-center">
 					<div className="flex items-center pb-24">
 						<div>
-							<h2 className="flex items-center gap-x-2 text-3xl font-bold tracking-tight">
+							<h2 className="flex items-center gap-x-2 text-3xl font-bold tracking-wide">
 								<Settings />
 								Settings
 							</h2>

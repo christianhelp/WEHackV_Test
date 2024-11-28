@@ -1,40 +1,47 @@
 summary {
-	font-family: var(--font-inknut-antiqua);
+    font-family:var(--font-inknut-antiqua);
 }
 summary::after {
-	content: "\002B";
-	color: #4a3628;
-	display: flex;
-	align-items: start;
-	transition: 0.2s;
-	font-weight: bolder;
+    content: '\002B';
+    color: #301814;
+    display: flex;
+    align-items:start;
+    transition: 0.2s;
+    font-weight:bolder;
+}
+  
+summary::-webkit-details-marker {
+    display: none;
 }
 
-summary::-webkit-details-marker {
-	display: none;
-}
 
 details {
-	padding: 0.5rem;
-	background-color: #ffe9d7;
-	border-radius: 5px;
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: 2px solid #301814;
+    /* filter: drop-shadow(-10px 10px #992444); */
+    
 }
 details:hover {
-	box-shadow: 0rem 0rem 2rem #ffe9d7bb;
-	transition: 0.4s ease-in-out;
+    box-shadow: 0rem 0rem 2rem #992444;
+    transition: 0.4s ease-in-out;
 }
 
+details:active {
+    box-shadow: 0rem 0rem 2rem #992444;
+}
+  
 details[open] summary {
-	background: #ffe9d7;
-	color: #4a3628;
+    background: #D16155;
+    color:#301814;
 }
 
-details[open] summary:after {
-	content: "\00D7";
+details[open] summary:after{
+    content: "\00D7";
 }
-
+  
 details[open] .panel {
-	background: #ffe9d7;
-	color: #4a3628;
-	padding: 0.5em 1em;
+    background: #D16155;
+    color:#301814;
+    padding: .5em 1em;
 }

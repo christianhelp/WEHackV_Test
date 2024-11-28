@@ -35,7 +35,7 @@ export default async function NavbarNonDash({
 					<div className="col-span-3 flex items-center justify-start gap-x-5 pl-4 md:pl-0">
 						<Link href="/">
 							<Image
-								src={"/static/images/LogoSparkle.png"}
+								src={"/img/static/images/white wehack logo.png"}
 								alt={c.hackathonName + " Logo"}
 								width={32}
 								height={32}
@@ -43,7 +43,7 @@ export default async function NavbarNonDash({
 						</Link>
 
 						<div className="h-[45%] w-[2px] rotate-[25deg] bg-muted-foreground" />
-						<h2 className="font-bold tracking-tight">{title}</h2>
+						<h2 className="font-bold tracking-wide">{title}</h2>
 					</div>
 
 					<div className="flex items-center justify-between space-x-5 pr-2 md:justify-center md:pr-0">

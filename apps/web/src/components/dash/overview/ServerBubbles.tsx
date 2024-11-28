@@ -10,7 +10,7 @@ export function Questions() {
 		<div className="flex h-full min-h-[150px] w-full flex-col justify-between rounded-xl border border-border p-5">
 			<div>
 				<h1 className="font-bold">Have a question?</h1>
-				<p className="text-xs text-muted-foreground">
+				<p className="text-sm text-muted-foreground">
 					We're here to help! Feel free to reach out to us via email
 					or on Discord.
 				</p>

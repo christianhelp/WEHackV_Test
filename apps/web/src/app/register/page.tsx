@@ -45,10 +45,11 @@ export default async function Page() {
 									className="mr-5 flex items-center gap-x-2"
 								>
 									<Image
-										src={"/static/images/LogoSparkle.png"}
+										src={"/img/static/images/black wehack logo.png"}
 										alt={c.hackathonName + " Logo"}
 										width={60}
 										height={60}
+										className={"drop-shadow-[0_0px_0px_rgba(255,255,255,0.90)]"}
 									/>
 								</Link>
 							</div>

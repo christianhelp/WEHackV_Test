@@ -5,38 +5,19 @@ import { Analytics } from "@vercel/analytics/react";
 import { defaultTheme } from "config";
 import { neobrutalism } from "@clerk/themes";
 import Script from "next/script";
-import {
-	Inknut_Antiqua,
-	Nunito,
-	Junge,
-	Julius_Sans_One,
-} from "next/font/google";
-import { Darker_Grotesque, Sriracha, Righteous } from "next/font/google";
+import { Inknut_Antiqua, Nunito, Junge, Julius_Sans_One, Righteous, Darker_Grotesque, Sriracha} from "next/font/google";
 import type { Metadata } from "next";
 
-const nunito = Nunito({
-	variable: "--font-nunito",
-	subsets: ["latin"],
-});
-const inknut = Inknut_Antiqua({
-	weight: "400",
-	subsets: ["devanagari"],
-	variable: "--font-inknut-antiqua",
-});
-
-// Add Junge font
-const junge = Junge({
-	subsets: ["latin"],
-	variable: "--font-junge",
-	weight: "400",
-});
-
-// Add Julius Sans One font
-const julius_sans = Julius_Sans_One({
-	subsets: ["latin"],
-	variable: "--font-julius-sans-one",
-	weight: "400",
-});
+const righteous = Righteous({
+	subsets: ['latin'],
+	variable: '--font-righteous',
+	weight: '400'
+  });
+  
+  const darker_grotesque = Darker_Grotesque({
+	subsets: ['latin'],
+	variable: '--font-darker-grotesque',
+  });
 
 export const metadata: Metadata = {
 	title: "WEHack",
@@ -70,7 +51,7 @@ export default function RootLayout({
 					</Script>
 				</head>
 				<body
-					className={`${nunito.variable} ${inknut.variable} ${junge.variable} ${julius_sans.variable}`}
+					className={`${righteous.variable} ${darker_grotesque.variable}`}
 				>
 					{children}
 					<Analytics />
