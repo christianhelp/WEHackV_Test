@@ -25,7 +25,7 @@ function Footer() {
 				</div>
 			</div>
 			<div className="lg:items-ends flex flex-col gap-y-10 md:flex-row md:items-end md:gap-x-10 lg:-mr-10 lg:w-full lg:flex-row lg:gap-x-10 xl:-mr-72">
-				<div className="flex flex-row gap-x-20 md:gap-x-10">
+				<div className="flex flex-row flex-wrap gap-x-20 gap-y-10 md:gap-x-10">
 					<div className="navigation-container flex flex-col flex-wrap gap-y-1">
 						<h1 className="about-title text-center text-xl font-medium text-[#FFE9D7]">
 							Navigation
@@ -36,9 +36,30 @@ function Footer() {
 						<a className="nav-link" href="#about-wehack">
 							About
 						</a>
-						<a className="nav-link" href="#FAQ">
-							FAQ
-						</a>
+						<a
+							className="nav-link"
+							href="#Testimonials"
+							>
+								Testimonials
+							</a>
+							<a
+								className="nav-link"
+								href="#Sponsors"
+							>
+								Sponsors
+							</a>
+							<a
+								className="nav-link"
+								href="#FAQ"
+							>
+								FAQ
+							</a>
+							<a
+								className="nav-link"
+								href="#Team"
+							>
+								Meet the Team
+							</a>
 						<a
 							className="nav-link"
 							href="http://hackp.ac/coc"
@@ -87,8 +108,7 @@ function Footer() {
 							X
 						</a>
 					</div>
-				</div>
-				<div className="contact-container flex flex-col flex-wrap gap-y-1">
+					<div className="contact-container flex flex-col flex-wrap gap-y-1">
 					<h1 className="about-title text-left text-xl font-medium text-[#FFE9D7]">
 						Other Hackathons
 					</h1>
@@ -128,6 +148,8 @@ function Footer() {
 						HackUTD
 					</a>
 				</div>
+				</div>
+				
 			</div>
 		</div>
 	);
