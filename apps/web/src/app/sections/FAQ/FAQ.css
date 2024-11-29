@@ -5,10 +5,11 @@
     border-radius:20px;
     border: 8px solid #992444;
     filter: drop-shadow(-10px 10px #992444);
+    box-shadow: 0px 0px 40px #992444;
 }
 
 .glow {
-    filter: drop-shadow(0 0 20px #992444);
+    /* filter: drop-shadow(0 0 20px #992444); */
     transform: rotate(6deg);
 }
 

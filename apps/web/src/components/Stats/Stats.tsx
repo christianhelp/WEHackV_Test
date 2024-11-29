@@ -12,13 +12,13 @@ function Stats() {
                 </div>
                 
                 <div className="statsOne max-w-[85%] md:max-w-[50%] lg:max-w-[40%] flex flex-col md:justify-center lg:justify-center">
-                    <img src={"/img/static/images/Group 23.svg"}></img>
+                    <img src={"/img/static/images/Group 23.svg"} className="transform-gpu"></img>
                 </div>     
             </div>
 
             <div className='flex flex-wrap flex-col-reverse md:flex-row lg:flex-row content-center justify-between md:justify-around lg:justify-around gap-y-10 w-full '>
                 <div className="statsTwo max-w-[85%] md:max-w-[50%] lg:max-w-[40%] flex flex-col md:justify-center lg:justify-center">
-                    <img src={"/img/static/images/Group 24.svg"}></img>
+                    <img src={"/img/static/images/Group 24.svg"} className="transform-gpu"></img>
                 </div>   
                 <div className="flex flex-row md:flex-col justify-center">
                     <img className="wehack-stats-mascot max-w-64 md:max-w-72 lg:max-w-72" src={"/img/static/images/Raccoon_Music.svg"} alt="a bear trying to catch a butterfly" loading="eager"></img>
@@ -31,7 +31,7 @@ function Stats() {
                 </div>
                 
                 <div className="statsThree max-w-[85%] md:max-w-[50%] lg:max-w-[40%] flex flex-col md:justify-center lg:justify-center">
-                    <img src={"/img/static/images/Group 25.svg"}></img>
+                    <img src={"/img/static/images/Group 25.svg"} className="transform-gpu"></img>
                 </div>     
             </div>
         </div>

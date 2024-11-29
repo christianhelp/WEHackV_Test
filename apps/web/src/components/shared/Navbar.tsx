@@ -37,7 +37,7 @@ export default async function Navbar({ className }: NavbarProps) {
 								alt={c.hackathonName + " Logo"}
 								width={65}
 								height={65}
-								className={"drop-shadow-[0_0px_8px_rgba(255,255,255,0.90)]"}
+								className={"drop-shadow-[0_0px_8px_rgba(255,255,255,0.90)] transform-gpu"}
 							/>
 						</Link>
 					</div>

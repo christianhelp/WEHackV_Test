@@ -22,8 +22,8 @@ function Testimonials() {
                         <img className='musicnote h-auto max-w-28 md:w-auto lg:max-w-56 -rotate-[10deg] md:-rotate-0' src={"/img/static/images/Untitled design-8.png"} alt={"music note"}/>
                     </div>
                     
-                    <div className="glow">
-                        <h1 className='FAQ-title text-[#992444] text-center text-4xl md:text-5xl lg:text-5xl'>Testimonials</h1>
+                    <div className="glow transform-gpu">
+                        <h1 className='Testimonials-title text-[#992444] text-center text-4xl md:text-5xl lg:text-5xl'>Testimonials</h1>
                     </div>
 
                     <div className="flex justify-end pt-5 -mr-52 mt-3 md:mt-0 md:-mr-0 md:pt-0">

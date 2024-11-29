@@ -14,7 +14,7 @@ export class Carousel extends React.Component {
                 totalSlides={3}
                 orientation="horizontal"
                 isIntrinsicHeight={true}
-                isPlaying={true}
+                isPlaying={false}
                 interval={6000}
                 infinite={true}
 

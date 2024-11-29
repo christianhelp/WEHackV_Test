@@ -38,7 +38,7 @@ function Jumbotron() {
     <section className='jumbotron md:h-[80rem]' id="home">
       <div className='jumboText-container flex flex-col items-start text-left'>
         <div className='jumbo-group md:ml-[1rem] mt-16 md:mt-[5rem]'>
-          <h4 className='jumbo-text text-[#B4A498] text-xs md:text-base font-serif lg:text-2xl'>WEHack 2025 Presents</h4>
+          <h4 className='jumbo-text text-[#B4A498] text-xs font-semibold md:text-base font-serif lg:text-2xl'>WEHack 2025 Presents</h4>
           <h1 className='jumbo-title text-[#FFE9D7] text-3xl md:text-5xl lg:text-7xl animate-pulse'>Timeless Moments Await</h1>
           <h2 className='jumbo-text font-black text-[#A6CDC4] text-base sm:text-1xl md:1xl lg:text-4xl'>April 5th-6th</h2>
 

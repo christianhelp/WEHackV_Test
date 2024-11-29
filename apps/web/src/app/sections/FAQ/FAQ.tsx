@@ -11,7 +11,7 @@ function FAQ() {
                     <img src="/img/static/images/sparkles.png" className="-rotate-[10deg] h-auto max-w-32 md:max-w-auto"></img>
                 </div>
                 
-                <div className="glow">
+                <div className="glow transform-gpu">
                     <h1 className='FAQ-title text-[#992444] text-center text-4xl md:text-5xl lg:text-5xl'>Frequently Asked Questions</h1>
                 </div>
                 <div className="flex justify-end pt-5 -mr-8">
@@ -88,7 +88,7 @@ const dataColOne = [
 const dataColTwo =  [
     {
         question: "Does it cost money to participate?",
-        answer: "WEHack 2024 is completely free! This includes food and swag, which will be handed out to attendees during the hackathon.",
+        answer: "WEHack 2025 is completely free! This includes food and swag, which will be handed out to attendees during the hackathon.",
     },
 
     {

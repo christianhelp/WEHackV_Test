@@ -10,12 +10,12 @@ export default function Page() {
 				{c.hackathonName}
 			</h1>
 			<div className="relative flex aspect-video w-full max-w-[500px] flex-col items-center justify-center rounded-xl bg-white p-5 backdrop-blur transition dark:bg-white/[0.08]">
-				<h1 className="flex items-center gap-x-2 text-2xl font-bold text-[#992444]">
+				<h1 className="text-center text-2xl font-bold text-[#992444]">
 					{/* <CheckCircleIcon /> */}
-					Thanks for registering!
+					Thank you for submitting your application for WEHack 2025!
 				</h1>
 				<p className="pb-10 pt-5 text-center text-[#992444] text-xl font-bold">
-					Your account is awaiting approval.
+					Your registration has been submitted, and we will reach a decision on your registration status soon.
 					<br />
 					You will be notified when it is approved!
 				</p>

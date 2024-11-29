@@ -14,8 +14,8 @@ function Sponsor() {
     return (
       <div className='Sponsor-container w-full h-auto flex flex-wrap flex-col items-center justify-center p-6 pb-40 lg:pb-60' id="Sponsors">
         <div className="flex flex-col md:flex-row justify-center items-center gap-y-2 md:gap-x-16 lg:gap-x-24 pb-24 md:pb-24 lg:pb-36">
-          <div className="glow-sponsor">
-            <h1 className='FAQ-title text-[#992444] text-center text-4xl md:text-5xl lg:text-5xl'>2025 Sponsors</h1>
+          <div className="glow-sponsor transform-gpu">
+            <h1 className='Sponsor-title text-[#992444] text-center text-4xl md:text-5xl lg:text-5xl'>2025 Sponsors</h1>
           </div>
         </div>
         <div className="sponsor-text-container flex flex-col gap-y-5 flex-wrap items-center justify-center">

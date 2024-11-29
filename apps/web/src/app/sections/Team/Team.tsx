@@ -78,8 +78,8 @@ function Team() {
  return (
   <div className='w-full h-auto flex flex-wrap flex-col items-center justify-center py-40 lg:px-32' id="Team">
     <div className="title-container flex flex-col md:flex-row justify-center items-center gap-y-2 md:gap-x-16 lg:gap-x-24 pb-24 md:pb-24 lg:pb-36">      
-        <div className="glow-team">
-            <h1 className='FAQ-title text-[#992444] text-center text-4xl md:text-5xl lg:text-5xl'>Meet the Team</h1>
+        <div className="glow-team transform-gpu">
+            <h1 className='Team-title text-[#992444] text-center text-4xl md:text-5xl lg:text-5xl'>Meet the Team</h1>
         </div>
     </div>
     <div className="polaroid-container">
