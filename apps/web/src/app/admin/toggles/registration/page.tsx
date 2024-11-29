@@ -9,8 +9,8 @@ const redis = new Redis({
 
 export default async function Page() {
 	const pipe = redis.pipeline();
-	pipe.get("config:registration:registrationEnabled");
-	pipe.get("config:registration:secretRegistrationEnabled");
+	pipe.get(`${process.env.HK_ENV}_config:registration:registrationEnabled`);
+	pipe.get(`${process.env.HK_ENV}_config:registration:secretRegistrationEnabled`);
 	// const result = await pipe.exec();
 
 	const [
@@ -18,9 +18,9 @@ export default async function Page() {
 		defaultSecretRegistrationEnabled,
 		defaultRSVPsEnabled,
 	]: (string | null)[] = await redis.mget(
-		"config:registration:registrationEnabled",
-		"config:registration:secretRegistrationEnabled",
-		"config:registration:allowRSVPs",
+		`${process.env.HK_ENV}_config:registration:registrationEnabled`,
+		`${process.env.HK_ENV}_config:registration:secretRegistrationEnabled`,
+		`${process.env.HK_ENV}_config:registration:allowRSVPs`,
 	);
 
 	return (

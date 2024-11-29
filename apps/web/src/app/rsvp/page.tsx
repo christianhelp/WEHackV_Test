@@ -45,7 +45,7 @@ export default async function RsvpPage({
 		return redirect("/i/approval");
 	}
 
-	const rsvpEnabled = await redis.get("config:registration:allowRSVPs");
+	const rsvpEnabled = await redis.get(`${process.env.HK_ENV}_config:registration:allowRSVPs`);
 
 	// TODO: fix type jank here
 	if (

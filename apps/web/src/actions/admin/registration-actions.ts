@@ -17,7 +17,7 @@ const defaultRegistrationToggleSchema = z.object({
 export const toggleRegistrationEnabled = adminAction
 	.schema(defaultRegistrationToggleSchema)
 	.action(async ({ parsedInput: { enabled }, ctx: { user, userId } }) => {
-		await redis.set("config:registration:registrationEnabled", enabled);
+		await redis.set(`${process.env.HK_ENV}_config:registration:registrationEnabled`, enabled);
 		revalidatePath("/admin/toggles/registration");
 		return { success: true, statusSet: enabled };
 	});
@@ -26,7 +26,7 @@ export const toggleRegistrationMessageEnabled = adminAction
 	.schema(defaultRegistrationToggleSchema)
 	.action(async ({ parsedInput: { enabled }, ctx: { user, userId } }) => {
 		await redis.set(
-			"config:registration:registrationMessageEnabled",
+			`${process.env.HK_ENV}_config:registration:registrationMessageEnabled`,
 			enabled,
 		);
 		revalidatePath("/admin/toggles/registration");
@@ -37,7 +37,7 @@ export const toggleSecretRegistrationEnabled = adminAction
 	.schema(defaultRegistrationToggleSchema)
 	.action(async ({ parsedInput: { enabled }, ctx: { user, userId } }) => {
 		await redis.set(
-			"config:registration:secretRegistrationEnabled",
+			`${process.env.HK_ENV}_config:registration:secretRegistrationEnabled`,
 			enabled,
 		);
 		revalidatePath("/admin/toggles/registration");
@@ -47,7 +47,7 @@ export const toggleSecretRegistrationEnabled = adminAction
 export const toggleRSVPs = adminAction
 	.schema(defaultRegistrationToggleSchema)
 	.action(async ({ parsedInput: { enabled }, ctx: { user, userId } }) => {
-		await redis.set("config:registration:allowRSVPs", enabled);
+		await redis.set(`${process.env.HK_ENV}_config:registration:allowRSVPs`, enabled);
 		revalidatePath("/admin/toggles/registration");
 		return { success: true, statusSet: enabled };
 	});

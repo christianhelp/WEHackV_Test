@@ -21,8 +21,8 @@ const navAdminPage = "/admin/toggles/landing";
 export const setItem = adminAction
 	.schema(metadataSchema)
 	.action(async ({ parsedInput: { name, url }, ctx: { user, userId } }) => {
-		await redis.sadd("config:navitemslist", encodeURIComponent(name));
-		await redis.hset(`config:navitems:${encodeURIComponent(name)}`, {
+		await redis.sadd(`${process.env.HK_ENV}_config:navitemslist`, encodeURIComponent(name));
+		await redis.hset(`${process.env.HK_ENV}_config:navitems:${encodeURIComponent(name)}`, {
 			url,
 			name,
 			enabled: true,
@@ -35,7 +35,7 @@ export const removeItem = adminAction
 	.schema(z.string())
 	.action(async ({ parsedInput: name, ctx: { user, userId } }) => {
 		const pipe = redis.pipeline();
-		pipe.srem("config:navitemslist", encodeURIComponent(name));
+		pipe.srem(`${process.env.HK_ENV}_config:navitemslist`, encodeURIComponent(name));
 		pipe.del(`config:navitems:${encodeURIComponent(name)}`);
 		await pipe.exec();
 		// await new Promise((resolve) => setTimeout(resolve, 1500));
@@ -50,7 +50,7 @@ export const toggleItem = adminAction
 			parsedInput: { name, statusToSet },
 			ctx: { user, userId },
 		}) => {
-			await redis.hset(`config:navitems:${encodeURIComponent(name)}`, {
+			await redis.hset(`${process.env.HK_ENV}_config:navitems:${encodeURIComponent(name)}`, {
 				enabled: statusToSet,
 			});
 			revalidatePath(navAdminPage);
