@@ -6,7 +6,7 @@ function About() {
     <section className='about-section' id="about-wehack">
       {/* group 1 */}
       <div className='flex justify-center items-center'>
-          <img className="h-auto md:px-0" src={"/img/static/images/Group 34.svg"} alt={"Dallas' Largest Inclusive Hackathon"} />
+          <img className="h-auto md:px-0 transform-gpu" src={"/img/static/images/Group 34.svg"} alt={"Dallas' Largest Inclusive Hackathon"} />
       </div>
       <div className='about-group flex flex-wrap flex-col sm:flex-row md:flex-row: lg:flex-row'>
         <div className='about-text-container flex flex-col items-center justify-center gap-y-5 -mt-10 md:mt-5 lg:mt-20'>
