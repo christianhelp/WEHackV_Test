@@ -36,7 +36,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
 			<div className="mb-5 grid w-full grid-cols-3">
 				<div className="flex items-center">
 					<div>
-						<h2 className="flex items-center gap-x-2 text-3xl font-bold tracking-tight">
+						<h2 className="flex items-center gap-x-2 text-3xl font-bold tracking-wide">
 							<Info />
 							User Info
 						</h2>

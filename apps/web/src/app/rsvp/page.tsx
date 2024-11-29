@@ -7,7 +7,7 @@ import { eq } from "db/drizzle";
 import { userCommonData } from "db/schema";
 import ClientToast from "@/components/shared/ClientToast";
 import { SignedOut, RedirectToSignIn } from "@clerk/nextjs";
-import { Redis } from "@upstash/redis"
+import { Redis } from "@upstash/redis";
 import { parseRedisBoolean } from "@/lib/utils/server/redis";
 import Link from "next/link";
 import { Button } from "@/components/shadcn/ui/button";
@@ -45,7 +45,7 @@ export default async function RsvpPage({
 		return redirect("/i/approval");
 	}
 
-	const rsvpEnabled = await redis.get("config:registration:allowRSVPs");
+	const rsvpEnabled = await redis.get(`${process.env.HK_ENV}_config:registration:allowRSVPs`);
 
 	// TODO: fix type jank here
 	if (
@@ -58,7 +58,7 @@ export default async function RsvpPage({
 		return (
 			<>
 				<ClientToast />
-				<main className="mx-auto flex min-h-screen w-full max-w-5xl flex-col items-center justify-center bg-[#301814] pt-30">
+				<main className="pt-30 mx-auto flex min-h-screen w-full max-w-5xl flex-col items-center justify-center bg-backgroudn">
 					<div className="max-w-screen fixed left-1/2 top-[calc(50%+7rem)] h-[40vh] w-[800px]"></div>
 					<h2 className="text-4xl font-extrabold">
 						{c.hackathonName}

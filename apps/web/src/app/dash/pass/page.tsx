@@ -52,7 +52,7 @@ function EventPass({ qrPayload, user, clerk, guild }: EventPassProps) {
 		<div className="relative my-20 h-max">
 			<div className="absolute left-1/2 top-0 z-10 h-[75px] w-[75px] -translate-x-1/2 -translate-y-[50%] rotate-45 rounded-full border-2 border-background border-b-border border-r-border bg-background dark:border" />
 			<div className="flex aspect-[9/17] !max-h-[calc(100vh-7rem)] w-full max-w-[400px] flex-col overflow-hidden rounded-3xl border-2 border-border bg-background py-[37.5px] dark:border">
-				<div className="relative flex h-[30%] w-full flex-col items-center pt-2 mt-10">
+				<div className="relative mt-10 flex h-[30%] w-full flex-col items-center pt-2">
 					<Image
 						src={clerk.imageUrl}
 						alt={`${user.firstName}'s Profile Picture`}
@@ -60,7 +60,7 @@ function EventPass({ qrPayload, user, clerk, guild }: EventPassProps) {
 						height={100}
 						className="mx-auto rounded-full"
 					/>
-					<h1 className="mt-2 text-center text-4xl font-bold ">
+					<h1 className="mt-2 text-center text-4xl font-bold">
 						{user.firstName}
 					</h1>
 					<div className="flex w-full items-center justify-center space-x-5">
@@ -72,7 +72,7 @@ function EventPass({ qrPayload, user, clerk, guild }: EventPassProps) {
 						</h3> */}
 					</div>
 				</div>
-				<div className="event-pass-img relative flex w-full mt-12">
+				<div className="event-pass-img relative mt-12 flex w-full">
 					<div className="absolute left-1/2 top-1/2 aspect-square w-[200px] -translate-x-1/2 -translate-y-[65%] bg-[#c37288] opacity-40 blur-[50px] will-change-transform"></div>
 					{/* <Image
 						src={c.eventPassBgImage}
@@ -80,7 +80,7 @@ function EventPass({ qrPayload, user, clerk, guild }: EventPassProps) {
 						fill
 						className="no-select -translate-y-[15%] scale-[0.8] object-contain"
 					/> */}
-					<div className="w-full flex flex-col justify-center items-center">
+					<div className="flex w-full flex-col items-center justify-center">
 						<div className="flex h-full w-full items-center justify-center pl-2">
 							{/* <Image
 								src={c.icon.svg}
@@ -88,25 +88,25 @@ function EventPass({ qrPayload, user, clerk, guild }: EventPassProps) {
 								width={60}
 								alt={``}
 							/> */}
-							<h1 className="text-2xl ml-1 font-bold leading-tight">
+							<h1 className="ml-1 text-2xl font-bold leading-tight">
 								{c.hackathonName}{" "}
 								<span className="text-hackathon">
 									{c.itteration}
 								</span>
 							</h1>
 						</div>
-						<div className="h-full w-full flex flex-col justify-center items-center gap-y-1">
+						<div className="flex h-full w-full flex-col items-center justify-center gap-y-1">
 							<p className="font-mono text-xs">{`${format(
 								c.startDate,
 								"h:mma, MMM d, yyyy",
 							)}`}</p>
-							<p className="font-mono text-xs text-center px-10">
+							<p className="px-10 text-center font-mono text-xs">
 								{c.prettyLocation}
 							</p>
 						</div>
 					</div>
 				</div>
-				<div className="flex h-[25%] w-full items-center justify-center border-dashed border-muted mt-5">
+				<div className="mt-5 flex h-[25%] w-full items-center justify-center border-dashed border-muted">
 					<Drawer>
 						<DrawerTrigger asChild>
 							<div className="flex aspect-square h-[90%] items-center justify-center overflow-x-hidden rounded-xl border-2 border-dashed border-muted p-2">

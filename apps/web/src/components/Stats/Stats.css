@@ -1,3 +1,7 @@
 .stats-title {
     filter: drop-shadow(0rem 0rem 1rem #FFE9D7);
 }
+
+.statsOne, .statsTwo, .statsThree {
+    filter:drop-shadow(0px 0px 20px rgba(210, 175, 113, 0.5))
+}

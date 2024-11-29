@@ -9,7 +9,7 @@ export default async function Page() {
 	return (
 		<div>
 			<div className="flex items-center justify-start">
-				<h2 className="text-3xl font-bold tracking-tight">
+				<h2 className="text-3xl font-bold tracking-wide">
 					Navbar Items
 				</h2>
 				<div className="ml-auto">

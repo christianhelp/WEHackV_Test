@@ -18,9 +18,9 @@ export default async function ({ params }: { params: { tag: string } }) {
 	return (
 		<>
 			<NavbarNonDash title={"Profile"} />
-				<div className="max-w-screen relative flex min-h-screen items-center justify-center bg-nav">
+			<div className="max-w-screen relative flex min-h-screen items-center justify-center bg-nav">
 				<div className="absolute top-0 h-[50vh] w-[60vw] -translate-y-[22vh]" />
-				<div className="grid min-h-[45vh] w-full max-w-5xl md:grid-cols-5 md:gap-x-2 flex-col justify-center md:justify-start md:pl-11">
+				<div className="grid min-h-[45vh] w-full max-w-5xl flex-col justify-center md:grid-cols-5 md:justify-start md:gap-x-2 md:pl-11">
 					<div className="flex flex-col justify-center">
 						<div className="relative aspect-square w-full overflow-hidden rounded-full">
 							<Image
@@ -89,21 +89,22 @@ export default async function ({ params }: { params: { tag: string } }) {
 								</Link>
 							)}
 					</div>
-					<div className="col-span-4 flex flex-col justify-center mt-5 md:ml-14">
+					<div className="col-span-4 mt-5 flex flex-col justify-center md:ml-14">
 						<h3 className="font-bold md:text-2xl">About</h3>
 						<p>
 							<Balancer>{user.bio}</Balancer>
 						</p>
 						{user.skills && (user.skills as string[]).length > 0 ? (
 							<>
-								<h3 className="mt-4 font-bold md:text-2xl">Skills</h3>
+								<h3 className="mt-4 font-bold md:text-2xl">
+									Skills
+								</h3>
 								<p>{(user.skills as string[]).join(", ")}</p>
 							</>
 						) : null}
 					</div>
 				</div>
 			</div>
-			
 		</>
 	);
 }

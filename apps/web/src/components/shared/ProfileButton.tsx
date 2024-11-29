@@ -19,6 +19,7 @@ import { DropdownSwitcher } from "@/components/shared/ThemeSwitcher";
 import DefaultDropdownTrigger from "../dash/shared/DefaultDropDownTrigger";
 import MobileNavBarLinks from "./MobileNavBarLinks";
 import { getUser } from "db/functions";
+import { redirect } from "next/navigation";
 
 export default async function ProfileButton() {
 	const clerkUser = await auth();
@@ -52,23 +53,38 @@ export default async function ProfileButton() {
 								Register
 							</DropdownMenuItem>
 						</Link>
-						<Link href={`#about-wehack`}>
+						{/* <Link href={`/#about-wehack`}>
 							<DropdownMenuItem className="cursor-pointer">
 								About
 							</DropdownMenuItem>
 						</Link>
-						<Link href={`#FAQ`}>
+						<Link href={`/#Testimonials`}>
+							<DropdownMenuItem className="cursor-pointer">
+								Testimonials
+							</DropdownMenuItem>
+						</Link>
+						<Link href={`/#Sponsors`}>
+							<DropdownMenuItem className="cursor-pointer">
+								Sponsors
+							</DropdownMenuItem>
+						</Link>
+						<Link href={`/#FAQ`}>
 							<DropdownMenuItem className="cursor-pointer">
 								FAQ
 							</DropdownMenuItem>
 						</Link>
+						<Link href={`/#Team`}>
+							<DropdownMenuItem className="cursor-pointer">
+								Meet the Team
+							</DropdownMenuItem>
+						</Link> */}
 						<Link href={`http://hackp.ac/coc`} target="_blank">
 							<DropdownMenuItem className="cursor-pointer">
 								MLH Conduct
 							</DropdownMenuItem>
 						</Link>
-						
-						<DropdownMenuSeparator className="bg-[rgb(228,228,231)] " />
+
+						<DropdownMenuSeparator className="bg-[rgb(228,228,231)]" />
 						{/* <DropdownSwitcher /> */}
 						<Link href={`/bug-report`}>
 							<DropdownMenuItem className="cursor-pointer">

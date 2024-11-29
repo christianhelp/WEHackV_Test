@@ -4,10 +4,10 @@ import Image from "next/image";
 export default function MLHBadge() {
 	return (
 		<>
-			<div className="fixed hidden h-0 w-full dark:block z-50">
+			<div className="absolute z-50 hidden h-0 w-full dark:block">
 				<Link
 					id="mlh-trust-badge"
-					className="absolute right-5 top-0 z-50 w-[10%] min-w-[60px] max-w-[100px]"
+					className="absolute right-5 top-0 z-50 w-[10%] min-w-[60px] max-w-[80px]"
 					// style="display:block;max-width:100px;min-width:60px;position:fixed;right:50px;top:0;width:10%;z-index:10000"
 					href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2025-season&utm_content=white"
 					target="_blank"
@@ -22,10 +22,10 @@ export default function MLHBadge() {
 					/>
 				</Link>
 			</div>
-			<div className="fixed block h-0 w-full dark:hidden z-50">
+			<div className="absolute z-50 block h-0 w-full dark:hidden">
 				<Link
 					id="mlh-trust-badge"
-					className="absolute right-5 top-0 z-50 w-[10%] min-w-[60px] max-w-[100px]"
+					className="absolute right-5 top-0 z-50 w-[10%] min-w-[60px] max-w-[80px]"
 					// style="display:block;max-width:100px;min-width:60px;position:fixed;right:50px;top:0;width:10%;z-index:10000"
 					href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2025-season&utm_content=white"
 					target="_blank"

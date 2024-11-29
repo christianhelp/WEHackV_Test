@@ -4,10 +4,24 @@ import Question from '@/components/Question/Question'
 
 function FAQ() {
   return (
-    <div className='FAQ-container bg-[#755642] w-full h-auto flex flex-wrap flex-col items-center justify-center p-6 pb-40 lg:pb-60' id="FAQ">
-        <h1 className='FAQ-title text-[#FFE9D7] text-center text-4xl md:text-5xl lg:text-5xl pb-7 md:pb-15 md:pb-20'>Frequently Asked Questions</h1>
+    <div className='FAQ-container w-full h-auto flex flex-wrap flex-col items-center justify-center p-6 pb-40 lg:pb-24 pt-20' id="FAQ">
+        <div className="title-container flex flex-col">      
+            <div className="header-container pb-12 md:pb-24 lg:pb-36 flex flex-col md:flex-row gap-x-10">
+                <div className="flex justify-start pb-5 -ml-8">
+                    <img src="/img/static/images/sparkles.png" className="-rotate-[10deg] h-auto max-w-32 md:max-w-auto"></img>
+                </div>
+                
+                <div className="glow">
+                    <h1 className='FAQ-title text-[#992444] text-center text-4xl md:text-5xl lg:text-5xl'>Frequently Asked Questions</h1>
+                </div>
+                <div className="flex justify-end pt-5 -mr-8">
+                    <img src="/img/static/images/sparkles.png" className="rotate-[5deg] h-auto max-w-32 md:max-w-auto"></img>
+                </div>
+                
+            </div>
+        </div>
 
-        <div className='drop-down-container gap-5 mt-10 lg:mt-0 lg:gap-0 lg:px-14'>
+        <div className='drop-down-container gap-5 mt-5 lg:-mt-12 lg:gap-0 lg:px-14'>
             <div className='column-right w-full lg:w-1/2'>
                 <div className='questions-container flex flex-wrap items-center justify-center gap-5'>
                     {dataColOne.map((FAQ, index) => (
@@ -27,6 +41,10 @@ function FAQ() {
                     ))}
                 </div>
             </div>
+        </div>
+
+        <div className="vinyl-blue-container flex justify-center md:justify-end lg:justify-end md:-ml-[10rem] lg:-ml-[25rem] xl:-ml-[45rem] pt-20 pb-72 md:pt-16 md:pb-72">
+            <img className="vinyl" src="/img/static/images/Untitled_Artwork 4.png" width="300px" height="300px"></img>    
         </div>
         
         

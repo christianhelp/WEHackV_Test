@@ -1,0 +1,50 @@
+@media screen and (max-width: 1280px) {
+
+    .music {height: 4rem}
+    /* .musicnote {height: 4rem} */
+    .testimonial-title {height:8rem}
+
+}
+
+@media screen and (max-width: 1050px) {
+
+    .music {display: none}
+    /* .musicnote {height: 3.2rem} */
+    .testimonial-title {height:6rem}
+
+}
+
+@media screen and (max-width: 600px) {
+
+    .music {display: none}
+    /* .musicnote {display: none} */
+    .testimonial-title {height:6rem}
+
+}
+
+@media screen and (max-width: 606px) {
+
+    .testimonial-container {
+        .musicnote {display: none}
+    }
+
+}
+
+.music {
+    filter: drop-shadow(0rem 0rem 1rem #992444);
+}
+.musicnote {
+    filter: drop-shadow(0rem 0rem 1rem #992444);
+}
+
+.testimonial-title {
+    filter: drop-shadow(0rem 0rem 2rem #992444);
+}
+
+.glow {
+    filter: drop-shadow(0 0 20px #992444);
+    transform: rotate(-3deg);
+}
+
+
+

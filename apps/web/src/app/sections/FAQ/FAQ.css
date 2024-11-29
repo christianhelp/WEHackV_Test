@@ -1,5 +1,48 @@
 .FAQ-title {
-    text-shadow: 0rem 0rem 3rem white;
+    /* text-shadow: 0rem 0rem 3rem white; */
+    background-color: #A6CDC4;
+    padding:2rem;
+    border-radius:20px;
+    border: 8px solid #992444;
+    filter: drop-shadow(-10px 10px #992444);
+}
+
+.glow {
+    filter: drop-shadow(0 0 20px #992444);
+    transform: rotate(6deg);
+}
+
+.vinyl {
+    position: absolute;
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+}
+
+@-moz-keyframes spin { 
+    100% { -moz-transform: rotate(360deg); } 
+}
+@-webkit-keyframes spin { 
+    100% { -webkit-transform: rotate(360deg); } 
+}
+@keyframes spin { 
+    100% { 
+        -webkit-transform: rotate(360deg); 
+        transform:rotate(360deg); 
+    } 
+}
+
+@-moz-keyframes spinCC { 
+    100% { -moz-transform: rotate(-360deg); } 
+}
+@-webkit-keyframes spinCC { 
+    100% { -webkit-transform: rotate(-360deg); } 
+}
+@keyframes spinCC { 
+    100% { 
+        -webkit-transform: rotate(-360deg); 
+        transform:rotate(-360deg); 
+    } 
 }
 
 .drop-down-container {

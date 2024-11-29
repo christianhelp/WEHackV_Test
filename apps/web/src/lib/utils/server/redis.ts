@@ -7,7 +7,7 @@ const redis = new Redis({
 });
 
 export async function getAllNavItems() {
-	const keys = await redis.smembers<string[]>("config:navitemslist");
+	const keys = await redis.smembers<string[]>(`${process.env.HK_ENV}_config:navitemslist`);
 	if (!keys || keys.length < 1) {
 		return {
 			keys: [],
@@ -16,7 +16,7 @@ export async function getAllNavItems() {
 	}
 	const pipe = redis.pipeline();
 	for (const key of keys) {
-		pipe.hgetall(`config:navitems:${key}`);
+		pipe.hgetall(`${process.env.HK_ENV}_config:navitems:${key}`);
 	}
 	const items = await pipe.exec<NavItemToggleType[]>();
 	return {

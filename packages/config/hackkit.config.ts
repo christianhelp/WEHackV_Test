@@ -786,7 +786,7 @@ const c = {
 	localUniversityName: "The University of Texas at Dallas",
 	localUniversitySchoolIDName: "UTD NetID",
 	localUniversityShortIDMaxLength: 9,
-	registration:{
+	registration: {
 		schools,
 		majors,
 		levelsOfStudy,
@@ -808,7 +808,7 @@ const c = {
 			discordRole: "Guild B Role",
 		},
 		"Guild C | Group A": {
-			discordRole: "Guild C Role	",
+			discordRole: "Guild C Role",
 		},
 		"Guild C | Group B": {
 			discordRole: "Guild C Role",
@@ -854,7 +854,7 @@ const c = {
 			Users: "/admin/users",
 			Events: "/admin/events",
 			Points: "/admin/points",
-			"Check-in": "/admin/check-in",
+			"Hackathon Check-in": "/admin/check-in",
 			Toggles: "/admin/toggles",
 		},
 		// TODO: Can remove days? Pretty sure they're dynamic now.
@@ -952,13 +952,5 @@ const publicRoutes = [
 
 // Generally it is reccomended to put your primary audience's university at the top of this list.
 
-
-
-
 export default c;
-export {
-	defaultTheme,
-	bucketResumeBaseUploadUrl,
-	perms,
-	publicRoutes,
-};
+export { defaultTheme, bucketResumeBaseUploadUrl, perms, publicRoutes };

@@ -3,7 +3,7 @@ summary {
 }
 summary::after {
     content: '\002B';
-    color: #4A3628;
+    color: #301814;
     display: flex;
     align-items:start;
     transition: 0.2s;
@@ -17,18 +17,23 @@ summary::-webkit-details-marker {
 
 details {
     padding: 0.5rem;
-    background-color: #FFE9D7;
-    border-radius: 5px;
+    border-radius: 10px;
+    border: 2px solid #301814;
+    /* filter: drop-shadow(-10px 10px #992444); */
     
 }
 details:hover {
-    box-shadow: 0rem 0rem 2rem #ffe9d7bb;
+    box-shadow: 0rem 0rem 2rem #992444;
     transition: 0.4s ease-in-out;
+}
+
+details:active {
+    box-shadow: 0rem 0rem 2rem #992444;
 }
   
 details[open] summary {
-    background: #FFE9D7;
-    color:#4A3628;
+    background: #D16155;
+    color:#301814;
 }
 
 details[open] summary:after{
@@ -36,7 +41,7 @@ details[open] summary:after{
 }
   
 details[open] .panel {
-    background: #FFE9D7;
-    color:#4A3628;
+    background: #D16155;
+    color:#301814;
     padding: .5em 1em;
 }

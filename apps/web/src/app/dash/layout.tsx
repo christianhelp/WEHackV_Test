@@ -42,7 +42,7 @@ export default async function DashLayout({ children }: DashLayoutProps) {
 					<div className="flex items-center gap-x-4">
 						<Link href="/">
 							<Image
-								src={"/static/images/LogoSparkle.png"}
+								src={"/img/static/images/white wehack logo.png"}
 								alt={c.hackathonName + " Logo"}
 								width={32}
 								height={32}
@@ -50,7 +50,7 @@ export default async function DashLayout({ children }: DashLayoutProps) {
 						</Link>
 
 						<div className="h-[45%] w-[2px] rotate-[25deg] bg-muted-foreground" />
-						<h2 className="font-bold tracking-tight">Dashboard</h2>
+						<h2 className="font-bold tracking-wide">Dashboard</h2>
 					</div>
 					<div className="hidden items-center justify-end gap-x-4 md:flex">
 						<Link href={"/"}>

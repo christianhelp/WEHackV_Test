@@ -25,18 +25,18 @@ export default async function ({ children }: { children: ReactNode }) {
 		<>
 			<ClientToast />
 			<NavbarNonDash title={"Settings"} />
-			<div className="mx-auto md:grid max-w-5xl md:grid-cols-5 gap-x-3 pt-24 pb-24 flex-col items-center justify-center px-10">
+			<div className="mx-auto max-w-5xl flex-col items-center justify-center gap-x-3 px-10 pb-24 pt-24 md:grid md:grid-cols-5">
 				<div className="col-span-5 flex items-center">
 					<div className="flex items-center pb-24">
 						<div>
-							<h2 className="flex items-center gap-x-2 text-3xl font-bold tracking-tight">
+							<h2 className="flex items-center gap-x-2 text-3xl font-bold tracking-wide">
 								<Settings />
 								Settings
 							</h2>
 						</div>
 					</div>
 				</div>
-				<div className="flex flex-row md:flex-col pb-5 gap-x-6 md:gap-y-6 md:pr-6">
+				<div className="flex flex-row gap-x-6 pb-5 md:flex-col md:gap-y-6 md:pr-6">
 					{/* <SettingsSection name="Settings" path="/settings" /> */}
 					<SettingsSection name="Account" path="/settings/account" />
 					<SettingsSection name="Profile" path="/settings/profile" />

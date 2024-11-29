@@ -26,7 +26,7 @@ module.exports = {
 				border: "#b84f6c",
 				input: "#D09C51",
 				ring: "hsl(var(--ring))",
-				background: "#301814",
+				background: "#282738",
 				foreground: "#CCBA97", // changes font color
 				primary: {
 					DEFAULT: "hsl(var(--primary))",
@@ -55,7 +55,7 @@ module.exports = {
 					foreground: "hsl(var(--popover-foreground))",
 				},
 				card: {
-					DEFAULT: "#301814",
+					DEFAULT: "#282738",
 					foreground: "hsl(var(--card-foreground))",
 				},
 			},

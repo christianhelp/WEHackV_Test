@@ -1,7 +1,11 @@
 a:hover {
-    /* background-color:#4A3628;
+	/* background-color:#4A3628;
     border-radius:1rem; */
-    cursor: pointer;
-    text-shadow: 0rem 0rem 1rem white;
-    transition: 0.3s ease-in-out;
+	cursor: pointer;
+	text-shadow: 0rem 0rem 1rem white;
+	transition: 0.3s ease-in-out;
+}
+
+.primary-btn {
+	border-radius: 2rem;
 }

@@ -106,12 +106,12 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 			shirtSize: "" as any,
 			// schoolID: "",
 			university: "",
-			phoneNumber:"",
-			countryOfResidence:"",
-			questionOne:"",
-			questionTwo:"",
-			questionThree:"",
-			uploadedFile: undefined
+			phoneNumber: "",
+			countryOfResidence: "",
+			questionOne: "",
+			questionTwo: "",
+			questionThree: "",
+			uploadedFile: undefined,
 		},
 	});
 
@@ -134,15 +134,13 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 	// 	}
 	// }, [universityValue]);
 
-
-	useEffect(()=>{
-		console.log(countryValue)
-	},[countryValue])
+	useEffect(() => {
+		console.log(countryValue);
+	}, [countryValue]);
 
 	useEffect(() => {
 		console.log("Resume file updated:", resumeFile);
 	}, [resumeFile]);
-
 
 	async function onSubmit(data: z.infer<typeof RegisterFormValidator>) {
 		console.log(data);
@@ -169,19 +167,18 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 		if (resumeFile) {
 			const uploadResult = await startUpload([resumeFile]); // Pass the resumeFile as an array
 
-            if (uploadResult) {
-                // Extract the uploaded file information (URL, etc.)
-                const uploadedFileData = uploadResult[0];
-				console.log(resume)
+			if (uploadResult) {
+				// Extract the uploaded file information (URL, etc.)
+				const uploadedFileData = uploadResult[0];
+				console.log(resume);
 
-                // Proceed with form submission by including the uploaded resume URL
-                const res = await zpostSafe({
-                    url: "/api/registration/create",
-                    body: { ...data, resume }, // Add the resume URL to the form data
-                    vRes: BasicServerValidator,
-                });
-		
-				
+				// Proceed with form submission by including the uploaded resume URL
+				const res = await zpostSafe({
+					url: "/api/registration/create",
+					body: { ...data, resume }, // Add the resume URL to the form data
+					vRes: BasicServerValidator,
+				});
+
 				if (res.success) {
 					if (res.data.success) {
 						alert(
@@ -204,21 +201,16 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 					setIsLoading(false);
 					alert(
 						`Something went wrong while attempting to register. Please try again. If this is a continuing issue, please reach out to us at ${c.issueEmail}.`,
-					)
+					);
 					return console.log(
 						`Recieved a unexpected response from the server. Please try again. If this is a continuing issue, please reach out to us at ${c.issueEmail}.`,
 					);
 				}
 			}
-		}
-		else {
+		} else {
 			setIsLoading(false);
-					alert(
-						`Please upload a resume`,
-					)
-					return console.log(
-						`User has not uploaded a resume`,
-					);
+			alert(`Please upload a resume`);
+			return console.log(`User has not uploaded a resume`);
 		}
 
 		// const res = await zpostSafe({
@@ -273,7 +265,7 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 	const { getRootProps, getInputProps, isDragActive } = useDropzone({
 		onDrop,
 		accept: generateClientDropzoneAccept(
-		  generatePermittedFileTypes(routeConfig).fileTypes,
+			generatePermittedFileTypes(routeConfig).fileTypes,
 		),
 	});
 	// const { getRootProps, getInputProps, isDragActive } = useDropzone({
@@ -294,7 +286,7 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 			<Form {...form}>
 				<form
 					onSubmit={form.handleSubmit(onSubmit)}
-					className="space-y-6"
+					className="space-y-16"
 				>
 					<FormGroupWrapper title="General">
 						<div className="grid grid-cols-1 gap-x-2 gap-y-4 md:grid-cols-2">
@@ -303,7 +295,10 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 								name="firstName"
 								render={({ field }) => (
 									<FormItem>
-										<FormLabel className="flex flex-row gap-x-2">First Name <p className="text-[#F03C2D]">*</p></FormLabel>
+										<FormLabel className="flex flex-row gap-x-2">
+											First Name{" "}
+											<p className="text-[#F03C2D]">*</p>
+										</FormLabel>
 										<FormControl>
 											<Input
 												placeholder="John"
@@ -319,7 +314,10 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 								name="lastName"
 								render={({ field }) => (
 									<FormItem>
-										<FormLabel className="flex flex-row gap-x-2">Last Name <p className="text-[#F03C2D]">*</p></FormLabel>
+										<FormLabel className="flex flex-row gap-x-2">
+											Last Name{" "}
+											<p className="text-[#F03C2D]">*</p>
+										</FormLabel>
 										<FormControl>
 											<Input
 												placeholder="Doe"
@@ -335,7 +333,10 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 								name="email"
 								render={({ field }) => (
 									<FormItem>
-										<FormLabel className="flex flex-row gap-x-2">Email <p className="text-[#F03C2D]">*</p></FormLabel>
+										<FormLabel className="flex flex-row gap-x-2">
+											Email{" "}
+											<p className="text-[#F03C2D]">*</p>
+										</FormLabel>
 										<FormControl>
 											<Input
 												readOnly={
@@ -353,7 +354,10 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 								name="phoneNumber"
 								render={({ field }) => (
 									<FormItem>
-										<FormLabel className="flex flex-row gap-x-2">Phone Number <p className="text-[#F03C2D]">*</p></FormLabel>
+										<FormLabel className="flex flex-row gap-x-2">
+											Phone Number{" "}
+											<p className="text-[#F03C2D]">*</p>
+										</FormLabel>
 										<FormControl>
 											<Input
 												placeholder="555-555-5555"
@@ -371,7 +375,10 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 								name="age"
 								render={({ field }) => (
 									<FormItem>
-										<FormLabel className="flex flex-row gap-x-2">Age <p className="text-[#F03C2D]">*</p></FormLabel>
+										<FormLabel className="flex flex-row gap-x-2">
+											Age{" "}
+											<p className="text-[#F03C2D]">*</p>
+										</FormLabel>
 										<FormControl>
 											<Input type="number" {...field} />
 										</FormControl>
@@ -384,7 +391,10 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 								name="gender"
 								render={({ field }) => (
 									<FormItem className="">
-										<FormLabel className="flex flex-row gap-x-2">Gender <p className="text-[#F03C2D]">*</p></FormLabel>
+										<FormLabel className="flex flex-row gap-x-2">
+											Gender{" "}
+											<p className="text-[#F03C2D]">*</p>
+										</FormLabel>
 										<Select
 											onValueChange={field.onChange}
 											defaultValue={field.value}
@@ -423,7 +433,10 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 								name="race"
 								render={({ field }) => (
 									<FormItem className="">
-										<FormLabel className="flex flex-row gap-x-2">Race <p className="text-[#F03C2D]">*</p></FormLabel>
+										<FormLabel className="flex flex-row gap-x-2">
+											Race{" "}
+											<p className="text-[#F03C2D]">*</p>
+										</FormLabel>
 										<Select
 											onValueChange={field.onChange}
 											defaultValue={field.value}
@@ -457,7 +470,10 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 								name="ethnicity"
 								render={({ field }) => (
 									<FormItem className="">
-										<FormLabel className="flex flex-row gap-x-2">Ethnicity <p className="text-[#F03C2D]">*</p></FormLabel>
+										<FormLabel className="flex flex-row gap-x-2">
+											Ethnicity{" "}
+											<p className="text-[#F03C2D]">*</p>
+										</FormLabel>
 										<Select
 											onValueChange={field.onChange}
 											defaultValue={field.value}
@@ -487,7 +503,9 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 								name="countryOfResidence"
 								render={({ field }) => (
 									<FormItem className="grid-cols-2">
-										<FormLabel className="flex flex-row gap-x-2">Country of Residence <p className="text-[#F03C2D]">*</p>
+										<FormLabel className="flex flex-row gap-x-2">
+											Country of Residence{" "}
+											<p className="text-[#F03C2D]">*</p>
 										</FormLabel>
 										<div className="flex w-full items-center justify-center">
 											<Popover>
@@ -699,7 +717,10 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 								name="university"
 								render={({ field }) => (
 									<FormItem className="col-span-2 flex flex-col">
-										<FormLabel className="flex flex-row gap-x-2">University <p className="text-[#F03C2D]">*</p></FormLabel>
+										<FormLabel className="flex flex-row gap-x-2">
+											University{" "}
+											<p className="text-[#F03C2D]">*</p>
+										</FormLabel>
 										<Popover>
 											<PopoverTrigger asChild>
 												<FormControl>
@@ -776,7 +797,10 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 								name="major"
 								render={({ field }) => (
 									<FormItem className="col-span-2 flex flex-col">
-										<FormLabel className="flex flex-row gap-x-2">Major <p className="text-[#F03C2D]">*</p></FormLabel>
+										<FormLabel className="flex flex-row gap-x-2">
+											Major{" "}
+											<p className="text-[#F03C2D]">*</p>
+										</FormLabel>
 										<Popover>
 											<PopoverTrigger asChild>
 												<FormControl>
@@ -853,7 +877,10 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 								name="levelOfStudy"
 								render={({ field }) => (
 									<FormItem className="col-span-2 flex flex-col md:col-span-1">
-										<FormLabel className="flex flex-row gap-x-2">Level of Study <p className="text-[#F03C2D]">*</p></FormLabel>
+										<FormLabel className="flex flex-row gap-x-2">
+											Level of Study{" "}
+											<p className="text-[#F03C2D]">*</p>
+										</FormLabel>
 										<Select
 											onValueChange={field.onChange}
 											defaultValue={field.value}
@@ -923,7 +950,9 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 								name="hackathonsAttended"
 								render={({ field }) => (
 									<FormItem>
-										<FormLabel className="flex flex-row gap-x-2"># of Hackathons Attended <p className="text-[#F03C2D]">*</p>
+										<FormLabel className="flex flex-row gap-x-2">
+											# of Hackathons Attended{" "}
+											<p className="text-[#F03C2D]">*</p>
 										</FormLabel>
 										<FormControl>
 											<Input type="number" {...field} />
@@ -937,7 +966,9 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 								name="softwareBuildingExperience"
 								render={({ field }) => (
 									<FormItem>
-										<FormLabel className="flex flex-row gap-x-2">Software Building Experience <p className="text-[#F03C2D]">*</p>
+										<FormLabel className="flex flex-row gap-x-2">
+											Software Building Experience{" "}
+											<p className="text-[#F03C2D]">*</p>
 										</FormLabel>
 										<Select
 											onValueChange={field.onChange}
@@ -974,8 +1005,10 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 								name="heardAboutEvent"
 								render={({ field }) => (
 									<FormItem>
-										<FormLabel className="flex flex-row gap-x-2">Where did you hear about{" "}
-										{c.hackathonName}? <p className="text-[#F03C2D]">*</p>
+										<FormLabel className="flex flex-row gap-x-2">
+											Where did you hear about{" "}
+											{c.hackathonName}?{" "}
+											<p className="text-[#F03C2D]">*</p>
 										</FormLabel>
 										<Select
 											onValueChange={field.onChange}
@@ -1020,13 +1053,16 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 					</FormGroupWrapper>
 					{/* ADDED SHORT ANSWER QUESTIONS */}
 					<FormGroupWrapper title="Short Answer Questions">
-						<div className="grid grid-cols-1 gap-x-2 gap-y-16 md:gap-y-10 pb-10 md:pb-8">
+						<div className="grid grid-cols-1 gap-x-2 gap-y-16 pb-10 md:gap-y-10 md:pb-8">
 							<FormField
 								control={form.control}
 								name="questionOne"
 								render={({ field }) => (
 									<FormItem>
-										<FormLabel className="flex flex-row gap-x-2">What does WEHack mean to you? <p className="text-[#F03C2D]">*</p></FormLabel>
+										<FormLabel className="flex flex-row gap-x-2">
+											What does WEHack mean to you?{" "}
+											<p className="text-[#F03C2D]">*</p>
+										</FormLabel>
 										<FormControl>
 											<Textarea
 												placeholder="Enter answer here"
@@ -1043,7 +1079,12 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 								name="questionTwo"
 								render={({ field }) => (
 									<FormItem>
-										<FormLabel className="flex flex-row gap-x-2">What steps do you take to encourage or support inclusive environments for underrepresented groups? <p className="text-[#F03C2D]">*</p></FormLabel>
+										<FormLabel className="flex flex-row gap-x-2">
+											What steps do you take to encourage
+											or support inclusive environments
+											for underrepresented groups?{" "}
+											<p className="text-[#F03C2D]">*</p>
+										</FormLabel>
 										<FormControl>
 											<Textarea
 												placeholder="Enter answer here"
@@ -1060,7 +1101,12 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 								name="questionThree"
 								render={({ field }) => (
 									<FormItem>
-										<FormLabel className="flex flex-row gap-x-2">In what ways do you hope to make a positive impact through your project at WEHack 2025? <p className="text-[#F03C2D]">*</p></FormLabel>
+										<FormLabel className="flex flex-row gap-x-2">
+											In what ways do you hope to make a
+											positive impact through your project
+											at WEHack 2025?{" "}
+											<p className="text-[#F03C2D]">*</p>
+										</FormLabel>
 										<FormControl>
 											<Textarea
 												placeholder="Enter answer here"
@@ -1081,7 +1127,10 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 								name="shirtSize"
 								render={({ field }) => (
 									<FormItem>
-										<FormLabel  className="flex flex-row gap-x-2">Shirt Size <p className="text-[#F03C2D]">*</p></FormLabel>
+										<FormLabel className="flex flex-row gap-x-2">
+											Shirt Size{" "}
+											<p className="text-[#F03C2D]">*</p>
+										</FormLabel>
 										<Select
 											onValueChange={field.onChange}
 											defaultValue={field.value}
@@ -1121,7 +1170,11 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 								render={() => (
 									<FormItem className="row-span-2">
 										<div className="mb-4">
-											<FormLabel className="flex flex-row gap-x-2 text-base">Dietary Restrictions <p className="text-[#F03C2D]">*</p>
+											<FormLabel className="flex flex-row gap-x-2 text-base">
+												Dietary Restrictions{" "}
+												<p className="text-[#F03C2D]">
+													*
+												</p>
 											</FormLabel>
 											<FormDescription>
 												Please select which dietary
@@ -1260,7 +1313,10 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 							name="uploadedFile"
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel  className="flex flex-row gap-x-2">Resume <p className="text-[#F03C2D]">*</p></FormLabel>
+									<FormLabel className="flex flex-row gap-x-2">
+										Resume{" "}
+										<p className="text-[#F03C2D]">*</p>
+									</FormLabel>
 									<FormControl>
 										<div
 											{...getRootProps()}
@@ -1273,11 +1329,16 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 											<input
 												{...getInputProps()}
 												onChange={(e) => {
-													field.onChange(e.target.files);
-													setResumeFile(e.target.files?.[0] || null);
-												  }}
+													field.onChange(
+														e.target.files,
+													);
+													setResumeFile(
+														e.target.files?.[0] ||
+															null,
+													);
+												}}
 											/>
-											<p className="p-2 text-center">
+											<p className="p-2 text-center text-xl">
 												{resumeFile
 													? `${resumeFile.name} (${Math.round(resumeFile.size / 1024)}kb)`
 													: isDragActive
@@ -1288,8 +1349,8 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 												<Button
 													className="mt-4 bg-[#992444] hover:bg-[#F03C2D]"
 													onClick={() => {
-														field.onChange(null)
-														setResumeFile(null)
+														field.onChange(null);
+														setResumeFile(null);
 													}}
 												>
 													Remove
@@ -1309,7 +1370,10 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 								name="hackerTag"
 								render={({ field }) => (
 									<FormItem>
-										<FormLabel className="flex flex-row gap-x-2">HackerTag <p className="text-[#F03C2D]">*</p></FormLabel>
+										<FormLabel className="flex flex-row gap-x-2">
+											HackerTag{" "}
+											<p className="text-[#F03C2D]">*</p>
+										</FormLabel>
 										<FormControl>
 											<div className="flex">
 												<div className="flex h-10 w-10 items-center justify-center rounded-l bg-accent text-lg font-light text-primary">
@@ -1331,7 +1395,9 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 								name="profileDiscordName"
 								render={({ field }) => (
 									<FormItem>
-										<FormLabel className='flex flex-row'>Discord Username</FormLabel>
+										<FormLabel className="flex flex-row">
+											Discord Username
+										</FormLabel>
 										<FormControl>
 											<Input
 												placeholder={`${c.hackathonName.toLowerCase()} or ${c.hackathonName.toLowerCase()}#1234`}
@@ -1347,7 +1413,10 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 								name="pronouns"
 								render={({ field }) => (
 									<FormItem>
-										<FormLabel  className="flex flex-row gap-x-2">Pronouns <p className="text-[#F03C2D]">*</p></FormLabel>
+										<FormLabel className="flex flex-row gap-x-2">
+											Pronouns{" "}
+											<p className="text-[#F03C2D]">*</p>
+										</FormLabel>
 										<FormControl>
 											<Input {...field} />
 										</FormControl>
@@ -1362,7 +1431,10 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 								name="bio"
 								render={({ field }) => (
 									<FormItem>
-										<FormLabel className="flex flex-row gap-x-2">Bio <p className="text-[#F03C2D]">*</p></FormLabel>
+										<FormLabel className="flex flex-row gap-x-2">
+											Bio{" "}
+											<p className="text-[#F03C2D]">*</p>
+										</FormLabel>
 										<FormControl>
 											<Textarea
 												placeholder="Hello! I'm..."
@@ -1391,7 +1463,9 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 								name="skills"
 								render={({ field }) => (
 									<FormItem className="flex flex-col items-start">
-										<FormLabel className="text-left flex flex-row gap-x-2">Skills <p className="text-[#F03C2D]">*</p>
+										<FormLabel className="flex flex-row gap-x-2 text-left">
+											Skills{" "}
+											<p className="text-[#F03C2D]">*</p>
 										</FormLabel>
 										<FormControl className="min-h-[80px]">
 											<TagInput
@@ -1412,7 +1486,7 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 												}}
 											/>
 										</FormControl>
-										<FormDescription className="!mt-0">
+										<FormDescription className="!mt-0 tracking-wide text-md">
 											These skills can be listed on your
 											profile and help with the team
 											finding process! Enter anything you
@@ -1453,7 +1527,12 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 							)}
 						/>
 					</FormGroupWrapper>
-					<Button type="submit" className="bg-[#D09C51] hover:bg-[#CCBA97]">Submit</Button>
+					<Button
+						type="submit"
+						className="bg-[#D09C51] hover:bg-[#CCBA97]"
+					>
+						Submit
+					</Button>
 					{hasErrors && (
 						<p className="text-[#F03C2D]">
 							Something doesn't look right. Please check your

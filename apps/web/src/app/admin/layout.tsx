@@ -40,15 +40,15 @@ export default async function AdminLayout({ children }: AdminLayoutProps) {
 			<div className="relative top-0 z-20 grid h-16 w-full grid-cols-2 bg-nav px-5">
 				<div className="flex items-center gap-x-4">
 					<Image
-						src={"/static/images/LogoSparkle.png"}
+						src={"/img/static/images/white wehack logo.png"}
 						alt={c.hackathonName + " Logo"}
 						width={32}
 						height={32}
 					/>
 					<div className="h-[45%] w-[2px] rotate-[25deg] bg-muted-foreground" />
-					<h2 className="font-bold tracking-tight">Admin</h2>
+					<h2 className="font-bold tracking-wide">Admin</h2>
 				</div>
-				<div className="items-center justify-end gap-x-4 flex pt-6 md:pt-0">
+				<div className="flex items-center justify-end gap-x-4 pt-6 md:pt-0">
 					<div className="hidden items-center justify-end gap-x-4 md:flex">
 						<Link href={"/"}>
 							<Button
@@ -74,10 +74,10 @@ export default async function AdminLayout({ children }: AdminLayoutProps) {
 								Discord
 							</Button>
 						</Link>
-						
 					</div>
-					<div className='-mt-4 md:-mt-0'><ProfileButton /></div>
-					
+					<div className="-mt-4 md:-mt-0">
+						<ProfileButton />
+					</div>
 				</div>
 				<div className="flex items-center justify-end gap-x-4 md:hidden"></div>
 			</div>

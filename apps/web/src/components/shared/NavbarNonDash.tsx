@@ -8,7 +8,7 @@ import NavBarLinksGrouper from "./NavBarLinksGrouper";
 import { Oswald } from "next/font/google";
 import { cn } from "@/lib/utils/client/cn";
 import { getUser } from "db/functions";
-import './Nav.css'
+import "./Nav.css";
 import DashNavItem from "../dash/shared/DashNavItem";
 
 const oswald = Oswald({
@@ -18,26 +18,24 @@ const oswald = Oswald({
 
 interface NavbarNonDashProps {
 	className?: string;
-    title: string
+	title: string;
 }
 
-export default async function NavbarNonDash({ className, title }: NavbarNonDashProps) {
+export default async function NavbarNonDash({
+	className,
+	title,
+}: NavbarNonDashProps) {
 	const user = await currentUser();
 	const registrationIsComplete =
 		user != null && (await getUser(user.id)) != undefined;
 	return (
-		<div className="z-50 w-screen fixed">
-			<div
-				className={cn(
-					`relative top-0 z-50 h-16 w-screen`,
-					className,
-				)}
-			>
+		<div className="fixed z-50 w-screen">
+			<div className={cn(`relative top-0 z-50 h-16 w-screen`, className)}>
 				<div className="mx-auto grid h-full w-full max-w-7xl grid-flow-col grid-cols-2 px-2 sm:px-5 lg:max-w-full lg:px-5">
 					<div className="col-span-3 flex items-center justify-start gap-x-5 pl-4 md:pl-0">
-                    <Link href="/">
+						<Link href="/">
 							<Image
-								src={"/static/images/LogoSparkle.png"}
+								src={"/img/static/images/white wehack logo.png"}
 								alt={c.hackathonName + " Logo"}
 								width={32}
 								height={32}
@@ -45,10 +43,10 @@ export default async function NavbarNonDash({ className, title }: NavbarNonDashP
 						</Link>
 
 						<div className="h-[45%] w-[2px] rotate-[25deg] bg-muted-foreground" />
-						<h2 className="font-bold tracking-tight">{title}</h2>
+						<h2 className="font-bold tracking-wide">{title}</h2>
 					</div>
 
-					<div className="flex items-center justify-between space-x-5 md:justify-center pr-2 md:pr-0">
+					<div className="flex items-center justify-between space-x-5 pr-2 md:justify-center md:pr-0">
 						<div className="gap-x-4 md:flex">
 							{user ? (
 								<>
@@ -59,9 +57,7 @@ export default async function NavbarNonDash({ className, title }: NavbarNonDashP
 												: "/register"
 										}
 									>
-										<Button
-											className="primary-btn bg-[#D09C51] text-[#FFE9D7] w-full py-3 px-5 hover:bg-[#CCBA97]"
-										>
+										<Button className="primary-btn w-full bg-[#D09C51] px-5 py-3 text-[#FFE9D7] hover:bg-[#CCBA97]">
 											{registrationIsComplete
 												? "Dashboard"
 												: "Complete Registration"}
@@ -71,16 +67,14 @@ export default async function NavbarNonDash({ className, title }: NavbarNonDashP
 							) : (
 								<>
 									<Link href={"/sign-in"}>
-										<Button
-											className="primary-btn bg-[#909634] text-[#FFE9D7] w-full py-3 px-5 hover:bg-[#909634]"
-										>
+										<Button className="primary-btn w-full bg-[#909634] px-5 py-3 text-[#FFE9D7] hover:bg-[#909634]">
 											Sign In
 										</Button>
 									</Link>
 									<Link href={"/register"}>
-										<Button
-											className="primary-btn bg-[#909634] text-[#FFE9D7] w-full py-3 px-5 hover:bg-[#909634]"
-										>Register</Button>
+										<Button className="primary-btn w-full bg-[#909634] px-5 py-3 text-[#FFE9D7] hover:bg-[#909634]">
+											Register
+										</Button>
 									</Link>
 								</>
 							)}
@@ -90,7 +84,7 @@ export default async function NavbarNonDash({ className, title }: NavbarNonDashP
 						</div>
 					</div>
 				</div>
-                {/* <div className="flex h-12 w-full border-b border-b-border bg-nav px-5">
+				{/* <div className="flex h-12 w-full border-b border-b-border bg-nav px-5">
 					{Object.entries(c.dashPaths.dash).map(([name, path]) => (
 						<DashNavItem key={name} name={name} path={path} />
 					))}

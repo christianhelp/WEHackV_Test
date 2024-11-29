@@ -29,8 +29,8 @@ export default async function Page() {
 		| string
 		| null
 	)[] = await redis.mget(
-		"config:registration:registrationEnabled",
-		"config:registration:secretRegistrationEnabled",
+		`${process.env.HK_ENV}_config:registration:registrationEnabled`,
+		`${process.env.HK_ENV}_config:registration:secretRegistrationEnabled`,
 	);
 
 	if (parseRedisBoolean(defaultRegistrationEnabled, true) === true) {
@@ -45,29 +45,30 @@ export default async function Page() {
 									className="mr-5 flex items-center gap-x-2"
 								>
 									<Image
-										src={"/static/images/LogoSparkle.png"}
+										src={"/img/static/images/white wehack logo.png"}
 										alt={c.hackathonName + " Logo"}
 										width={60}
 										height={60}
+										className={"drop-shadow-[0_0px_0px_rgba(255,255,255,0.90)]"}
 									/>
 								</Link>
 							</div>
 						</div>
-						</div>
+					</div>
 				</div>
 				<main className="dark:bg-[#301814]">
 					<div className="mx-auto min-h-screen max-w-5xl px-5 pb-10 pt-[20vh] font-sans dark:text-[#CCBA97]">
 						<h1 className="text-6xl font-black md:text-8xl">
 							Register
 						</h1>
-						<p className="mt-5 font-medium">
+						<p className="mt-5 font-medium text-2xl">
 							<span className="font-bold">Welcome Hacker!</span>{" "}
 							Please fill out the form below to complete your
 							registration for {c.hackathonName}.
 						</p>
-						<p className="pb-10 pt-5 text-sm">
-							Psttt... Running into a issue? Please let us know by emailing <b>wehackutd@gmail.com</b>
-							
+						<p className="pb-10 pt-5 text-xl">
+							Psttt... Running into a issue? Please let us know by
+							emailing <b>wehackutd@gmail.com</b>
 						</p>
 						<RegisterForm
 							defaultEmail={
