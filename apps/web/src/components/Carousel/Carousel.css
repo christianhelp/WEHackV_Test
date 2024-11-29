@@ -42,7 +42,7 @@ div.carousel{
 
 .text-container{
     width: 26rem;
-    height: 26rem;
+    height: 30rem;
 }
 
 @media screen and (max-width: 600px) {

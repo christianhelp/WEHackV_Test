@@ -64,8 +64,8 @@ export class Carousel extends React.Component {
 
                     <div className="flex flex-col justify-center items-center">
                         <Slider className="text-container justify-items-center flex-row mb-8 pb-96">
-                            <Slide index={0} className='text-[#CCBA97] font-medium text-lg lg:text-xl'>
-                                <p className=" text-justify text-md">"WEHack was the perfect opportunity for me because
+                            <Slide index={0} className='text-[#CCBA97] font-medium text-xl md:text-2xl'>
+                                <p className="text-justify">"WEHack was the perfect opportunity for me because
                                     I felt like I was completely in a safe space where all my ideas were accepted. It
                                     gave me the chance to develop many different skills as well as many different
                                     relationships. I was able to gain the confidence from creating and conceiving a
@@ -73,7 +73,7 @@ export class Carousel extends React.Component {
                                     definitely fueled my innovation!"</p>
                                 <p className="mt-5">~ Sanjana Kotha (Sophomore)</p>
                             </Slide>
-                            <Slide index={1} className='text-center text-[#CCBA97] font-medium text-lg lg:text-xl'>
+                            <Slide index={1} className='text-[#CCBA97] font-medium text-xl md:text-2xl'>
                                 <p className=" text-justify ">"WEHack gave me one of my most memorable experiences. It
                                     gave me the opportunity to work with new applications and attend the amazing
                                     workshops that gave me insight into tech applications and the tech industry. As a
@@ -83,7 +83,7 @@ export class Carousel extends React.Component {
                                     talk to companies, and develop skills!"</p>
                                 <p className="mt-5">~ Elisa Paul (Sophomore)</p>
                             </Slide>
-                            <Slide index={2} className='text-center text-[#CCBA97] font-medium text-lg lg:text-xl'>
+                            <Slide index={2} className='text-[#CCBA97] font-medium text-xl md:text-2xl'>
                                 <p className=" text-justify ">"I had a wonderful time at WEHack. I gained a lot of
                                     knowledge from both independent research online and through my collaboration with my
                                     teammates. Engaging with professionals from various companies proved to be

@@ -94,13 +94,6 @@ function Footer() {
 					</h1>
 					<a
 						className="nav-link"
-						href="https://hackutd.co/"
-						target="_blank"
-					>
-						HackUTD
-					</a>
-					<a
-						className="nav-link"
 						href="https://hacktx.com/"
 						target="_blank"
 					>
@@ -126,6 +119,13 @@ function Footer() {
 						target="_blank"
 					>
 						CodeQuantum
+					</a>
+					<a
+						className="nav-link"
+						href="https://hackutd.co/"
+						target="_blank"
+					>
+						HackUTD
 					</a>
 				</div>
 			</div>

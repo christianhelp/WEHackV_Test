@@ -45,7 +45,7 @@ export default async function Page() {
 									className="mr-5 flex items-center gap-x-2"
 								>
 									<Image
-										src={"/img/static/images/black wehack logo.png"}
+										src={"/img/static/images/white wehack logo.png"}
 										alt={c.hackathonName + " Logo"}
 										width={60}
 										height={60}
@@ -61,12 +61,12 @@ export default async function Page() {
 						<h1 className="text-6xl font-black md:text-8xl">
 							Register
 						</h1>
-						<p className="mt-5 font-medium">
+						<p className="mt-5 font-medium text-2xl">
 							<span className="font-bold">Welcome Hacker!</span>{" "}
 							Please fill out the form below to complete your
 							registration for {c.hackathonName}.
 						</p>
-						<p className="pb-10 pt-5 text-sm">
+						<p className="pb-10 pt-5 text-xl">
 							Psttt... Running into a issue? Please let us know by
 							emailing <b>wehackutd@gmail.com</b>
 						</p>

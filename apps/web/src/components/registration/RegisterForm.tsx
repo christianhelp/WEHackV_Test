@@ -286,7 +286,7 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 			<Form {...form}>
 				<form
 					onSubmit={form.handleSubmit(onSubmit)}
-					className="space-y-6"
+					className="space-y-16"
 				>
 					<FormGroupWrapper title="General">
 						<div className="grid grid-cols-1 gap-x-2 gap-y-4 md:grid-cols-2">
@@ -1338,7 +1338,7 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 													);
 												}}
 											/>
-											<p className="p-2 text-center">
+											<p className="p-2 text-center text-xl">
 												{resumeFile
 													? `${resumeFile.name} (${Math.round(resumeFile.size / 1024)}kb)`
 													: isDragActive
@@ -1486,7 +1486,7 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 												}}
 											/>
 										</FormControl>
-										<FormDescription className="!mt-0">
+										<FormDescription className="!mt-0 tracking-wide text-md">
 											These skills can be listed on your
 											profile and help with the team
 											finding process! Enter anything you
