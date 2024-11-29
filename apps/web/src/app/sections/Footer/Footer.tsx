@@ -19,7 +19,7 @@ function Footer() {
 							href="https://github.com/acmutsa/HackKit"
 							target="_blank"
 						>
-							<u>Powered by HackKit</u>
+							<u>Managed with HackKit</u>
 						</a>
 					</p>
 				</div>
