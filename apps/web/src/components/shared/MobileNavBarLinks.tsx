@@ -9,7 +9,7 @@ export default async function MobileNavBarLinks() {
 
 	return (
 		<div className="cursor-pointer md:hidden">
-			{navLinks.items.map((nav, key) => {
+			{/* {navLinks.items.map((nav, key) => {
 				return (
 					<div key={nav.name}>
 						{nav.enabled ? (
@@ -19,7 +19,28 @@ export default async function MobileNavBarLinks() {
 						) : null}
 					</div>
 				);
-			})}
+			})} */}
+			{/* <DropdownMenuSeparator></DropdownMenuSeparator>
+			<Link className="text-lg lg:text-sm" href={"#about-wehack"}>
+				<DropdownMenuItem>About</DropdownMenuItem>
+			</Link>
+			<Link className="text-lg lg:text-sm" href={"#Testimonials"}>
+				<DropdownMenuItem>Testimonials</DropdownMenuItem>
+			</Link>
+			<Link className="text-lg lg:text-sm" href={"#Sponsors"}>
+				<DropdownMenuItem>Sponsors</DropdownMenuItem>
+			</Link>
+			<Link className="text-lg lg:text-sm" href={"#FAQ"}>
+				<DropdownMenuItem>FAQ</DropdownMenuItem>
+			</Link>
+			<Link className="text-lg lg:text-sm" href={"#Team"}>
+				<DropdownMenuItem>Meet the Team</DropdownMenuItem>
+			</Link>
+			<Link className="text-lg lg:text-sm" href={"http://hackp.ac/coc"} target="_blank">
+				<DropdownMenuItem>MLH Conduct</DropdownMenuItem>
+			</Link> */}
+			
+			
 		</div>
 	);
 }

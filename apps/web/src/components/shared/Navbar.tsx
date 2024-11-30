@@ -44,7 +44,7 @@ export default async function Navbar({ className }: NavbarProps) {
 
 					<div className="flex items-center justify-between space-x-2 pr-20 md:justify-center md:pr-32">
 						<div className="col-span-2 hidden items-center justify-end gap-x-5 md:flex md:pr-10">
-							{/* <NavBarLinksGrouper /> */}
+							<NavBarLinksGrouper />
 							<a
 								className="text-lg font-medium lg:text-sm"
 								href="#about-wehack"

@@ -43,7 +43,7 @@ function FAQ() {
             </div>
         </div>
 
-        <div className="vinyl-blue-container flex justify-center md:justify-end lg:justify-end md:-ml-[10rem] lg:-ml-[25rem] xl:-ml-[45rem] pt-20 pb-72 md:pt-16 md:pb-72">
+        <div className="vinyl-blue-container overflow-x-hidden flex justify-center md:justify-end lg:justify-end md:-ml-[10rem] lg:-ml-[25rem] xl:-ml-[45rem] pt-20 pb-72 md:pt-16 md:pb-72">
             <img className="vinyl overflow-x-hidden" src="/img/static/images/Untitled_Artwork 4.png" width="300px" height="300px"></img>    
         </div>
         
