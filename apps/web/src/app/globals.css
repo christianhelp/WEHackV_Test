@@ -138,15 +138,14 @@ body {
 }
 .App {
     background-image: url("/img/static/images/landing-page-background-1.webp");
-    background-size:100% auto; 
-    background-repeat:repeat;
-    background-position: top;
+    background-size: 100% auto; /* Adjust width */
+    background-repeat: no-repeat;
+    background-position: center;
     overflow-x: hidden;
-    /* min-height: 100vh; */
+    height: 100vh;
     width: 100%;
     margin: 0;
     padding: 0;
-	top:0;
     background-attachment: fixed;
 }
 
@@ -226,10 +225,6 @@ h2, p {
         width:50%;
         flex-direction: column;
     }
-	.App {
-		background-repeat:no-repeat;
-		background-attachment: fixed;
-	}
 }
 
 /* large */
