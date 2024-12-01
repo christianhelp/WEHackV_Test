@@ -13,10 +13,15 @@ export const ourFileRouter = {
 		.middleware(async ({ req }) => {
 			// This code runs on your server before upload
 			const user = await auth(req);
-
+			if (process.env.UPLOADTHING_TOKEN) {
+				console.log("existing")
+			}
 			// If you throw, the user will not be able to upload
 			if (!user) throw new UploadThingError("Unauthorized");
-			console.log(req);
+			// console.log(req);
+			const testing = await req.json();
+			console.log(testing);
+			// throw new UploadThingError("Testing");
 			// Whatever is returned here is accessible in onUploadComplete as `metadata`
 			return { userId: user.id };
 		})
