@@ -30,7 +30,7 @@ function Sponsor() {
           ))}
         </div> */}
         <div className="vinyl-yellow-container overflow-x-hidden flex justify-center md:justify-start pt-20 pb-72 md:pt-30 md:pb-64 md:-mr-[5rem] lg:-mr-[20rem] xl:-mr-[35rem]">
-          <img className="vinyl-yellow overflow-x-hidden" src="/img/static/images/Untitled_Artwork 5.png" width="250px" height="250px"></img>    
+          <img className="vinyl-yellow overflow-x-hidden" src={"/img/static/images/Untitled_Artwork 5.png"} width="250px" height="250px"></img>    
         </div>
       </div>
     );

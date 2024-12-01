@@ -20,10 +20,20 @@ import DefaultDropdownTrigger from "../dash/shared/DefaultDropDownTrigger";
 import MobileNavBarLinks from "./MobileNavBarLinks";
 import { getUser } from "db/functions";
 import { redirect } from "next/navigation";
+import { useRouter } from "next/router";
+
 
 export default async function ProfileButton() {
 	const clerkUser = await auth();
 	const { userId } = clerkUser;
+	function handleHashLinkClick(hash : string) {
+		const element = document.querySelector(hash);
+		if (element) {
+		  element.scrollIntoView({ behavior: "smooth" });
+		  history.pushState(null, "", hash); // Update the URL without reloading
+		}
+	  }
+	  
 
 	// This is our default component if there is no user data
 	if (!userId) {
@@ -53,7 +63,7 @@ export default async function ProfileButton() {
 								Register
 							</DropdownMenuItem>
 						</Link>
-						{/* <Link href={`/#about-wehack`}>
+						<Link href={`/#about-wehack`}>
 							<DropdownMenuItem className="cursor-pointer">
 								About
 							</DropdownMenuItem>
@@ -77,7 +87,7 @@ export default async function ProfileButton() {
 							<DropdownMenuItem className="cursor-pointer">
 								Meet the Team
 							</DropdownMenuItem>
-						</Link> */}
+						</Link>
 						<Link href={`http://hackp.ac/coc`} target="_blank">
 							<DropdownMenuItem className="cursor-pointer">
 								MLH Conduct
