@@ -174,8 +174,11 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 		if (resumeFile) {
 			console.log("inside if statement", resumeFile);
 			// const { startUpload, routeConfig } = useUploadThing("pdfUploader"); // Specify your endpoint
+			if (process.env.UPLOADTHING_TOKEN) {
+				console.log("existing")
+			}
 			const uploadResult = await startUpload([resumeFile]); // Pass the resumeFile as an array
-			console.log(uploadResult);
+			console.log("results", uploadResult);
 
 			if (uploadResult) {
 				// Extract the uploaded file information (URL, etc.)
