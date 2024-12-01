@@ -16,7 +16,7 @@ export const ourFileRouter = {
 
 			// If you throw, the user will not be able to upload
 			if (!user) throw new UploadThingError("Unauthorized");
-
+			console.log(req);
 			// Whatever is returned here is accessible in onUploadComplete as `metadata`
 			return { userId: user.id };
 		})

@@ -165,7 +165,9 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 		let resume: string = c.noResumeProvidedURL;
 
 		if (resumeFile) {
+			// const { startUpload, routeConfig } = useUploadThing("pdfUploader"); // Specify your endpoint
 			const uploadResult = await startUpload([resumeFile]); // Pass the resumeFile as an array
+			
 
 			if (uploadResult) {
 				// Extract the uploaded file information (URL, etc.)
