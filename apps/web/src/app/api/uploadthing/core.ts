@@ -14,9 +14,9 @@ export const ourFileRouter = {
 			// This code runs on your server before upload
 			// const user = await auth(req);
 			if (process.env.UPLOADTHING_TOKEN) {
-				console.log("inside middleware: existing")
+				console.log("inside public middleware: existing")
 			} else {
-				console.log("inside NOT existing in middleware")
+				console.log("inside NOT existing in public middleware")
 			}
 			// If you throw, the user will not be able to upload
 			// if (!user) throw new UploadThingError("Unauthorized");
@@ -49,9 +49,9 @@ export const ourFileRouter = {
 			}
 
 			if (process.env.UPLOADTHING_TOKEN) {
-				console.log("inside middleware: existing")
+				console.log("inside private middleware: existing")
 			} else {
-				console.log("inside NOT existing in middleware")
+				console.log("inside NOT existing in private middleware")
 			}
 	  
 			return { userId: session.id };

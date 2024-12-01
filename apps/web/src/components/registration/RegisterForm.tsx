@@ -173,9 +173,12 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 			if (uploadResult) {
 				// Extract the uploaded file information (URL, etc.)
 				const {serverData:{
-					fileUrl
+					fileUrl,
+					uploadedBy
 				}} = uploadResult[0];
 				
+				console.log(fileUrl);
+				console.log(uploadedBy);
 				console.log(resume);
 				resume = fileUrl;
 
