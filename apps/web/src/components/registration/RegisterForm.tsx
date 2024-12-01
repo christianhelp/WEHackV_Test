@@ -70,7 +70,13 @@ interface RegisterFormProps {
 export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 	const [resumeFile, setResumeFile] = useState<File | null>(null);
 
-	const { startUpload, routeConfig } = useUploadThing("pdfUploader"); // Specify your endpoint
+	const { startUpload, routeConfig } = useUploadThing("pdfUploader", {
+		onClientUploadComplete: () => {
+		  alert("uploaded successfully!");
+		},
+		onUploadError: () => {
+		  alert("error occurred while uploading");
+		},}); // Specify your endpoint
 
 	const { isLoaded, userId } = useAuth();
 	const router = useRouter();
@@ -164,15 +170,17 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 
 		let resume: string = c.noResumeProvidedURL;
 
+		console.log("before if statement", resumeFile);
 		if (resumeFile) {
+			console.log("inside if statement", resumeFile);
 			// const { startUpload, routeConfig } = useUploadThing("pdfUploader"); // Specify your endpoint
 			const uploadResult = await startUpload([resumeFile]); // Pass the resumeFile as an array
-			
+			console.log(uploadResult);
 
 			if (uploadResult) {
 				// Extract the uploaded file information (URL, etc.)
 				const uploadedFileData = uploadResult[0];
-				console.log(resume);
+				console.log(uploadedFileData);
 
 				// Proceed with form submission by including the uploaded resume URL
 				const res = await zpostSafe({
