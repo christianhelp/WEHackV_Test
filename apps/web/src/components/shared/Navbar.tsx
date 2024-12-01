@@ -43,47 +43,47 @@ export default async function Navbar({ className }: NavbarProps) {
 					</div>
 
 					<div className="flex items-center justify-between space-x-2 pr-20 md:justify-center md:pr-32">
-						<div className="col-span-2 hidden items-center justify-end gap-x-5 md:flex md:pr-10">
+						<div className="col-span-2 hidden items-center justify-end gap-x-5 lg:flex md:pr-10">
 							<NavBarLinksGrouper />
 							<a
-								className="text-lg font-medium lg:text-sm"
+								className="text-lg font-medium md:text-sm"
 								href="#about-wehack"
 							>
 								About
 							</a>
 							<a
-								className="text-lg font-medium lg:text-sm"
+								className="text-lg font-medium md:text-sm"
 								href="#Testimonials"
 							>
 								Testimonials
 							</a>
 							<a
-								className="text-lg font-medium lg:text-sm"
+								className="text-lg font-medium md:text-sm"
 								href="#Sponsors"
 							>
 								Sponsors
 							</a>
 							<a
-								className="text-lg font-medium lg:text-sm"
+								className="text-lg font-medium md:text-sm"
 								href="#FAQ"
 							>
 								FAQ
 							</a>
 							<a
-								className="text-lg font-medium lg:text-sm"
+								className="text-lg font-medium md:text-sm"
 								href="#Team"
 							>
 								Meet the Team
 							</a>
 							<a
-								className="text-lg font-medium lg:text-sm"
+								className="text-lg font-medium md:text-sm"
 								href="http://hackp.ac/coc"
 								target="_blank"
 							>
 								MLH Conduct
 							</a>
 						</div>
-						<div className="hidden gap-x-4 md:flex">
+						<div className="hidden gap-x-4 lg:flex">
 							{user ? (
 								<>
 									<Link

@@ -4,11 +4,13 @@ import {
 	DropdownMenuSeparator,
 } from "@/components/shadcn/ui/dropdown-menu";
 import Link from "next/link";
+import NavBarLinksGrouper from "./NavBarLinksGrouper";
+
 export default async function MobileNavBarLinks() {
 	const navLinks = await getAllNavItems();
 
 	return (
-		<div className="cursor-pointer md:hidden">
+		<div className="cursor-pointer lg:hidden">
 			{/* {navLinks.items.map((nav, key) => {
 				return (
 					<div key={nav.name}>
@@ -20,25 +22,42 @@ export default async function MobileNavBarLinks() {
 					</div>
 				);
 			})} */}
-			{/* <DropdownMenuSeparator></DropdownMenuSeparator>
-			<Link className="text-lg lg:text-sm" href={"#about-wehack"}>
-				<DropdownMenuItem>About</DropdownMenuItem>
-			</Link>
-			<Link className="text-lg lg:text-sm" href={"#Testimonials"}>
-				<DropdownMenuItem>Testimonials</DropdownMenuItem>
-			</Link>
-			<Link className="text-lg lg:text-sm" href={"#Sponsors"}>
-				<DropdownMenuItem>Sponsors</DropdownMenuItem>
-			</Link>
-			<Link className="text-lg lg:text-sm" href={"#FAQ"}>
-				<DropdownMenuItem>FAQ</DropdownMenuItem>
-			</Link>
-			<Link className="text-lg lg:text-sm" href={"#Team"}>
-				<DropdownMenuItem>Meet the Team</DropdownMenuItem>
-			</Link>
-			<Link className="text-lg lg:text-sm" href={"http://hackp.ac/coc"} target="_blank">
-				<DropdownMenuItem>MLH Conduct</DropdownMenuItem>
-			</Link> */}
+			<DropdownMenuSeparator></DropdownMenuSeparator>
+			<DropdownMenuItem className="cursor-pointer">
+							<Link href={`/#about-wehack`} className="w-full h-full block">
+								About
+							</Link>
+						</DropdownMenuItem>
+
+						<DropdownMenuItem className="cursor-pointer">
+							<Link href={`/#Testimonials`} className="w-full h-full block">
+								Testimonials
+							</Link>
+						</DropdownMenuItem>
+
+						<DropdownMenuItem className="cursor-pointer">
+							<Link href={`/#Sponsors`} className="w-full h-full block">
+								Sponsors
+							</Link>
+						</DropdownMenuItem>
+
+						<DropdownMenuItem className="cursor-pointer">
+							<Link href={`/#FAQ`} className="w-full h-full block">
+								FAQ
+							</Link>
+						</DropdownMenuItem>
+
+						<DropdownMenuItem className="cursor-pointer">
+							<Link href={`/#Team`} className="w-full h-full block">
+								Meet the Team
+							</Link>
+						</DropdownMenuItem>
+						
+						<Link href={`http://hackp.ac/coc`} target="_blank">
+							<DropdownMenuItem className="cursor-pointer">
+								MLH Conduct
+							</DropdownMenuItem>
+						</Link>
 			
 			
 		</div>

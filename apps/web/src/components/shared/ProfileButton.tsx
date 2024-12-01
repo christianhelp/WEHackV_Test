@@ -21,24 +21,18 @@ import MobileNavBarLinks from "./MobileNavBarLinks";
 import { getUser } from "db/functions";
 import { redirect } from "next/navigation";
 import { useRouter } from "next/router";
+import NavBarLinksGrouper from "./NavBarLinksGrouper";
 
 
 export default async function ProfileButton() {
 	const clerkUser = await auth();
 	const { userId } = clerkUser;
-	function handleHashLinkClick(hash : string) {
-		const element = document.querySelector(hash);
-		if (element) {
-		  element.scrollIntoView({ behavior: "smooth" });
-		  history.pushState(null, "", hash); // Update the URL without reloading
-		}
-	  }
-	  
 
 	// This is our default component if there is no user data
 	if (!userId) {
 		return (
-			<DropdownMenu>
+			
+			<DropdownMenu modal={false}>
 				<DropdownMenuTrigger
 					asChild
 					className="border-transparent bg-transparent hover:border-transparent hover:bg-transparent"
@@ -47,11 +41,13 @@ export default async function ProfileButton() {
 						<DefaultDropdownTrigger />
 					</Button>
 				</DropdownMenuTrigger>
+				
 				<DropdownMenuContent
 					className="mt-2 w-32 bg-[rgb(247,240,232)] sm:w-40 lg:w-52"
 					align="end"
 					forceMount
 				>
+					
 					<DropdownMenuGroup>
 						<Link href={`/sign-in`}>
 							<DropdownMenuItem className="cursor-pointer">
@@ -63,36 +59,8 @@ export default async function ProfileButton() {
 								Register
 							</DropdownMenuItem>
 						</Link>
-						<Link href={`/#about-wehack`}>
-							<DropdownMenuItem className="cursor-pointer">
-								About
-							</DropdownMenuItem>
-						</Link>
-						<Link href={`/#Testimonials`}>
-							<DropdownMenuItem className="cursor-pointer">
-								Testimonials
-							</DropdownMenuItem>
-						</Link>
-						<Link href={`/#Sponsors`}>
-							<DropdownMenuItem className="cursor-pointer">
-								Sponsors
-							</DropdownMenuItem>
-						</Link>
-						<Link href={`/#FAQ`}>
-							<DropdownMenuItem className="cursor-pointer">
-								FAQ
-							</DropdownMenuItem>
-						</Link>
-						<Link href={`/#Team`}>
-							<DropdownMenuItem className="cursor-pointer">
-								Meet the Team
-							</DropdownMenuItem>
-						</Link>
-						<Link href={`http://hackp.ac/coc`} target="_blank">
-							<DropdownMenuItem className="cursor-pointer">
-								MLH Conduct
-							</DropdownMenuItem>
-						</Link>
+						
+						<MobileNavBarLinks/>
 
 						<DropdownMenuSeparator className="bg-[rgb(228,228,231)]" />
 						{/* <DropdownSwitcher /> */}
