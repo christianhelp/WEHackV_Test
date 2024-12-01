@@ -12,11 +12,11 @@ export const { GET, POST } = createRouteHandler({
 	// config: { ... },
 });
 
-export default async function uploadthing(req: NextRequest) {
-	const { userId } = getAuth(req);
-	if (userId) {
-		// add the userId to the body
-		const body = await req.json();
-		const updatedBody = { ...body, userId };
-	}
-}
+// export default async function uploadthing(req: NextRequest) {
+// 	const { userId } = getAuth(req);
+// 	if (userId) {
+// 		// add the userId to the body
+// 		const body = await req.json();
+// 		const updatedBody = { ...body, userId };
+// 	}
+// }
