@@ -55,6 +55,10 @@ function FAQ() {
 
 const dataColOne = [
     {
+        question: "What is a hackathon?",
+        answer: "A hackathon is typically a 24-hour event where you create a project (with a team or solo) to solve a certain challenge and compete for prizes.",
+    },
+    {
         question: "Who can attend?",
         answer: "Anyone can sign up to participate as a hacker at WEHack. However, keep in mind that a lot of the hackathon content will revolve around women and non-binary experiences to reflect our mission of uniting and empowering women and non-binary individuals in STEM. If you do not identify as female or non-binary but consider yourself an ally of our cause, we would love to have you as a mentor or volunteer!",
     },
@@ -67,6 +71,11 @@ const dataColOne = [
     {
         question: "Do I need to have coding experience?",
         answer: "No! WEHack is open to all majors and experience levels and would be the perfect place to work on your first project. Resources such as mentors and workshops are available to support beginner hackers.",
+    },
+
+    {
+        question: "I’m not a Computer Science major, can I still participate at WEHack?",
+        answer: "Yes! WEHack is truly a beginner friendly hackathon, where all majors are welcome. We are alsonintroducing two new tracks for business and design-related majors: BizTech with Women in Technology & Business and Design Time with UX Club!",
     },
     
     {
@@ -89,6 +98,11 @@ const dataColTwo =  [
     {
         question: "Does it cost money to participate?",
         answer: "WEHack 2025 is completely free! This includes food and swag, which will be handed out to attendees during the hackathon.",
+    },
+
+    {
+        question: "How can I be a volunteer or mentor at WEHack?",
+        answer: "Volunteer and mentor applications will be released soon! Please note that if you are a volunteer or mentor, you cannot be a hacker at WEHack.",        
     },
 
     {
@@ -115,6 +129,11 @@ const dataColTwo =  [
     {
         question: "Can I sleep at WEHack?",
         answer: "You are welcome to sleep at WEHack! Make sure to bring pillows, blankets, chargers, and other necessities if you are planning to stay the night.",        
+    },
+
+    {
+        question: "Are travel reimbursements provided?",
+        answer: "Unfortunately, we are not providing travel reimbursements at this time.",        
     }
 ]
 
