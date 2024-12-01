@@ -12,6 +12,7 @@ export const ourFileRouter = {
 		// Set permissions and file types for this FileRoute
 		.middleware(async ({ req }) => {
 			// This code runs on your server before upload
+			console.log("before i check everything")
 			if (process.env.UPLOADTHING_TOKEN) {
 				console.log("inside middleware: existing")
 			} else {
