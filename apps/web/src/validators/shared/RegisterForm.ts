@@ -188,7 +188,10 @@ export const RegisterFormValidator = z.object({
 	// 	.nullable(),
 	uploadedFile: z
 		.any()
-		.refine((file) => file !== null && file !== undefined, {
+		.refine((file) => {
+			console.log("zod:", file);
+			return(file !== null && file !== undefined)
+		}, {
 			message: "Please upload a PDF of your resume before submitting.",
 		}),
 });

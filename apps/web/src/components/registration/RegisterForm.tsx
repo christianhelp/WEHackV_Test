@@ -256,11 +256,21 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 				);
 			}
 			if (acceptedFiles.length > 0) {
+				console.log("testing")
 				setResumeFile(acceptedFiles[0]);
+				form.setValue("uploadedFile", acceptedFiles[0])
 			}
 		},
 		[],
 	);
+
+	const currentFile = form.watch("uploadedFile")
+
+	useEffect(()=>{
+		console.log("file:",currentFile);
+	},[currentFile])
+
+
 
 	const { getRootProps, getInputProps, isDragActive } = useDropzone({
 		onDrop,
@@ -1329,13 +1339,16 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 											<input
 												{...getInputProps()}
 												onChange={(e) => {
+													console.log(e.target.files?.[0]);
 													field.onChange(
-														e.target.files,
+														e.target.files?.[0]
+														
 													);
 													setResumeFile(
 														e.target.files?.[0] ||
 															null,
 													);
+													console.log("hey")
 												}}
 											/>
 											<p className="p-2 text-center text-xl">
