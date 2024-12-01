@@ -36,5 +36,5 @@ export default authMiddleware({
 });
 
 export const config = {
-	matcher: ["/api/uploadthing", "/((?!.*\\..*|_next).*)", "/", "/(api|trpc)(.*)"],
+	matcher: ["/((?!.*\\..*|_next).*)", "/", "/(api|trpc)(.*)"],
 };

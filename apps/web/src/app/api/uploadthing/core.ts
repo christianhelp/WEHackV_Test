@@ -21,8 +21,8 @@ export const ourFileRouter = {
 			// If you throw, the user will not be able to upload
 			// if (!user) throw new UploadThingError("Unauthorized");
 			// console.log(req);
-			// const testing = await req.json();
-			// console.log(testing);
+			const testing = await req.json();
+			console.log(testing);
 			// throw new UploadThingError("Testing");
 			// Whatever is returned here is accessible in onUploadComplete as `metadata`
 			// return { userId: user.id };
@@ -53,6 +53,9 @@ export const ourFileRouter = {
 			} else {
 				console.log("inside NOT existing in private middleware")
 			}
+
+			const testing = await req.json();
+			console.log(testing);
 	  
 			return { userId: session.id };
 		})
