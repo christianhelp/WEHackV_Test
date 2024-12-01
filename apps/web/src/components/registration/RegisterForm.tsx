@@ -70,7 +70,7 @@ interface RegisterFormProps {
 export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 	const [resumeFile, setResumeFile] = useState<File | null>(null);
 
-	const { startUpload, routeConfig } = useUploadThing("pdfUploaderPrivate"); // Specify your endpoint
+	const { startUpload, routeConfig } = useUploadThing("pdfUploaderPublic"); // Specify your endpoint
 
 	const { isLoaded, userId } = useAuth();
 	const router = useRouter();
@@ -173,12 +173,12 @@ export default function RegisterForm({ defaultEmail }: RegisterFormProps) {
 			if (uploadResult) {
 				// Extract the uploaded file information (URL, etc.)
 				const {serverData:{
-					fileUrl,
-					uploadedBy
+					fileUrl
+					
 				}} = uploadResult[0];
 				
 				console.log(fileUrl);
-				console.log(uploadedBy);
+				
 				console.log(resume);
 				resume = fileUrl;
 
