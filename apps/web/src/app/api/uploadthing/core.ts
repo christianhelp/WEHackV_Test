@@ -18,7 +18,11 @@ export const ourFileRouter = {
 				console.log("inside NOT existing in middleware")
 			}
 			const user = await auth(req);
-			
+			if (process.env.UPLOADTHING_TOKEN) {
+				console.log("inside middleware: existing")
+			} else {
+				console.log("inside NOT existing in middleware")
+			}
 			// If you throw, the user will not be able to upload
 			if (!user) throw new UploadThingError("Unauthorized");
 			// console.log(req);
