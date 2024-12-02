@@ -8,40 +8,7 @@ const auth = (req: Request) => ({ id: "fakeId" }); // Fake auth function
 
 // FileRouter for your app, can contain multiple FileRoutes
 export const ourFileRouter = {
-	// PDF UPLOADER
-	pdfUploaderPublic: f({ pdf: { maxFileSize: "4MB", maxFileCount: 1 } })
-		// Set permissions and file types for this FileRoute
-		.middleware(async ({ req }) => {
-			// This code runs on your server before upload
-			// const user = await auth(req);
-			if (process.env.UPLOADTHING_TOKEN) {
-				console.log("inside public middleware: existing")
-			} else {
-				console.log("inside NOT existing in public middleware")
-			}
-			// If you throw, the user will not be able to upload
-			// if (!user) throw new UploadThingError("Unauthorized");
-			// console.log(req);
-			const testing = await req.json();
-			console.log(testing);
-			// throw new UploadThingError("Testing");
-			// Whatever is returned here is accessible in onUploadComplete as `metadata`
-			// return { userId: user.id };
-			console.log("Public route: No authentication required");
-			return {};
-		})
-		.onUploadError(async ({ error, fileKey }) => {
-			// This code RUNS ON YOUR SERVER after upload
-			console.log(error);
-		})
-		.onUploadComplete(async ({ metadata, file }) => {
-			console.log("Public upload complete");
-			console.log("File URL:", file.url);
-			return { fileUrl: file.url };
-		}),
-
-
-	pdfUploaderPrivate: f({ pdf: { maxFileSize: "4MB", maxFileCount: 1 } })
+	pdfUploaderPrivate: f({ pdf: { maxFileSize: "4MB", maxFileCount: 1, minFileCount:1 } })
 	// Set permissions and file types for this FileRoute
 		.middleware(async ({ req }) => {
 			const { userId } = getAuth(req);
@@ -50,15 +17,6 @@ export const ourFileRouter = {
 			  throw new UploadThingError("You need to be logged in to upload files");
 			}
 
-			if (process.env.UPLOADTHING_TOKEN) {
-				console.log("inside private middleware: existing")
-			} else {
-				console.log("inside NOT existing in private middleware")
-			}
-
-			const testing = await req.json();
-			console.log(testing);
-	  
 			return { userId: userId };
 		})
 		.onUploadComplete(async ({ metadata, file }) => {
