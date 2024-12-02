@@ -1,5 +1,6 @@
 import { createUploadthing, type FileRouter } from "uploadthing/next";
 import { UploadThingError } from "uploadthing/server";
+import { getAuth } from "@clerk/nextjs/server";
 
 const f = createUploadthing();
 
@@ -43,8 +44,9 @@ export const ourFileRouter = {
 	pdfUploaderPrivate: f({ pdf: { maxFileSize: "4MB", maxFileCount: 1 } })
 	// Set permissions and file types for this FileRoute
 		.middleware(async ({ req }) => {
-			const session = await auth(req);
-			if (!session) {
+			const { userId } = getAuth(req);
+
+			if (!userId) {
 			  throw new UploadThingError("You need to be logged in to upload files");
 			}
 
@@ -57,7 +59,7 @@ export const ourFileRouter = {
 			const testing = await req.json();
 			console.log(testing);
 	  
-			return { userId: session.id };
+			return { userId: userId };
 		})
 		.onUploadComplete(async ({ metadata, file }) => {
 			// This code RUNS ON YOUR SERVER after upload
