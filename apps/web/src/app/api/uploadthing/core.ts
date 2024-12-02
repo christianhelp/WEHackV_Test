@@ -17,6 +17,8 @@ export const ourFileRouter = {
 			  throw new UploadThingError("You need to be logged in to upload files");
 			}
 
+			console.log("token env value is: ", process.env.UPLOADTHING_TOKEN);
+
 			return { userId: userId };
 		})
 		.onUploadComplete(async ({ metadata, file }) => {
